@@ -31,7 +31,7 @@ outputType = "webview"
 
 [[workflows.workflow.tasks]]
 task = "shell.exec"
-args = "cd cbt-app && node server/index.js & sleep 2 && npm run dev:frontend"
+args = "cd /home/runner/workspace/cbt-app && node server/index.js & cd /home/runner/workspace/cbt-app && npm run dev:frontend"
 waitForPort = 5000
 
 [[ports]]
