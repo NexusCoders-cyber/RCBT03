@@ -6,7 +6,7 @@ const GROK_API_KEY = import.meta.env.VITE_GROK_API_KEY || ''
 const CEREBRAS_API_KEY = import.meta.env.VITE_CEREBRAS_API_KEY || ''
 
 const DB_NAME = 'jamb-cbt-offline'
-const DB_VERSION = 5
+const DB_VERSION = 6
 const AI_CACHE_STORE = 'ai_cache'
 const AI_HISTORY_STORE = 'ai_history'
 const AI_SETTINGS_STORE = 'ai_settings'
@@ -15,10 +15,21 @@ let db = null
 let genAI = null
 let chatSession = null
 let conversationHistory = []
-let currentProvider = 'gemini'
-let currentModel = 'gemini-1.5-flash'
+let currentProvider = 'auto'
+let currentModel = 'auto'
 
 export const AI_PROVIDERS = {
+  auto: {
+    id: 'auto',
+    name: 'Auto Select',
+    icon: '🎯',
+    color: 'from-emerald-500 to-teal-600',
+    description: 'Automatically selects the best available model',
+    models: [
+      { id: 'auto', name: 'Auto', description: 'Smart model selection', tier: 'auto' },
+    ],
+    available: true
+  },
   gemini: {
     id: 'gemini',
     name: 'Google Gemini',
@@ -26,9 +37,9 @@ export const AI_PROVIDERS = {
     color: 'from-blue-500 to-purple-600',
     description: 'Google\'s most capable AI model',
     models: [
-      { id: 'gemini-1.5-flash', name: 'Gemini 1.5 Flash', description: 'Best free tier (1500/day)', tier: 'standard' },
-      { id: 'gemini-2.0-flash', name: 'Gemini 2.0 Flash', description: 'Latest & fastest', tier: 'premium' },
-      { id: 'gemini-1.5-pro', name: 'Gemini 1.5 Pro', description: 'Advanced reasoning', tier: 'pro' },
+      { id: 'gemini-1.5-flash', name: 'Gemini 1.5 Flash', description: 'Best free tier (1500/day)', tier: 'standard', priority: 1 },
+      { id: 'gemini-2.0-flash', name: 'Gemini 2.0 Flash', description: 'Latest & fastest', tier: 'premium', priority: 2 },
+      { id: 'gemini-1.5-pro', name: 'Gemini 1.5 Pro', description: 'Advanced reasoning', tier: 'pro', priority: 3 },
     ],
     available: !!GEMINI_API_KEY
   },
@@ -39,10 +50,9 @@ export const AI_PROVIDERS = {
     color: 'from-green-500 to-teal-600',
     description: 'Access multiple AI models via Poe',
     models: [
-      { id: 'claude-3-haiku', name: 'Claude 3 Haiku', description: 'Fast & accurate', tier: 'standard' },
-      { id: 'claude-3-sonnet', name: 'Claude 3 Sonnet', description: 'Balanced', tier: 'pro' },
-      { id: 'gpt-4o-mini', name: 'GPT-4o Mini', description: 'OpenAI compact', tier: 'standard' },
-      { id: 'gemini-pro', name: 'Gemini Pro', description: 'Google via Poe', tier: 'standard' },
+      { id: 'claude-3-haiku', name: 'Claude 3 Haiku', description: 'Fast & accurate', tier: 'standard', priority: 1 },
+      { id: 'claude-3-sonnet', name: 'Claude 3 Sonnet', description: 'Balanced', tier: 'pro', priority: 2 },
+      { id: 'gpt-4o-mini', name: 'GPT-4o Mini', description: 'OpenAI compact', tier: 'standard', priority: 1 },
     ],
     available: !!POE_API_KEY
   },
@@ -53,8 +63,8 @@ export const AI_PROVIDERS = {
     color: 'from-orange-500 to-red-600',
     description: 'xAI\'s conversational model',
     models: [
-      { id: 'grok-beta', name: 'Grok Beta', description: 'Latest Grok model', tier: 'standard' },
-      { id: 'grok-2', name: 'Grok 2', description: 'Enhanced capabilities', tier: 'pro' },
+      { id: 'grok-beta', name: 'Grok Beta', description: 'Latest Grok model', tier: 'standard', priority: 1 },
+      { id: 'grok-2', name: 'Grok 2', description: 'Enhanced capabilities', tier: 'pro', priority: 2 },
     ],
     available: !!GROK_API_KEY
   },
@@ -65,11 +75,121 @@ export const AI_PROVIDERS = {
     color: 'from-yellow-500 to-orange-600',
     description: 'Ultra-fast inference',
     models: [
-      { id: 'llama-3.3-70b', name: 'Llama 3.3 70B', description: 'High performance', tier: 'pro' },
-      { id: 'llama-3.1-8b', name: 'Llama 3.1 8B', description: 'Fast & efficient', tier: 'standard' },
+      { id: 'llama-3.3-70b', name: 'Llama 3.3 70B', description: 'High performance', tier: 'pro', priority: 2 },
+      { id: 'llama-3.1-8b', name: 'Llama 3.1 8B', description: 'Fast & efficient', tier: 'standard', priority: 1 },
     ],
     available: !!CEREBRAS_API_KEY
   }
+}
+
+const PROMPT_CATEGORIES = {
+  math: ['calculate', 'solve', 'equation', 'formula', 'mathematics', 'algebra', 'geometry', 'calculus', 'trigonometry', 'number'],
+  science: ['physics', 'chemistry', 'biology', 'reaction', 'experiment', 'atom', 'molecule', 'cell', 'organism', 'force', 'energy'],
+  literature: ['novel', 'poem', 'author', 'character', 'theme', 'literary', 'literature', 'prose', 'drama', 'poetry'],
+  language: ['grammar', 'vocabulary', 'english', 'word', 'sentence', 'comprehension', 'passage'],
+  image: ['image', 'diagram', 'picture', 'graph', 'chart', 'figure', 'analyze this', 'look at'],
+  complex: ['explain', 'analyze', 'compare', 'contrast', 'evaluate', 'discuss', 'elaborate', 'in-depth'],
+  simple: ['what is', 'define', 'meaning', 'quick', 'short', 'brief']
+}
+
+function analyzePrompt(prompt) {
+  const lowerPrompt = prompt.toLowerCase()
+  const analysis = {
+    requiresVision: false,
+    complexity: 'standard',
+    category: 'general',
+    preferredTier: 'standard'
+  }
+  
+  for (const keyword of PROMPT_CATEGORIES.image) {
+    if (lowerPrompt.includes(keyword)) {
+      analysis.requiresVision = true
+      break
+    }
+  }
+  
+  for (const keyword of PROMPT_CATEGORIES.complex) {
+    if (lowerPrompt.includes(keyword)) {
+      analysis.complexity = 'complex'
+      analysis.preferredTier = 'pro'
+      break
+    }
+  }
+  
+  if (analysis.complexity !== 'complex') {
+    for (const keyword of PROMPT_CATEGORIES.simple) {
+      if (lowerPrompt.includes(keyword)) {
+        analysis.complexity = 'simple'
+        break
+      }
+    }
+  }
+  
+  for (const [category, keywords] of Object.entries(PROMPT_CATEGORIES)) {
+    if (category === 'image' || category === 'complex' || category === 'simple') continue
+    for (const keyword of keywords) {
+      if (lowerPrompt.includes(keyword)) {
+        analysis.category = category
+        break
+      }
+    }
+  }
+  
+  if (analysis.category === 'math' || analysis.category === 'science') {
+    analysis.preferredTier = 'pro'
+  }
+  
+  return analysis
+}
+
+function selectBestProvider(analysis, hasImage = false) {
+  const availableProviders = []
+  
+  if (hasImage || analysis.requiresVision) {
+    if (GEMINI_API_KEY) {
+      return { provider: 'gemini', model: 'gemini-1.5-flash' }
+    }
+    throw new Error('Image analysis requires Gemini API key')
+  }
+  
+  if (GEMINI_API_KEY) {
+    availableProviders.push({
+      provider: 'gemini',
+      model: analysis.preferredTier === 'pro' ? 'gemini-1.5-pro' : 'gemini-1.5-flash',
+      priority: 1
+    })
+  }
+  
+  if (CEREBRAS_API_KEY) {
+    availableProviders.push({
+      provider: 'cerebras',
+      model: analysis.preferredTier === 'pro' ? 'llama-3.3-70b' : 'llama-3.1-8b',
+      priority: 2
+    })
+  }
+  
+  if (GROK_API_KEY) {
+    availableProviders.push({
+      provider: 'grok',
+      model: 'grok-beta',
+      priority: 3
+    })
+  }
+  
+  if (POE_API_KEY) {
+    availableProviders.push({
+      provider: 'poe',
+      model: analysis.preferredTier === 'pro' ? 'claude-3-sonnet' : 'claude-3-haiku',
+      priority: 4
+    })
+  }
+  
+  if (availableProviders.length === 0) {
+    return { provider: 'gemini', model: 'gemini-1.5-flash' }
+  }
+  
+  availableProviders.sort((a, b) => a.priority - b.priority)
+  return availableProviders[0]
 }
 
 function getGenAI() {
@@ -116,6 +236,9 @@ async function openDB() {
       if (!database.objectStoreNames.contains('generated_content')) {
         database.createObjectStore('generated_content', { keyPath: 'id' })
       }
+      if (!database.objectStoreNames.contains('offline_queue')) {
+        database.createObjectStore('offline_queue', { keyPath: 'id', autoIncrement: true })
+      }
     }
   })
 }
@@ -131,17 +254,17 @@ export async function getAISettings() {
       request.onsuccess = () => {
         const result = request.result
         if (result) {
-          currentProvider = result.provider || 'gemini'
-          currentModel = result.model || 'gemini-1.5-flash'
+          currentProvider = result.provider || 'auto'
+          currentModel = result.model || 'auto'
           resolve(result)
         } else {
-          resolve({ provider: 'gemini', model: 'gemini-1.5-flash' })
+          resolve({ provider: 'auto', model: 'auto' })
         }
       }
-      request.onerror = () => resolve({ provider: 'gemini', model: 'gemini-1.5-flash' })
+      request.onerror = () => resolve({ provider: 'auto', model: 'auto' })
     })
   } catch {
-    return { provider: 'gemini', model: 'gemini-1.5-flash' }
+    return { provider: 'auto', model: 'auto' }
   }
 }
 
@@ -316,19 +439,19 @@ async function withRetry(fn, maxRetries = 3) {
     }
   }
   if (lastError?.message?.includes('429') || lastError?.message?.includes('quota')) {
-    throw new Error('You have reached the API rate limit. Please wait a moment and try again, or switch to Gemini 1.5 Flash for higher limits.')
+    throw new Error('You have reached the API rate limit. Please wait a moment and try again.')
   }
   throw lastError
 }
 
-async function callGeminiAPI(prompt, imageData = null) {
+async function callGeminiAPI(prompt, model, imageData = null) {
   const ai = getGenAI()
   if (!ai) {
     throw new Error('Gemini API is not configured. Please add your API key.')
   }
 
-  const model = ai.getGenerativeModel({ 
-    model: currentModel,
+  const geminiModel = ai.getGenerativeModel({ 
+    model: model,
     systemInstruction: SYSTEM_INSTRUCTION
   })
 
@@ -340,12 +463,12 @@ async function callGeminiAPI(prompt, imageData = null) {
           mimeType: imageData.split(';')[0].split(':')[1]
         }
       }
-      const result = await model.generateContent([prompt, imagePart])
+      const result = await geminiModel.generateContent([prompt, imagePart])
       return result.response.text()
     })
   }
 
-  if (!chatSession) {
+  if (!chatSession || currentModel !== model) {
     const savedHistory = await loadConversationHistory()
     conversationHistory = savedHistory
     
@@ -354,7 +477,7 @@ async function callGeminiAPI(prompt, imageData = null) {
       parts: [{ text: msg.content }]
     }))
     
-    chatSession = model.startChat({
+    chatSession = geminiModel.startChat({
       history: formattedHistory,
       generationConfig: {
         temperature: 0.7,
@@ -377,12 +500,12 @@ async function callGeminiAPI(prompt, imageData = null) {
   })
 }
 
-async function callPoeAPI(prompt) {
+async function callPoeAPI(prompt, model) {
   if (!POE_API_KEY) {
-    throw new Error('Poe API is not configured. Please add your API key.')
+    throw new Error('Poe API is not configured.')
   }
 
-  const response = await fetch('https://api.poe.com/bot/' + currentModel, {
+  const response = await fetch('https://api.poe.com/bot/' + model, {
     method: 'POST',
     headers: {
       'Authorization': `Bearer ${POE_API_KEY}`,
@@ -401,17 +524,16 @@ async function callPoeAPI(prompt) {
   })
 
   if (!response.ok) {
-    const data = await response.json().catch(() => ({}))
-    throw new Error(data.error || 'Poe API request failed')
+    throw new Error('Poe API request failed')
   }
 
   const data = await response.json()
   return data.text || data.response || 'No response received'
 }
 
-async function callGrokAPI(prompt) {
+async function callGrokAPI(prompt, model) {
   if (!GROK_API_KEY) {
-    throw new Error('Grok API is not configured. Please add your API key.')
+    throw new Error('Grok API is not configured.')
   }
 
   const response = await fetch('https://api.x.ai/v1/chat/completions', {
@@ -421,7 +543,7 @@ async function callGrokAPI(prompt) {
       'Content-Type': 'application/json',
     },
     body: JSON.stringify({
-      model: currentModel,
+      model: model,
       messages: [{
         role: 'system',
         content: SYSTEM_INSTRUCTION
@@ -434,17 +556,16 @@ async function callGrokAPI(prompt) {
   })
 
   if (!response.ok) {
-    const data = await response.json().catch(() => ({}))
-    throw new Error(data.error?.message || 'Grok API request failed')
+    throw new Error('Grok API request failed')
   }
 
   const data = await response.json()
   return data.choices?.[0]?.message?.content || 'No response received'
 }
 
-async function callCerebrasAPI(prompt) {
+async function callCerebrasAPI(prompt, model) {
   if (!CEREBRAS_API_KEY) {
-    throw new Error('Cerebras API is not configured. Please add your API key.')
+    throw new Error('Cerebras API is not configured.')
   }
 
   const response = await fetch('https://api.cerebras.ai/v1/chat/completions', {
@@ -454,7 +575,7 @@ async function callCerebrasAPI(prompt) {
       'Content-Type': 'application/json',
     },
     body: JSON.stringify({
-      model: currentModel,
+      model: model,
       messages: [{
         role: 'system',
         content: SYSTEM_INSTRUCTION
@@ -468,42 +589,64 @@ async function callCerebrasAPI(prompt) {
   })
 
   if (!response.ok) {
-    const data = await response.json().catch(() => ({}))
-    throw new Error(data.error?.message || 'Cerebras API request failed')
+    throw new Error('Cerebras API request failed')
   }
 
   const data = await response.json()
   return data.choices?.[0]?.message?.content || 'No response received'
 }
 
-async function callAIProvider(prompt, imageData = null) {
-  await getAISettings()
-  
-  switch (currentProvider) {
+async function callAIProvider(prompt, provider, model, imageData = null) {
+  switch (provider) {
     case 'gemini':
-      return callGeminiAPI(prompt, imageData)
+      return callGeminiAPI(prompt, model, imageData)
     case 'poe':
-      if (imageData) {
-        throw new Error('Image analysis is only available with Gemini. Please switch to Gemini for image features.')
-      }
-      return callPoeAPI(prompt)
+      return callPoeAPI(prompt, model)
     case 'grok':
-      if (imageData) {
-        throw new Error('Image analysis is only available with Gemini. Please switch to Gemini for image features.')
-      }
-      return callGrokAPI(prompt)
+      return callGrokAPI(prompt, model)
     case 'cerebras':
-      if (imageData) {
-        throw new Error('Image analysis is only available with Gemini. Please switch to Gemini for image features.')
-      }
-      return callCerebrasAPI(prompt)
+      return callCerebrasAPI(prompt, model)
     default:
-      return callGeminiAPI(prompt, imageData)
+      return callGeminiAPI(prompt, model, imageData)
   }
 }
 
+async function callWithFallback(prompt, imageData = null) {
+  const analysis = analyzePrompt(prompt)
+  const providers = []
+  
+  if (GEMINI_API_KEY) {
+    providers.push({ provider: 'gemini', model: 'gemini-1.5-flash' })
+  }
+  if (CEREBRAS_API_KEY) {
+    providers.push({ provider: 'cerebras', model: 'llama-3.1-8b' })
+  }
+  if (GROK_API_KEY) {
+    providers.push({ provider: 'grok', model: 'grok-beta' })
+  }
+  if (POE_API_KEY) {
+    providers.push({ provider: 'poe', model: 'claude-3-haiku' })
+  }
+  
+  if (providers.length === 0) {
+    throw new Error('No AI providers configured. Please add at least one API key.')
+  }
+  
+  for (const { provider, model } of providers) {
+    try {
+      if (imageData && provider !== 'gemini') continue
+      return await callAIProvider(prompt, provider, model, imageData)
+    } catch (error) {
+      console.warn(`Provider ${provider} failed:`, error.message)
+      continue
+    }
+  }
+  
+  throw new Error('All AI providers failed. Please try again later.')
+}
+
 export async function askAI(question, subject = null, context = null, imageData = null) {
-  const cacheKey = `ai-${question.substring(0, 50)}-${subject || 'general'}-${currentProvider}-${currentModel}`
+  const cacheKey = `ai-${question.substring(0, 50)}-${subject || 'general'}`
   
   if (!imageData) {
     const cached = await getCachedResponse(cacheKey)
@@ -513,6 +656,8 @@ export async function askAI(question, subject = null, context = null, imageData 
   }
   
   if (!navigator.onLine) {
+    const offlineResponse = getOfflineResponse(question, subject)
+    if (offlineResponse) return offlineResponse
     throw new Error('You are offline. AI assistance requires an internet connection.')
   }
   
@@ -525,7 +670,14 @@ export async function askAI(question, subject = null, context = null, imageData 
   }
   
   try {
-    const response = await callAIProvider(userMessage, imageData)
+    await getAISettings()
+    
+    let response
+    if (currentProvider === 'auto' || currentModel === 'auto') {
+      response = await callWithFallback(userMessage, imageData)
+    } else {
+      response = await callAIProvider(userMessage, currentProvider, currentModel, imageData)
+    }
     
     if (!imageData) {
       await cacheResponse(cacheKey, response)
@@ -533,12 +685,36 @@ export async function askAI(question, subject = null, context = null, imageData 
     
     return response
   } catch (error) {
-    if (error.message.includes('offline')) {
-      throw error
+    if (currentProvider !== 'auto') {
+      try {
+        const response = await callWithFallback(userMessage, imageData)
+        if (!imageData) {
+          await cacheResponse(cacheKey, response)
+        }
+        return response
+      } catch {
+      }
     }
-    console.error('AI Error:', error)
     throw new Error(`AI service error: ${error.message}`)
   }
+}
+
+function getOfflineResponse(question, subject) {
+  const lowerQ = question.toLowerCase()
+  
+  if (lowerQ.includes('what is') || lowerQ.includes('define')) {
+    return `I'm currently offline and cannot provide AI assistance. However, here are some study tips for ${subject || 'this subject'}:
+
+**Key Study Strategies:**
+1. Review your textbook and class notes
+2. Practice past JAMB questions
+3. Use flashcards for key terms
+4. Study in short, focused sessions
+
+**Remember:** Consistent practice is key to JAMB success. Try again when you're online for detailed explanations.`
+  }
+  
+  return null
 }
 
 export async function explainQuestion(question, options, correctAnswer, subject) {
@@ -626,7 +802,6 @@ Only output the JSON array, no other text.`
       return JSON.parse(jsonMatch[0])
     }
   } catch {
-    console.error('Failed to parse flashcards response')
   }
   
   return []
@@ -680,7 +855,6 @@ Only output the JSON, no other text.`
       return JSON.parse(jsonMatch[0])
     }
   } catch {
-    console.error('Failed to parse novel analysis response')
   }
   
   return null
@@ -696,7 +870,7 @@ export async function resetChatSession() {
 }
 
 export function getAvailableProviders() {
-  return Object.values(AI_PROVIDERS).filter(p => p.available)
+  return Object.values(AI_PROVIDERS).filter(p => p.available || p.id === 'auto')
 }
 
 export function getCurrentSettings() {

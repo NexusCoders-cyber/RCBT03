@@ -1,0 +1,962 @@
+[
+  {
+    "id": "43",
+    "external_id": "43",
+    "subject": "physics",
+    "topic": null,
+    "question": "Which of these is not a fundamental S.I unit ",
+    "options": {
+      "a": "Ampere ",
+      "b": "Kelvin ",
+      "c": "Seconds ",
+      "d": "Radians",
+      "e": null
+    },
+    "answer": "d",
+    "explanation": null,
+    "exam_type": "post-utme",
+    "exam_year": "2009",
+    "image_url": null,
+    "is_ai_generated": false
+  },
+  {
+    "id": "11",
+    "external_id": "11",
+    "subject": "physics",
+    "topic": null,
+    "question": "An object of height 3.00cm is placed 10cm from a biconvex lens of 15cm, the image of the object is ",
+    "options": {
+      "a": "real and 3.00cm tall ",
+      "b": "virtual and 3.00cm tall ",
+      "c": " virtual and 9.00cm tall ",
+      "d": "real and 9.00cm tall",
+      "e": null
+    },
+    "answer": "c",
+    "explanation": null,
+    "exam_type": "post-utme",
+    "exam_year": "2006",
+    "image_url": null,
+    "is_ai_generated": false
+  },
+  {
+    "id": "65",
+    "external_id": "65",
+    "subject": "physics",
+    "topic": null,
+    "question": "A man of mass 50kg ascends a flight of stair 5m high in 5 seconds. If acceleration due to gravity is 10ms-2 the power expanded is ",
+    "options": {
+      "a": "100W ",
+      "b": "300W ",
+      "c": "250W ",
+      "d": "500W",
+      "e": null
+    },
+    "answer": "d",
+    "explanation": null,
+    "exam_type": "post-utme",
+    "exam_year": "2009",
+    "image_url": null,
+    "is_ai_generated": false
+  },
+  {
+    "id": "95",
+    "external_id": "95",
+    "subject": "physics",
+    "topic": null,
+    "question": "The density of sea water is 1030kg/m3. What is the pressure at a depth of  80 m below sea surface? Atmospheric pressure is 1.013 x 105 pa and acceleration  due to gravity is 10 m/s2  ",
+    "options": {
+      "a": "9.25 x  105 pa  ",
+      "b": "8.24 105 pa   ",
+      "c": "7.23 x 105 pa  ",
+      "d": "8.34 x 109 pa",
+      "e": null
+    },
+    "answer": "a",
+    "explanation": null,
+    "exam_type": "post-utme",
+    "exam_year": "2011",
+    "image_url": null,
+    "is_ai_generated": false
+  },
+  {
+    "id": "81",
+    "external_id": "81",
+    "subject": "physics",
+    "topic": null,
+    "question": "The superposition of two or more waves to produce a maximum or zero effect at a point is known as: ",
+    "options": {
+      "a": "reflection ",
+      "b": "refraction ",
+      "c": "diffraction ",
+      "d": "interference",
+      "e": null
+    },
+    "answer": "d",
+    "explanation": null,
+    "exam_type": "post-utme",
+    "exam_year": "2010",
+    "image_url": null,
+    "is_ai_generated": false
+  },
+  {
+    "id": "42",
+    "external_id": "42",
+    "subject": "physics",
+    "topic": null,
+    "question": "A capacity of 2.0 x 10-11F and an inductor are joined in series. The value of the inductance that will give the circuit a resonant frequency of 200KHz is ",
+    "options": {
+      "a": "1/16H ",
+      "b": "1/8H ",
+      "c": "1/64H ",
+      "d": "1/32H",
+      "e": null
+    },
+    "answer": "d",
+    "explanation": null,
+    "exam_type": "post-utme",
+    "exam_year": "2007",
+    "image_url": null,
+    "is_ai_generated": false
+  },
+  {
+    "id": "53",
+    "external_id": "53",
+    "subject": "physics",
+    "topic": null,
+    "question": "The mode of heat transfer which does not require material medium is",
+    "options": {
+      "a": "conduction ",
+      "b": "radiation ",
+      "c": "convection ",
+      "d": "propagation",
+      "e": null
+    },
+    "answer": "b",
+    "explanation": null,
+    "exam_type": "post-utme",
+    "exam_year": "2009",
+    "image_url": null,
+    "is_ai_generated": false
+  },
+  {
+    "id": "70",
+    "external_id": "70",
+    "subject": "physics",
+    "topic": null,
+    "question": " For  a particle having an x co-ordinate that varies in time according to the express ion x = 4t -2t2 The instantaneous velocity for of the particle at t = 2.5s is:",
+    "options": {
+      "a": "12m/s ",
+      "b": "6m/s ",
+      "c": "0m/s ",
+      "d": "10m/s",
+      "e": null
+    },
+    "answer": "b",
+    "explanation": null,
+    "exam_type": "post-utme",
+    "exam_year": "2010",
+    "image_url": null,
+    "is_ai_generated": false
+  },
+  {
+    "id": "60",
+    "external_id": "60",
+    "subject": "physics",
+    "topic": null,
+    "question": "Four lenses are being considered for use as a microscope object. Which of the following focal length is most suitable ",
+    "options": {
+      "a": "-5mm ",
+      "b": "+5mm ",
+      "c": "5cm ",
+      "d": "+5cm ",
+      "e": null
+    },
+    "answer": "b",
+    "explanation": null,
+    "exam_type": "post-utme",
+    "exam_year": "2009",
+    "image_url": null,
+    "is_ai_generated": false
+  },
+  {
+    "id": "68",
+    "external_id": "68",
+    "subject": "physics",
+    "topic": null,
+    "question": "The most likely measurement of length of an object using a venier caliper is: ",
+    "options": {
+      "a": "3.0cm ",
+      "b": "3.3cm ",
+      "c": "3.33cm ",
+      "d": "3.333cm",
+      "e": null
+    },
+    "answer": "b",
+    "explanation": null,
+    "exam_type": "post-utme",
+    "exam_year": "2010",
+    "image_url": null,
+    "is_ai_generated": false
+  },
+  {
+    "id": "35",
+    "external_id": "35",
+    "subject": "physics",
+    "topic": null,
+    "question": "An electric cell has an internal resistance of 2Ω. A current of 0.5A was measured when a resistor of resistance 5Ω was connected across it. Determine the electromotive force of the cell",
+    "options": {
+      "a": "3.5V ",
+      "b": "2.5V ",
+      "c": "4.5V ",
+      "d": "2.35V",
+      "e": null
+    },
+    "answer": "a",
+    "explanation": null,
+    "exam_type": "post-utme",
+    "exam_year": "2007",
+    "image_url": null,
+    "is_ai_generated": false
+  },
+  {
+    "id": "62",
+    "external_id": "62",
+    "subject": "physics",
+    "topic": null,
+    "question": "The force with which an object is attracted to the earth is called ",
+    "options": {
+      "a": "acceleration ",
+      "b": "mass ",
+      "c": "gravity ",
+      "d": "weight",
+      "e": null
+    },
+    "answer": "d",
+    "explanation": null,
+    "exam_type": "post-utme",
+    "exam_year": "2009",
+    "image_url": null,
+    "is_ai_generated": false
+  },
+  {
+    "id": "15",
+    "external_id": "15",
+    "subject": "physics",
+    "topic": null,
+    "question": "A coil of copper wire of N turns is kept rotating between the poles of a magnet  such that the magnetic flux linking the coil changes continuously. Which of the  following statements is TRUE? ",
+    "options": {
+      "a": "An e.m.f is induced in the coil such that when  the change of flux is positive the e.m.f is positive, and when the change of flux is negative the e.m.f is negative. ",
+      "b": "An e.m.f is induced in the coil whose magnitude  is inversely proportional to both the number of turns in the coil and the rate of  change of magnetic flux ",
+      "c": ". An e.m.f is set up in the permanent magnet which  reduces the flux in the coil to zero ",
+      "d": "A current flows in the coil and e.m.f is set  up proportional to both the rate of change of the flux and the number of turns",
+      "e": null
+    },
+    "answer": "d",
+    "explanation": null,
+    "exam_type": "post-utme",
+    "exam_year": "2006",
+    "image_url": null,
+    "is_ai_generated": false
+  },
+  {
+    "id": "115",
+    "external_id": "115",
+    "subject": "physics",
+    "topic": null,
+    "question": "A uniform meter rule AB has a mass 15g. A 30g mass is suspended at the 10.0cm mark, and another 5g mass is suspended at the 65.0cm mark. Calculate the position of the fulcrum that will keep the meter rule balanced horizontally ",
+    "options": {
+      "a": "50.0cm ",
+      "b": "32.0cm ",
+      "c": "27.5cm ",
+      "d": "17.9cm ",
+      "e": null
+    },
+    "answer": "d",
+    "explanation": null,
+    "exam_type": "post-utme",
+    "exam_year": "2012",
+    "image_url": null,
+    "is_ai_generated": false
+  },
+  {
+    "id": "56",
+    "external_id": "56",
+    "subject": "physics",
+    "topic": null,
+    "question": "Which of the following  is common to evaporation and boiling, they ",
+    "options": {
+      "a": "take place at any temperature ",
+      "b": "are surface phenomena ",
+      "c": "involve change of state ",
+      "d": "take place at a definite pressure ",
+      "e": null
+    },
+    "answer": "b",
+    "explanation": null,
+    "exam_type": "post-utme",
+    "exam_year": "2009",
+    "image_url": null,
+    "is_ai_generated": false
+  },
+  {
+    "id": "83",
+    "external_id": "83",
+    "subject": "physics",
+    "topic": null,
+    "question": "Which of the following statements are correct of nuclear fission? During the process \nI. energy is released \nII. More neutrons are released than those that cause fission \nIII. Small nuclei merge into large nuclei \nIV. There is a loss on mass\n",
+    "options": {
+      "a": "II and I only",
+      "b": "III",
+      "c": "I,II and IV",
+      "d": "IV and III",
+      "e": null
+    },
+    "answer": "c",
+    "explanation": null,
+    "exam_type": "post-utme",
+    "exam_year": "2010",
+    "image_url": null,
+    "is_ai_generated": false
+  },
+  {
+    "id": "39",
+    "external_id": "39",
+    "subject": "physics",
+    "topic": null,
+    "question": "The electromagnetic waves that are sensitive to temperature changes are",
+    "options": {
+      "a": "ultra-violet rays ",
+      "b": "Gamma rays ",
+      "c": "infrared-rays ",
+      "d": "X-rays",
+      "e": null
+    },
+    "answer": "c",
+    "explanation": null,
+    "exam_type": "post-utme",
+    "exam_year": "2007",
+    "image_url": null,
+    "is_ai_generated": false
+  },
+  {
+    "id": "100",
+    "external_id": "100",
+    "subject": "physics",
+    "topic": null,
+    "question": "An airplane increases its speed 36 km/h to 360 km/h in 20.0 s. How far does it travel while accelerating.  ",
+    "options": {
+      "a": "4.4 km     ",
+      "b": "1.1 km  ",
+      "c": "2.3 km  ",
+      "d": "1.0 km",
+      "e": null
+    },
+    "answer": "b",
+    "explanation": null,
+    "exam_type": "post-utme",
+    "exam_year": "2011",
+    "image_url": null,
+    "is_ai_generated": false
+  },
+  {
+    "id": "13",
+    "external_id": "13",
+    "subject": "physics",
+    "topic": null,
+    "question": "Light wave and ripples of water are similar because both",
+    "options": {
+      "a": "are longitudinal waves ",
+      "b": "have the same velocity ",
+      "c": "can be diffracted and refracted ",
+      "d": "have the same frequency ",
+      "e": null
+    },
+    "answer": "c",
+    "explanation": null,
+    "exam_type": "post-utme",
+    "exam_year": "2006",
+    "image_url": null,
+    "is_ai_generated": false
+  },
+  {
+    "id": "90",
+    "external_id": "90",
+    "subject": "physics",
+    "topic": null,
+    "question": "Which of the following statements is not true about a body performing simple harmonic motion? ",
+    "options": {
+      "a": "the linear speed is the product of the angular speed and the radius or amplitude ",
+      "b": "the linear acceleration is the product of the square of the angular speed and the displacement ",
+      "c": "frequency is the number of complete revolution per second made by a vibrating body ",
+      "d": "the S.I unit of amplitude is Hertz (Hz)",
+      "e": null
+    },
+    "answer": "d",
+    "explanation": null,
+    "exam_type": "post-utme",
+    "exam_year": "2010",
+    "image_url": null,
+    "is_ai_generated": false
+  },
+  {
+    "id": "125",
+    "external_id": "125",
+    "subject": "physics",
+    "topic": null,
+    "question": "A 3.0cm object is placed 12.0cm in front of bi-convex lens of focal length 8.0cm. Calculate the height of the image of the object.  ",
+    "options": {
+      "a": "3.0cm ",
+      "b": "6.0cm ",
+      "c": "12.0cm ",
+      "d": "24.0cm",
+      "e": null
+    },
+    "answer": "d",
+    "explanation": null,
+    "exam_type": "post-utme",
+    "exam_year": "2012",
+    "image_url": null,
+    "is_ai_generated": false
+  },
+  {
+    "id": "96",
+    "external_id": "96",
+    "subject": "physics",
+    "topic": null,
+    "question": "6000 J of heat is delivered to 10g of dry ice at O0C. What is the final temperature if the container has a heat capacity of 20J/K? (specific heat of water = 4200j/kg.k, latent heat of fusion of ice = 3.33 x 105J/kg)  ",
+    "options": {
+      "a": "142.90C  ",
+      "b": "63.60C  ",
+      "c": "43.00C  ",
+      "d": "00C",
+      "e": null
+    },
+    "answer": "c",
+    "explanation": null,
+    "exam_type": "post-utme",
+    "exam_year": "2011",
+    "image_url": null,
+    "is_ai_generated": false
+  },
+  {
+    "id": "45",
+    "external_id": "45",
+    "subject": "physics",
+    "topic": null,
+    "question": "To find the dept of the sea, a ship send out a second waves and an echo after one second. If the velocity of sound in water is 1500m/s, what is the depth of the sea ",
+    "options": {
+      "a": "0.75km ",
+      "b": "1.50km ",
+      "c": "2.20km ",
+      "d": "3.00km ",
+      "e": null
+    },
+    "answer": "a",
+    "explanation": null,
+    "exam_type": "post-utme",
+    "exam_year": "2009",
+    "image_url": null,
+    "is_ai_generated": false
+  },
+  {
+    "id": "71",
+    "external_id": "71",
+    "subject": "physics",
+    "topic": null,
+    "question": "  A long-jumper leaves the ground at an angle of 20o above the horizontal and at speed of 11m/s. How far does it jumps in the horizontal direction? ",
+    "options": {
+      "a": "0.384m ",
+      "b": "7.94m ",
+      "c": "8.45m ",
+      "d": "5m",
+      "e": null
+    },
+    "answer": "d",
+    "explanation": null,
+    "exam_type": "post-utme",
+    "exam_year": "2010",
+    "image_url": null,
+    "is_ai_generated": false
+  },
+  {
+    "id": "3",
+    "external_id": "3",
+    "subject": "physics",
+    "topic": null,
+    "question": "A nail is pulled from a wall with a string tied to the nail. If the string is inclined at an angle of 30oC to the wall and the tension in the string is 50N, the effective force used in pulling the nail is: ",
+    "options": {
+      "a": "25N ",
+      "b": "25√3 N ",
+      "c": "50N ",
+      "d": "50√3N",
+      "e": null
+    },
+    "answer": "a",
+    "explanation": null,
+    "exam_type": "post-utme",
+    "exam_year": "2006",
+    "image_url": null,
+    "is_ai_generated": false
+  },
+  {
+    "id": "117",
+    "external_id": "117",
+    "subject": "physics",
+    "topic": null,
+    "question": "A ship sinks to the bottom of a 250m deep lake. The atmospheric pressure over the lake is 1.03 x 105 Pa. Taking the density of water in the lake to be 1000 kg/m3, calculate the pressure exerted on the boat. [acceleration due to gravity = 10 m/s2] ",
+    "options": {
+      "a": "2.60 x 106Pa  ",
+      "b": "2.50 x 106Pa ",
+      "c": "2.60 x 105Pa ",
+      "d": "1.03 x 105Pa",
+      "e": null
+    },
+    "answer": "a",
+    "explanation": null,
+    "exam_type": "post-utme",
+    "exam_year": "2012",
+    "image_url": null,
+    "is_ai_generated": false
+  },
+  {
+    "id": "99",
+    "external_id": "99",
+    "subject": "physics",
+    "topic": null,
+    "question": " The electric field between two parallel plates is E.  A particle of mass m and carrying charge q is released at a point half the distance between the plates. The velocity  of the particle t  seconds after its release is  ",
+    "options": {
+      "a": "qEt/m ",
+      "b": "qEt2  ",
+      "c": "mqt2/2E  ",
+      "d": "MQT/2E",
+      "e": null
+    },
+    "answer": "",
+    "explanation": null,
+    "exam_type": "post-utme",
+    "exam_year": "2011",
+    "image_url": null,
+    "is_ai_generated": false
+  },
+  {
+    "id": "87",
+    "external_id": "87",
+    "subject": "physics",
+    "topic": null,
+    "question": "A transformer is connected to a 240 V supply. The primary coil has 40 turns, and the secondary is found to be 960V. What is the ratio of the number of turns of the primary coil to the number of turns of the secondary coil? ",
+    "options": {
+      "a": "4:01",
+      "b": "1:04",
+      "c": "1:06",
+      "d": "6:01",
+      "e": null
+    },
+    "answer": "a",
+    "explanation": null,
+    "exam_type": "post-utme",
+    "exam_year": "2010",
+    "image_url": null,
+    "is_ai_generated": false
+  },
+  {
+    "id": "86",
+    "external_id": "86",
+    "subject": "physics",
+    "topic": null,
+    "question": "Which of the following is not true about the properties of x-rays? ",
+    "options": {
+      "a": "they are not deflected by magnetic or electric field",
+      "b": "they ionized a gas making it a conductor ",
+      "c": "they are massive ",
+      "d": "they have high penetrating power ",
+      "e": null
+    },
+    "answer": "c",
+    "explanation": null,
+    "exam_type": "post-utme",
+    "exam_year": "2010",
+    "image_url": null,
+    "is_ai_generated": false
+  },
+  {
+    "id": "19",
+    "external_id": "19",
+    "subject": "physics",
+    "topic": null,
+    "question": "What is the dimension of pressure? ",
+    "options": {
+      "a": "ML-1T-2 ",
+      "b": "MLT-2 ",
+      "c": "ML2T-3 ",
+      "d": "ML-3",
+      "e": null
+    },
+    "answer": "a",
+    "explanation": null,
+    "exam_type": "post-utme",
+    "exam_year": "2007",
+    "image_url": null,
+    "is_ai_generated": false
+  },
+  {
+    "id": "48",
+    "external_id": "48",
+    "subject": "physics",
+    "topic": null,
+    "question": "The resistance of a wire depends on ",
+    "options": {
+      "a": "the length of the wire ",
+      "b": "the diameter of the wire ",
+      "c": "the temperature of the wire ",
+      "d": "All of the above",
+      "e": null
+    },
+    "answer": "d",
+    "explanation": null,
+    "exam_type": "post-utme",
+    "exam_year": "2009",
+    "image_url": null,
+    "is_ai_generated": false
+  },
+  {
+    "id": "44",
+    "external_id": "44",
+    "subject": "physics",
+    "topic": null,
+    "question": "If two masses 40g and 60g respectively, are attached firmly to end of a light metre rule, what is the centre of gravity of the system? ",
+    "options": {
+      "a": "at the mid point of the metre rule ",
+      "b": "40cm from the lighter mass ",
+      "c": "40cm from the heavier masses ",
+      "d": "60cm from the heavier masses ",
+      "e": null
+    },
+    "answer": "c",
+    "explanation": null,
+    "exam_type": "post-utme",
+    "exam_year": "2009",
+    "image_url": null,
+    "is_ai_generated": false
+  },
+  {
+    "id": "98",
+    "external_id": "98",
+    "subject": "physics",
+    "topic": null,
+    "question": "When white light passes through a triangular prism, the emerging rays of light arranged in order of decreasing angle of deviation are ",
+    "options": {
+      "a": "red, orange, yellow, green  ",
+      "b": "blue, green,  orange, yellow ",
+      "c": "red, green, yellow, orange ",
+      "d": "blue, green, yellow, orange",
+      "e": null
+    },
+    "answer": "d",
+    "explanation": null,
+    "exam_type": "post-utme",
+    "exam_year": "2011",
+    "image_url": null,
+    "is_ai_generated": false
+  },
+  {
+    "id": "27",
+    "external_id": "27",
+    "subject": "physics",
+    "topic": null,
+    "question": "What is the acceleration due to gravity ‘g’ on the moon, if ‘g’ is   10ms-2 on the earth?",
+    "options": {
+      "a": "0.74ms-2 ",
+      "b": "0.1ms-2 ",
+      "c": "10.0 ms-2 ",
+      "d": "1.67 ms-2",
+      "e": null
+    },
+    "answer": "c",
+    "explanation": null,
+    "exam_type": "post-utme",
+    "exam_year": "2007",
+    "image_url": null,
+    "is_ai_generated": false
+  },
+  {
+    "id": "116",
+    "external_id": "116",
+    "subject": "physics",
+    "topic": null,
+    "question": "rectangular block measures 40cm x 25cm and made of material of density 7800kg/m3. Calculate the pressure the block exerts on the floor when it stands on the smallest of its surfaces ",
+    "options": {
+      "a": "3.12 x 103N/m2 ",
+      "b": "3.90 x 103N/m2 ",
+      "c": "1.9 x 104N/m2 ",
+      "d": "3.12 x 104N/m2",
+      "e": null
+    },
+    "answer": "b",
+    "explanation": null,
+    "exam_type": "post-utme",
+    "exam_year": "2012",
+    "image_url": null,
+    "is_ai_generated": false
+  },
+  {
+    "id": "14",
+    "external_id": "14",
+    "subject": "physics",
+    "topic": null,
+    "question": "Three 4Ω resistors were connected in series by Tola, while Ade connected the ",
+    "options": {
+      "a": "1:02",
+      "b": "1:09",
+      "c": "1:10",
+      "d": "1:15",
+      "e": null
+    },
+    "answer": "b",
+    "explanation": null,
+    "exam_type": "post-utme",
+    "exam_year": "2006",
+    "image_url": null,
+    "is_ai_generated": false
+  },
+  {
+    "id": "29",
+    "external_id": "29",
+    "subject": "physics",
+    "topic": null,
+    "question": "A rectangular metal block of volume 10-6m3 at 273K is heated to 573K, if the coefficient of linear expansion is 1.2 x 10-5K-1, the percentage change of its volume is ",
+    "options": {
+      "a": "1.50%",
+      "b": "1.10%",
+      "c": "0.10%",
+      "d": "0.40%",
+      "e": null
+    },
+    "answer": "b",
+    "explanation": null,
+    "exam_type": "post-utme",
+    "exam_year": "2007",
+    "image_url": null,
+    "is_ai_generated": false
+  },
+  {
+    "id": "102",
+    "external_id": "102",
+    "subject": "physics",
+    "topic": null,
+    "question": "A wheel and axle is used to raise a weight of 600n with an effort of 300n. if the radii of the wheel and axle are 50 cm and 10 cm respectively, what is the efficiency of the system      ",
+    "options": {
+      "a": "40%",
+      "b": "50%",
+      "c": "20%",
+      "d": "10%",
+      "e": null
+    },
+    "answer": "a",
+    "explanation": null,
+    "exam_type": "post-utme",
+    "exam_year": "2011",
+    "image_url": null,
+    "is_ai_generated": false
+  },
+  {
+    "id": "37",
+    "external_id": "37",
+    "subject": "physics",
+    "topic": null,
+    "question": "It is known that an atomic nucleus comprises of positive charged protons. Which of the following also exist in the nucleus? ",
+    "options": {
+      "a": "a beta particle ",
+      "b": "an Alpha particle ",
+      "c": "A neutron ",
+      "d": "An electron",
+      "e": null
+    },
+    "answer": "c",
+    "explanation": null,
+    "exam_type": "post-utme",
+    "exam_year": "2007",
+    "image_url": null,
+    "is_ai_generated": false
+  },
+  {
+    "id": "55",
+    "external_id": "55",
+    "subject": "physics",
+    "topic": null,
+    "question": "A simple pendulum 0.6 long has a period of 1.55, what is the period of a similar pendulum 0.4 long in the same direction ",
+    "options": {
+      "a": "1.4 √1/3s ",
+      "b": "1.5 √1/3s ",
+      "c": "2.25s ",
+      "d": "None of the above",
+      "e": null
+    },
+    "answer": "d",
+    "explanation": null,
+    "exam_type": "post-utme",
+    "exam_year": "2009",
+    "image_url": null,
+    "is_ai_generated": false
+  },
+  {
+    "id": "110",
+    "external_id": "110",
+    "subject": "physics",
+    "topic": null,
+    "question": "A p-n junction can act as  ",
+    "options": {
+      "a": "an amplifier  ",
+      "b": "a rectifier  ",
+      "c": "an inductor ",
+      "d": "a capacitor ",
+      "e": null
+    },
+    "answer": "b",
+    "explanation": null,
+    "exam_type": "post-utme",
+    "exam_year": "2011",
+    "image_url": null,
+    "is_ai_generated": false
+  },
+  {
+    "id": "52",
+    "external_id": "52",
+    "subject": "physics",
+    "topic": null,
+    "question": "Radio waves have the velocity of 3 x 108ms-1. If a radio station sends out a broadcast on a frequency 800kHz, what is the wavelength of the broadcast? ",
+    "options": {
+      "a": "375.0m ",
+      "b": "267.0m ",
+      "c": "240.0m ",
+      "d": "37.5m ",
+      "e": null
+    },
+    "answer": "a",
+    "explanation": null,
+    "exam_type": "post-utme",
+    "exam_year": "2009",
+    "image_url": null,
+    "is_ai_generated": false
+  },
+  {
+    "id": "127",
+    "external_id": "127",
+    "subject": "physics",
+    "topic": null,
+    "question": "Two 2µF capacitors are connected in parallel. The combination is connected in series with a 6µF capacitor. What is the equivalent capacitor for the combination?",
+    "options": {
+      "a": "10.0µF  ",
+      "b": "8.0µF  ",
+      "c": "1.5µF  ",
+      "d": "2.4µF",
+      "e": null
+    },
+    "answer": "c",
+    "explanation": null,
+    "exam_type": "post-utme",
+    "exam_year": "2012",
+    "image_url": null,
+    "is_ai_generated": false
+  },
+  {
+    "id": "106",
+    "external_id": "106",
+    "subject": "physics",
+    "topic": null,
+    "question": "Which of the following is not a thermometer?  ",
+    "options": {
+      "a": "thermocouple  ",
+      "b": "pyrometer  ",
+      "c": "hydrometer  ",
+      "d": "platinum resistance thermometer. ",
+      "e": null
+    },
+    "answer": "c",
+    "explanation": null,
+    "exam_type": "post-utme",
+    "exam_year": "2011",
+    "image_url": null,
+    "is_ai_generated": false
+  },
+  {
+    "id": "5",
+    "external_id": "5",
+    "subject": "physics",
+    "topic": null,
+    "question": "Which of the following statements is not true? ",
+    "options": {
+      "a": "as the slope of an incline plane increases, the velocity ratio decreases, ",
+      "b": "the efficiency of an incline plane decreases as the slope increases ",
+      "c": "the effort required to push a given load up an incline plane increases as the slope increases",
+      "d": "The mechanical advantage of smooth incline plane depends on the ratio of the length to the height of the plane.",
+      "e": null
+    },
+    "answer": "d",
+    "explanation": null,
+    "exam_type": "post-utme",
+    "exam_year": "2006",
+    "image_url": null,
+    "is_ai_generated": false
+  },
+  {
+    "id": "88",
+    "external_id": "88",
+    "subject": "physics",
+    "topic": null,
+    "question": "Which of the following is not true about an object that is projected upwards at angle θ? ",
+    "options": {
+      "a": "the velocity is maximum at the maximum height ",
+      "b": "the acceleration along the horizontal direction is zero ",
+      "c": "the maximum range (Rmax) for an object moving with speed u is given by u2/g ",
+      "d": "the time it takes to get the maximum height is equal to the time it takes to come back to the point of projection",
+      "e": null
+    },
+    "answer": "a",
+    "explanation": null,
+    "exam_type": "post-utme",
+    "exam_year": "2010",
+    "image_url": null,
+    "is_ai_generated": false
+  },
+  {
+    "id": "97",
+    "external_id": "97",
+    "subject": "physics",
+    "topic": null,
+    "question": "A sample of radioactive substance, whose half-life is 16 days, registers 32 decays per second. How long will it take for the rate of decay to reduce to 2 decays per second? ",
+    "options": {
+      "a": "80 days  ",
+      "b": "64 days  ",
+      "c": "48 days  ",
+      "d": "32 days",
+      "e": null
+    },
+    "answer": "b",
+    "explanation": null,
+    "exam_type": "post-utme",
+    "exam_year": "2011",
+    "image_url": null,
+    "is_ai_generated": false
+  },
+  {
+    "id": "1",
+    "external_id": "1",
+    "subject": "physics",
+    "topic": null,
+    "question": "A 70kg man ascends a flight of stairs of height 4m in 7s. The power expended by the man is;",
+    "options": {
+      "a": "40W ",
+      "b": "100W ",
+      "c": "280W ",
+      "d": "400W",
+      "e": null
+    },
+    "answer": "a",
+    "explanation": null,
+    "exam_type": "post-utme",
+    "exam_year": "2006",
+    "image_url": null,
+    "is_ai_generated": false
+  }
+]

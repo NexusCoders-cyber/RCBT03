@@ -1,0 +1,642 @@
+[
+  {
+    "id": "1711",
+    "external_id": "1711",
+    "subject": "english",
+    "topic": "From the options, choose the word(s) that best fill the gap.",
+    "question": "\nIf the armed robbers ------------------------ caught, they would have been lynched",
+    "options": {
+      "a": " would be",
+      "b": "have been",
+      "c": "are",
+      "d": "had been",
+      "e": null
+    },
+    "answer": "d",
+    "explanation": "The correct answer is ‘D’ because it is a past perfect tense. Option ‘A’ is ‘would be’ which implies the future past tense, option ‘B’ ‘have been’ which means/is a present perfect tense, option ‘C’ are which indicates ‘plural’",
+    "exam_type": "utme",
+    "exam_year": "2015",
+    "image_url": null,
+    "is_ai_generated": false
+  },
+  {
+    "id": "577",
+    "external_id": "577",
+    "subject": "english",
+    "topic": "choose the option that best completes the gap(s)",
+    "question": "Western  education is one of the ... of colonial rule",
+    "options": {
+      "a": "legacies  ",
+      "b": "evidence ",
+      "c": "remnants ",
+      "d": "inheritance ",
+      "e": null
+    },
+    "answer": "a",
+    "explanation": null,
+    "exam_type": "utme",
+    "exam_year": "2010",
+    "image_url": null,
+    "is_ai_generated": false
+  },
+  {
+    "id": "1280",
+    "external_id": "1280",
+    "subject": "english",
+    "topic": "From the words lettered A to D, choose the word that rhymes with the given word.",
+    "question": "Prison",
+    "options": {
+      "a": "rising",
+      "b": "risen",
+      "c": "potion",
+      "d": "motion",
+      "e": null
+    },
+    "answer": "b",
+    "explanation": "Both words have the same sound at the end of their pronunciation.",
+    "exam_type": "utme",
+    "exam_year": "2022",
+    "image_url": null,
+    "is_ai_generated": false
+  },
+  {
+    "id": "1449",
+    "external_id": "1449",
+    "subject": "english",
+    "topic": "<b>Questions below are based on Bolaji Abdullahi's \"Sweet Sixteen\"</b>",
+    "question": "The stereotypical act in the book centres",
+    "options": {
+      "a": "terrorism",
+      "b": "religious intolerance",
+      "c": "food insecurity",
+      "d": "the lifestyle of a teenager",
+      "e": null
+    },
+    "answer": "b",
+    "explanation": "Aliya asks her Dad if it is true that all Muslims are terrorists and that they all perish. Her father corrects this stereotypical notion or unfounded generalised belief of some members of the society as regards their religion.",
+    "exam_type": "utme",
+    "exam_year": "2019",
+    "image_url": null,
+    "is_ai_generated": false
+  },
+  {
+    "id": "1079",
+    "external_id": "1079",
+    "subject": "english",
+    "topic": "<b>In each of the question 66 to 85 choose the option that best completes the gap(s)</b>",
+    "question": "I wanted to know his political beliefs, so l asked him what........",
+    "options": {
+      "a": "this was",
+      "b": "these are",
+      "c": "this is",
+      "d": "they were",
+      "e": null
+    },
+    "answer": "d",
+    "explanation": "I wanted to know his political beliefs, so l asked him what they were",
+    "exam_type": "utme",
+    "exam_year": "2012",
+    "image_url": null,
+    "is_ai_generated": false
+  },
+  {
+    "id": "1454",
+    "external_id": "1454",
+    "subject": "english",
+    "topic": "<b>Questions below are based on Bolaji Abdullahi's \"Sweet Sixteen\"</b>",
+    "question": "As it relates to sex education, Aliya's father advised that",
+    "options": {
+      "a": " she should abstain totally from sex as this is the worst sin ever in the history of human civilisation",
+      "b": "she should wisely decide before letting go of her body",
+      "c": "she should be mindful of her company of friends and the media's influence on sexual affairs",
+      "d": "sexual affair is no longer a hidden issue and she should wisely make her choices",
+      "e": null
+    },
+    "answer": "c",
+    "explanation": "Mr Bello warned Aliya to be careful as regarding the kind of movies, books and progammes she entertain as well the company of friends she keeps.",
+    "exam_type": "utme",
+    "exam_year": "2019",
+    "image_url": null,
+    "is_ai_generated": false
+  },
+  {
+    "id": "1182",
+    "external_id": "1182",
+    "subject": "english",
+    "topic": "<b>In each of questions 89 to 91, choose the option that has the same consonant sound as the one represented by the letter underlined.</b>",
+    "question": "Lo<u>se</u>",
+    "options": {
+      "a": "noise",
+      "b": "horse",
+      "c": "mouse",
+      "d": "Nurse",
+      "e": null
+    },
+    "answer": "a",
+    "explanation": "ose; /luːz/\n\nnoise; /nɔɪz/",
+    "exam_type": "utme",
+    "exam_year": "2013",
+    "image_url": null,
+    "is_ai_generated": false
+  },
+  {
+    "id": "650",
+    "external_id": "650",
+    "subject": "english",
+    "topic": "<b>In each of the questions 32 to 56, fill the each gap with the most appropriate option from the list option from the list provided.</b>",
+    "question": "The editor was not happy that the Nigerian press was hemmed ....... ?",
+    "options": {
+      "a": "up",
+      "b": "over",
+      "c": "across",
+      "d": "in",
+      "e": null
+    },
+    "answer": "d",
+    "explanation": null,
+    "exam_type": "utme",
+    "exam_year": "2001",
+    "image_url": null,
+    "is_ai_generated": false
+  },
+  {
+    "id": "722",
+    "external_id": "722",
+    "subject": "english",
+    "topic": "<b>LEXIS, STRUCTURE AND ORALFORMS</b> In each of the question 26 to 30 Choose the option that has the same vowel sound as the one represented by the letters underlined.\n",
+    "question": "b<u>oa</u>t?",
+    "options": {
+      "a": "board",
+      "b": "bought",
+      "c": "go",
+      "d": "glory",
+      "e": null
+    },
+    "answer": "c",
+    "explanation": "boat; /bəʊt/                                                       go; /ɡəʊ/",
+    "exam_type": "utme",
+    "exam_year": "2000",
+    "image_url": null,
+    "is_ai_generated": false
+  },
+  {
+    "id": "141",
+    "external_id": "141",
+    "subject": "english",
+    "topic": "choose the option nearest in meaning to the word or phrase in italics.",
+    "question": "In spite of constant financial support from his father, Udenyi treats his studies with considerable <i>levity</i>.",
+    "options": {
+      "a": "seriousness",
+      "b": "enthusiasm ",
+      "c": "wastefulness",
+      "d": "lassitude",
+      "e": null
+    },
+    "answer": "d",
+    "explanation": null,
+    "exam_type": "utme",
+    "exam_year": "2004",
+    "image_url": null,
+    "is_ai_generated": false
+  },
+  {
+    "id": "509",
+    "external_id": "509",
+    "subject": "english",
+    "topic": "choose the option that has the same vowel sound as the one represented the letter(s) underlined.",
+    "question": " c<u>ou</u>ntry",
+    "options": {
+      "a": "worry",
+      "b": "courteous",
+      "c": "bought",
+      "d": "poultry",
+      "e": null
+    },
+    "answer": "a",
+    "explanation": null,
+    "exam_type": "utme",
+    "exam_year": "2009",
+    "image_url": null,
+    "is_ai_generated": false
+  },
+  {
+    "id": "382",
+    "external_id": "382",
+    "subject": "english",
+    "topic": "select the option that bost explains the information conveyed in the sentence.",
+    "question": "The officer has discussed the vexed issue of incessant power failure",
+    "options": {
+      "a": "In anger, the officer explained the problem of constant power failure",
+      "b": "The officer added his voice to the much discussed problem of power cut",
+      "c": "The officer's explanations angered those who have suffered the effects of frequency power failure ",
+      "d": "The officer told the people not , to be angered by the frequent power cut",
+      "e": null
+    },
+    "answer": "b",
+    "explanation": null,
+    "exam_type": "utme",
+    "exam_year": "2008",
+    "image_url": null,
+    "is_ai_generated": false
+  },
+  {
+    "id": "43",
+    "external_id": "43",
+    "subject": "english",
+    "topic": "opposite in meaning to the word(s) or phrase in italics ",
+    "question": "The labour leader’s <i>recalcitrant</i> stance was applauded ",
+    "options": {
+      "a": "flexible ",
+      "b": "uncompromising ",
+      "c": "well-informed ",
+      "d": "stubborn ",
+      "e": null
+    },
+    "answer": "a",
+    "explanation": null,
+    "exam_type": "utme",
+    "exam_year": "2003",
+    "image_url": null,
+    "is_ai_generated": false
+  },
+  {
+    "id": "1476",
+    "external_id": "1476",
+    "subject": "english",
+    "topic": "CHOOSE THE OPTION THAT IS NEAREST IN MEANING TO THE WORD(S) IN BRACKET, FOR  THE QUESTIONS ",
+    "question": "Her findings [exploded] widely held beliefs about learning",
+    "options": {
+      "a": "challenged",
+      "b": "debunked",
+      "c": "projected",
+      "d": "confirmed",
+      "e": null
+    },
+    "answer": "b",
+    "explanation": "Exploded as used in this context means to refute or criticise.",
+    "exam_type": "utme",
+    "exam_year": "2019",
+    "image_url": null,
+    "is_ai_generated": false
+  },
+  {
+    "id": "632",
+    "external_id": "632",
+    "subject": "english",
+    "topic": "<b>In each of the questions 32 to 56, fill the each gap with the most appropriate option from the list option from the list provided.</b>",
+    "question": "The government which .....recruiting ....... workers suddenly stopped doing so?\n",
+    "options": {
+      "a": "are / its",
+      "b": "was / its",
+      "c": " is / their",
+      "d": "were / their",
+      "e": null
+    },
+    "answer": "b",
+    "explanation": null,
+    "exam_type": "utme",
+    "exam_year": "2001",
+    "image_url": null,
+    "is_ai_generated": false
+  },
+  {
+    "id": "1727",
+    "external_id": "1727",
+    "subject": "english",
+    "topic": "From the options, choose the word(s) that best filll the gap.     ",
+    "question": "Each of the contestants --------------- a chance now",
+    "options": {
+      "a": "has",
+      "b": "have",
+      "c": "get",
+      "d": "gets",
+      "e": null
+    },
+    "answer": "a",
+    "explanation": "The answer is ‘A’ has because it signifies form. According to the law of concord ‘each’ signifies ‘are’ and it has to go with a singular verb and not plural",
+    "exam_type": "utme",
+    "exam_year": "2015",
+    "image_url": null,
+    "is_ai_generated": false
+  },
+  {
+    "id": "1068",
+    "external_id": "1068",
+    "subject": "english",
+    "topic": "<b>In each of the question 66 to 85 choose the option that best completes the gap(s)</b>",
+    "question": "We visited his house…...three times.\n",
+    "options": {
+      "a": "like",
+      "b": "for \nlike",
+      "c": "about",
+      "d": "for about",
+      "e": null
+    },
+    "answer": "d",
+    "explanation": null,
+    "exam_type": "utme",
+    "exam_year": "2012",
+    "image_url": null,
+    "is_ai_generated": false
+  },
+  {
+    "id": "491",
+    "external_id": "491",
+    "subject": "english",
+    "topic": "choose the option that best completes the gap(s).",
+    "question": "Amina lives…..  campus.",
+    "options": {
+      "a": "in the. ",
+      "b": " on",
+      "c": "at the ",
+      "d": "inside",
+      "e": null
+    },
+    "answer": "b",
+    "explanation": null,
+    "exam_type": "utme",
+    "exam_year": "2009",
+    "image_url": null,
+    "is_ai_generated": false
+  },
+  {
+    "id": "1056",
+    "external_id": "1056",
+    "subject": "english",
+    "topic": "In each of the questions 51 to 65 choose the option <b>nearest in meaning</b> to the underlined word or phrase.",
+    "question": "His story gave us an <u>inkling</u> of what he passed through during the strike",
+    "options": {
+      "a": "a possible idea",
+      "b": "a taste",
+      "c": "a summary",
+      "d": "the right view",
+      "e": null
+    },
+    "answer": "a",
+    "explanation": "Inkling; means a slight knowledge or suspicion; a hint.",
+    "exam_type": "utme",
+    "exam_year": "2012",
+    "image_url": null,
+    "is_ai_generated": false
+  },
+  {
+    "id": "199",
+    "external_id": "199",
+    "subject": "english",
+    "topic": "choose the option that best completes the gap(s)",
+    "question": "The …………   event marked the beginning of a new life for the entire cabinet",
+    "options": {
+      "a": "historical  ",
+      "b": "historicity of the",
+      "c": "historic ",
+      "d": "history of the",
+      "e": null
+    },
+    "answer": "c",
+    "explanation": null,
+    "exam_type": "utme",
+    "exam_year": "2005",
+    "image_url": null,
+    "is_ai_generated": false
+  },
+  {
+    "id": "939",
+    "external_id": "939",
+    "subject": "english",
+    "topic": "<b>In each of the questions 34 to 48, Choose the option nearest in meaning to the underlined word(s).</b>\n",
+    "question": "Some drugs have a <u>deleterious</u> effect on a child's development?",
+    "options": {
+      "a": "debilitating",
+      "b": "helpful",
+      "c": "harmful",
+      "d": "healing",
+      "e": null
+    },
+    "answer": "c",
+    "explanation": "Deleterious; causing harm or damage. ",
+    "exam_type": "utme",
+    "exam_year": "2011",
+    "image_url": null,
+    "is_ai_generated": false
+  },
+  {
+    "id": "280",
+    "external_id": "280",
+    "subject": "english",
+    "topic": "choose the option that has the same consonant sound as the one represented by the letter(s) underlined.",
+    "question": "c<u>h</u>aracter",
+    "options": {
+      "a": "unique   ",
+      "b": "charade   ",
+      "c": "arch   ",
+      "d": "church ",
+      "e": null
+    },
+    "answer": "a",
+    "explanation": null,
+    "exam_type": "utme",
+    "exam_year": "2006",
+    "image_url": null,
+    "is_ai_generated": false
+  },
+  {
+    "id": "1657",
+    "external_id": "1657",
+    "subject": "english",
+    "topic": "For these questions, choose the option that best complete the gap(s) \n",
+    "question": "He said, ' We shouldn't do it ........?",
+    "options": {
+      "a": "should we",
+      "b": "should be",
+      "c": " didn't we",
+      "d": "said he",
+      "e": null
+    },
+    "answer": "a",
+    "explanation": "He said, ' We shouldn't do it should we?",
+    "exam_type": "utme",
+    "exam_year": "2016",
+    "image_url": null,
+    "is_ai_generated": false
+  },
+  {
+    "id": "1481",
+    "external_id": "1481",
+    "subject": "english",
+    "topic": "Choose the word that has the same vowel sound as the one in bracket, from questions below",
+    "question": "H[ei]r",
+    "options": {
+      "a": "Care",
+      "b": "Near",
+      "c": "mere",
+      "d": "weird",
+      "e": null
+    },
+    "answer": "a",
+    "explanation": "The vowel sound here is /e∂/ which perceivable in 'Care', 'air'.",
+    "exam_type": "utme",
+    "exam_year": "2019",
+    "image_url": null,
+    "is_ai_generated": false
+  },
+  {
+    "id": "1157",
+    "external_id": "1157",
+    "subject": "english",
+    "topic": "In each of questions 56 to 65, choose the option <b>nearest</b> in meaning to the word or phrase underlined.\n",
+    "question": "As a journalist, Bala has always had a <u>nose</u> for stories",
+    "options": {
+      "a": "an instinct",
+      "b": "a command",
+      "c": "soft comment",
+      "d": "cynical statement",
+      "e": null
+    },
+    "answer": "a",
+    "explanation": "In this context, to have a nose is to have the ability to sense or find something, such as news, trouble, gossip, etc.\n\nExample; She really has a nose for news. She's a good reporter.",
+    "exam_type": "utme",
+    "exam_year": "2013",
+    "image_url": null,
+    "is_ai_generated": false
+  },
+  {
+    "id": "778",
+    "external_id": "778",
+    "subject": "english",
+    "topic": "<b>In each of questions 68 to 84, choose from the option nearest in meaning to the word underlined.</b>\n",
+    "question": "The presence of the security men in the area will provide a <u>moment of respite</u> for the residents?",
+    "options": {
+      "a": "soothing relaxtion",
+      "b": "enduring reprieve",
+      "c": " lasting security",
+      "d": "tempoary relief",
+      "e": null
+    },
+    "answer": "d",
+    "explanation": null,
+    "exam_type": "utme",
+    "exam_year": "2000",
+    "image_url": null,
+    "is_ai_generated": false
+  },
+  {
+    "id": "1020",
+    "external_id": "1020",
+    "subject": "english",
+    "topic": "<b>LEXIS, STRUCTURE AND ORAL FORMS</b>\nIn each of question 26 to 35, select the option \nthat best explains the information conveyed in \nthe sentence",
+    "question": "Hardworking students must not have a finger in every pie at school.",
+    "options": {
+      "a": "Hardworking students must not have a role to play in most activities in the school",
+      "b": "Only hardworking students must participate in all activities in the school",
+      "c": "Hardworking students do not participate in all activities in the school",
+      "d": "Hardworking students must ask others to participate in school activities",
+      "e": null
+    },
+    "answer": "a",
+    "explanation": "Someone who has a finger in every pie is involved in a lot of different activities or knows about a lot of different things.",
+    "exam_type": "utme",
+    "exam_year": "2012",
+    "image_url": null,
+    "is_ai_generated": false
+  },
+  {
+    "id": "1651",
+    "external_id": "1651",
+    "subject": "english",
+    "topic": "For these questions, choose the option that best complete the gap(s) \n",
+    "question": "The doctor listened to my heartbeat with a .........",
+    "options": {
+      "a": "cardiograph",
+      "b": "stethoscope",
+      "c": "chromometer",
+      "d": "microscope",
+      "e": null
+    },
+    "answer": "b",
+    "explanation": "stethoscope; a medical instrument for listening to the action of someone's heart or breathing, typically having a small disc-shaped resonator that is placed against the chest, and two tubes connected to earpieces.",
+    "exam_type": "utme",
+    "exam_year": "2016",
+    "image_url": null,
+    "is_ai_generated": false
+  },
+  {
+    "id": "1166",
+    "external_id": "1166",
+    "subject": "english",
+    "topic": "<b>In each of question 66 to 85, choose the option that best completes the gap (s)</b>\n",
+    "question": "It was very easy for the two political parties to form a .......Government",
+    "options": {
+      "a": "collusion",
+      "b": "coalition",
+      "c": "co-operative",
+      "d": "colonia",
+      "e": null
+    },
+    "answer": "b",
+    "explanation": "It was very easy for the two political parties to form a coalition Government,\n\nA coalition government is a government formed jointly by more than one political party. ",
+    "exam_type": "utme",
+    "exam_year": "2013",
+    "image_url": null,
+    "is_ai_generated": false
+  },
+  {
+    "id": "1457",
+    "external_id": "1457",
+    "subject": "english",
+    "topic": "<b>Questions below are based on Bolaji Abdullahi's \"Sweet Sixteen\"</b>",
+    "question": "The novelist noted that stereoscopic people should be",
+    "options": {
+      "a": " condemned for their bad thinking",
+      "b": " encouraged by admonition",
+      "c": "corrected of their bad thinking",
+      "d": " challenged to take up social responsibilities",
+      "e": null
+    },
+    "answer": "c",
+    "explanation": "The novelist acclaimed that stereoscopic persons are only victims of bad thinking and shouldn't be condemned in return for their ignorance. They should rather be corrected.",
+    "exam_type": "utme",
+    "exam_year": "2019",
+    "image_url": null,
+    "is_ai_generated": false
+  },
+  {
+    "id": "1089",
+    "external_id": "1089",
+    "subject": "english",
+    "topic": "<b>In each of the questions, 95 to 97 choose the option that has the stress on the first syllable</b>",
+    "question": "",
+    "options": {
+      "a": "madam",
+      "b": "eighteen",
+      "c": "invent",
+      "d": "command",
+      "e": null
+    },
+    "answer": "a",
+    "explanation": "One common pronunciation convention many guides provide is that nouns and adjectives with two or more syllables will have stress placed on the first syllable, while verbs and prepositions tend to have their stress on the second syllable",
+    "exam_type": "utme",
+    "exam_year": "2012",
+    "image_url": null,
+    "is_ai_generated": false
+  },
+  {
+    "id": "846",
+    "external_id": "846",
+    "subject": "english",
+    "topic": "<b>LEXIS, STRUCTUREAND ORAL FORMS\n(Questions 26 to 75 carry 1 mark each)\nIn each of questions 26 to 50, fill each gap with the most appropriate option from the lists provided.</b>\n",
+    "question": "....... any problems, I shall travel to London tomorrow on a business trip?",
+    "options": {
+      "a": "in spite",
+      "b": "given",
+      "c": "in case of",
+      "d": "barring",
+      "e": null
+    },
+    "answer": "d",
+    "explanation": null,
+    "exam_type": "utme",
+    "exam_year": "2002",
+    "image_url": null,
+    "is_ai_generated": false
+  }
+]

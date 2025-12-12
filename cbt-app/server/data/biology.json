@@ -1,0 +1,202 @@
+[
+  {
+    "id": "208",
+    "external_id": "208",
+    "subject": "biology",
+    "topic": null,
+    "question": "Which of the following associations is an example of mutalism?",
+    "options": {
+      "a": "hydra viridis and zoochlorellae",
+      "b": "human and lice   ",
+      "c": "Shark and Remora fish  ",
+      "d": "Bread and Rhizopus stolonifer  ",
+      "e": null
+    },
+    "answer": "a",
+    "explanation": null,
+    "exam_type": "utme",
+    "exam_year": "2008",
+    "image_url": null,
+    "is_ai_generated": false
+  },
+  {
+    "id": "297",
+    "external_id": "297",
+    "subject": "biology",
+    "topic": null,
+    "question": "The chromosome number of a cell before and after the process of meiosis is conventionally represented as",
+    "options": {
+      "a": "2n_2n   ",
+      "b": "n_n  ",
+      "c": "n-2n  ",
+      "d": "2n-n",
+      "e": null
+    },
+    "answer": "d",
+    "explanation": null,
+    "exam_type": "utme",
+    "exam_year": "2010",
+    "image_url": null,
+    "is_ai_generated": false
+  },
+  {
+    "id": "294",
+    "external_id": "294",
+    "subject": "biology",
+    "topic": null,
+    "question": "A dilute solution of phenylthiocarbamide tastes bitter to some people  and is tasteless to others. This is an example of  ",
+    "options": {
+      "a": "taste bud variation",
+      "b": "discontinuous variation   ",
+      "c": "morphological variation",
+      "d": " continuous variation",
+      "e": null
+    },
+    "answer": "b",
+    "explanation": null,
+    "exam_type": "utme",
+    "exam_year": "2010",
+    "image_url": null,
+    "is_ai_generated": false
+  },
+  {
+    "id": "370",
+    "external_id": "370",
+    "subject": "biology",
+    "topic": null,
+    "question": "Which of the following animals an exist solely on the water they get from food and metabolic reactions?  ",
+    "options": {
+      "a": "Forest arboreal dwellers  ",
+      "b": "Desert dwellers",
+      "c": "forest ground dwellers",
+      "d": "rainforest dwellers",
+      "e": null
+    },
+    "answer": "b",
+    "explanation": null,
+    "exam_type": "utme",
+    "exam_year": "2012",
+    "image_url": null,
+    "is_ai_generated": false
+  },
+  {
+    "id": "185",
+    "external_id": "185",
+    "subject": "biology",
+    "topic": null,
+    "question": "An example of a fish that aestivates is",
+    "options": {
+      "a": "lung fish   ",
+      "b": "shark",
+      "c": "cat fish",
+      "d": "croaker",
+      "e": null
+    },
+    "answer": "a",
+    "explanation": null,
+    "exam_type": "utme",
+    "exam_year": "2007",
+    "image_url": null,
+    "is_ai_generated": false
+  },
+  {
+    "id": "242",
+    "external_id": "242",
+    "subject": "biology",
+    "topic": null,
+    "question": "The association between bacteria residing I the caecum and the ruminant is  ",
+    "options": {
+      "a": "parasitism  ",
+      "b": "predation  ",
+      "c": "saprophytism  ",
+      "d": "mutalism",
+      "e": null
+    },
+    "answer": "d",
+    "explanation": null,
+    "exam_type": "utme",
+    "exam_year": "2009",
+    "image_url": null,
+    "is_ai_generated": false
+  },
+  {
+    "id": "113",
+    "external_id": "113",
+    "subject": "biology",
+    "topic": null,
+    "question": "A non-renewable alternative source of energy is",
+    "options": {
+      "a": "wind generators  ",
+      "b": "solar panels  ",
+      "c": "nuclear energy",
+      "d": "hydroelectric power",
+      "e": null
+    },
+    "answer": "c",
+    "explanation": null,
+    "exam_type": "utme",
+    "exam_year": "2005",
+    "image_url": null,
+    "is_ai_generated": false
+  },
+  {
+    "id": "308",
+    "external_id": "308",
+    "subject": "biology",
+    "topic": null,
+    "question": "Which of the following can cause shrinkage  of living cells?  ",
+    "options": {
+      "a": "Isotonic solution   ",
+      "b": "Delonized water  ",
+      "c": "Hypertonic solution",
+      "d": "hypotonic solution",
+      "e": null
+    },
+    "answer": "c",
+    "explanation": null,
+    "exam_type": "utme",
+    "exam_year": "2011",
+    "image_url": null,
+    "is_ai_generated": false
+  },
+  {
+    "id": "42",
+    "external_id": "42",
+    "subject": "biology",
+    "topic": null,
+    "question": "The inactive state exhibited by an animal during hot dry seasons is termed  ",
+    "options": {
+      "a": "aestivation",
+      "b": "dormancy  ",
+      "c": "resting",
+      "d": "Hibernation",
+      "e": null
+    },
+    "answer": "a",
+    "explanation": null,
+    "exam_type": "utme",
+    "exam_year": "2003",
+    "image_url": null,
+    "is_ai_generated": false
+  },
+  {
+    "id": "189",
+    "external_id": "189",
+    "subject": "biology",
+    "topic": null,
+    "question": "The cell of an onion bulb can be differentiated from a cheek cell by the presence of  ",
+    "options": {
+      "a": "plasmalemma  ",
+      "b": " chloroplast",
+      "c": "cell wall  ",
+      "d": " nucleus",
+      "e": null
+    },
+    "answer": "c",
+    "explanation": null,
+    "exam_type": "utme",
+    "exam_year": "2008",
+    "image_url": null,
+    "is_ai_generated": false
+  }
+]

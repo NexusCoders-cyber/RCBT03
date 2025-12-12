@@ -1,0 +1,202 @@
+[
+  {
+    "id": "247",
+    "external_id": "247",
+    "subject": "mathematics",
+    "topic": null,
+    "question": "Determine the maximum value of y = 3x<sup>2</sup> - x<sup>3</sup>",
+    "options": {
+      "a": " zero",
+      "b": "2",
+      "c": " 4",
+      "d": "6",
+      "e": null
+    },
+    "answer": "c",
+    "explanation": "y = 3x<sup>2</sup> - x<sup>3</sup>\ndy/dx = 6x - 3x<sup>2</sup>\nas dy/dx = 0\n6x - 3x<sup>2</sup> = 0\n3x (2 - x) = 0\nthis implies that 2 -x = 0 and 3x = 0\nx = 2 (or) 0\nBut = dy/dx = 6x - 3x<sup>2</sup>\nd<sup>2</sup>y/dx<sup>2</sup> = 6 - 6x at x = 2\n= 6 - 6(2)\n= -6\ny = 3x<sup>2</sup> - x<sup>3</sup>\n= 3(2)<sup>2</sup> - 2<sup>3</sup>\n= 12 - 8\n= 4",
+    "exam_type": "utme",
+    "exam_year": "2003",
+    "image_url": null,
+    "is_ai_generated": false
+  },
+  {
+    "id": "1254",
+    "external_id": "1254",
+    "subject": "mathematics",
+    "topic": null,
+    "question": "The extension of a stretched string is directly proportional to its tension. If the extension produced by a tension of 8 Newton’s is 2cm, find the extension produced by a tension of 12 newton’s.",
+    "options": {
+      "a": "2",
+      "b": "1",
+      "c": "0",
+      "d": "3",
+      "e": null
+    },
+    "answer": "d",
+    "explanation": "Let the extension be E and the tension be T.\n\nThen E∝T\nE=kT\nwhen T = 8N, E = 2cm\n\n2=k × 8\nk = 2/8 = 0.25\n∴ E = 0.25T\nwhen T = 12N, E = 0.25 × 12 =3 cm",
+    "exam_type": "utme",
+    "exam_year": "2015",
+    "image_url": null,
+    "is_ai_generated": false
+  },
+  {
+    "id": "490",
+    "external_id": "490",
+    "subject": "mathematics",
+    "topic": null,
+    "question": "The fifth term of an A.P is 24 and the eleventh term is 96. Find the first term.",
+    "options": {
+      "a": "12",
+      "b": "4",
+      "c": "-12",
+      "d": "-24",
+      "e": null
+    },
+    "answer": "d",
+    "explanation": "U5 = 24, n = 5 and U11 = 96, n = 11\nUn = a + (n-1)d\n24 = a + (5-1)d imply 24 = a+4d .....eqn1\n96 = a + (11-1)d imply 96 = a+10d ...eqn2\neqn1 - eqn2 -72 = -6d\nd = 72/6 = 12\nbut 24 = a+4d\n24 = a + 4(12)\n24 = a + 48\na = 24-48\na = -24",
+    "exam_type": "utme",
+    "exam_year": "2008",
+    "image_url": null,
+    "is_ai_generated": false
+  },
+  {
+    "id": "171",
+    "external_id": "171",
+    "subject": "mathematics",
+    "topic": null,
+    "question": "The histogram shows the distribution of passengers in taxis at a certain motor park. How many taxis have more than 4 passengers?",
+    "options": {
+      "a": "17",
+      "b": "16",
+      "c": "15",
+      "d": "14",
+      "e": null
+    },
+    "answer": "a",
+    "explanation": "no. of passengers 0.5−2.5, 2.5−4.5, 4.5−6.5, 6.5−8.5, 8.5−10.5, 10.5−12.5                        Number of taxis 3, 4, 7, 5, 4, 1.      Total 24\n \nThus, the taxi with more than 4 passengers\n\n= 7 + 5 + 4 + 1 = 17",
+    "exam_type": "utme",
+    "exam_year": "2001",
+    "image_url": "https://res.cloudinary.com/aloc-ng/image/upload/v1710696982/ALOC-Questions/Mathematics/2001/JAMB_2001_Q_50_mmhkhv.jpg",
+    "is_ai_generated": false
+  },
+  {
+    "id": "959",
+    "external_id": "959",
+    "subject": "mathematics",
+    "topic": null,
+    "question": "\nThe table above shows the frequency of children age x years in a hospital\nx\t1\t2\t3\t4\t5\t6\t7\t8\ny\t3\t4\t5\t6\t7\t6\t5\t4\nHow many children are in the hospital",
+    "options": {
+      "a": "36",
+      "b": "40",
+      "c": "44",
+      "d": "50",
+      "e": null
+    },
+    "answer": "b",
+    "explanation": "The total number of students is ∑ f = 3 + 4 + 5 + 6 + 7 + 6 + 5 + 4\n\n= 40",
+    "exam_type": "utme",
+    "exam_year": "2018",
+    "image_url": "https://res.cloudinary.com/aloc-ng/image/upload/v1724006493/ALOC-Questions/Mathematics/2018/JAMB_MATH_2018_Q41_shvtnl.jpg",
+    "is_ai_generated": false
+  },
+  {
+    "id": "136",
+    "external_id": "136",
+    "subject": "mathematics",
+    "topic": null,
+    "question": "a sector of a circle of radius 7.2cm which subtends an angle of 300° at the centre is used to form a cone. What is the radius of the base of the cone?",
+    "options": {
+      "a": "8cm",
+      "b": "6cm",
+      "c": "9cm",
+      "d": "7cm",
+      "e": null
+    },
+    "answer": "b",
+    "explanation": "(r/L) = (θ/360°)\nGiven θ = 300, and L = 7.2cm,\n\n=> r = (300 x 7.2)/360\nr = 6cm",
+    "exam_type": "utme",
+    "exam_year": "2001",
+    "image_url": null,
+    "is_ai_generated": false
+  },
+  {
+    "id": "1139",
+    "external_id": "1139",
+    "subject": "mathematics",
+    "topic": null,
+    "question": "Let '*' and '^' be two binary operations such that a * b = a<sup>2</sup>b and a ^ b = 2a + b. Find (-4 * 2) ^ (7 * -1).",
+    "options": {
+      "a": "-49",
+      "b": "64",
+      "c": "113",
+      "d": "15",
+      "e": null
+    },
+    "answer": "d",
+    "explanation": "Given that, a * b = a<sup>2</sup>b and a ^ b = 2a + b\n\n(-4 * 2) = (-4)<sup>2</sup> x 2 = 16 x 2 = 32\n\n(7 * -1) = 7<sup>2</sup> x (-1) = 49 x (-1) = -49\n\n∴ (-4 * 2) ^ (7 * -1) = 2(32) + (-49) = 64 - 49 = 15",
+    "exam_type": "utme",
+    "exam_year": "2023",
+    "image_url": null,
+    "is_ai_generated": false
+  },
+  {
+    "id": "486",
+    "external_id": "486",
+    "subject": "mathematics",
+    "topic": null,
+    "question": "If x - 3 is directly proportional to the square of y and x = 5 when y =2, find x when y = 6.",
+    "options": {
+      "a": "30",
+      "b": "21",
+      "c": "16",
+      "d": "12",
+      "e": null
+    },
+    "answer": "b",
+    "explanation": "(x – 3) ∝ y<sup>2</sup>\nX-3 = Ky<sup>2</sup>\nK = X-3 / y<sup>2</sup>\n= 5-2/2<sup>2</sup>\n= 2/4\n= 1/2\n∴X-3 = 1/2y<sup>2</sup>\nX-3 = 1/2 (6)<sup>2</sup>\nX-3 = 1/2 x 36/1\nX-3 = 18\nX = 21",
+    "exam_type": "utme",
+    "exam_year": "2008",
+    "image_url": null,
+    "is_ai_generated": false
+  },
+  {
+    "id": "1084",
+    "external_id": "1084",
+    "subject": "mathematics",
+    "topic": null,
+    "question": "Simplify 2log 2/5 -log72/125 + log 9",
+    "options": {
+      "a": "1 - 4 log3",
+      "b": "-1 + 2 log 3",
+      "c": "-1 + 5 log2",
+      "d": " 1 - 2log 2",
+      "e": null
+    },
+    "answer": "d",
+    "explanation": "2log 2/5 - log72/125 + log 9\n\n[2/5)2 x 9] = log 4/25 x 9/1 x 125/72\n\n= log 72/125\n\n= log 5/2= log 10/4\n\n= log 10 - log 4\n\n= log10  - log2<sup>2</sup>\n\n= 1 - 2 log2",
+    "exam_type": "utme",
+    "exam_year": "2021",
+    "image_url": null,
+    "is_ai_generated": false
+  },
+  {
+    "id": "432",
+    "external_id": "432",
+    "subject": "mathematics",
+    "topic": null,
+    "question": "If y = x cos x, find dy/dx",
+    "options": {
+      "a": "sin x - x cos x",
+      "b": " sin x + x cos x",
+      "c": "cos x + x sin x",
+      "d": "cos x - x sin x",
+      "e": null
+    },
+    "answer": "d",
+    "explanation": "y = x cos x\ndy/dx = 1. cos x + x (-sin x)\n= cos x - x sin x",
+    "exam_type": "utme",
+    "exam_year": "2007",
+    "image_url": null,
+    "is_ai_generated": false
+  }
+]
