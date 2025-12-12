@@ -72,10 +72,11 @@ cbt-app/
 - Analytics: Performance tracking
 
 ## Environment Variables
-- `GEMINI_API_KEY` - Google Gemini API key (required)
+- `GEMINI_API_KEY` - Google Gemini API key (required for AI features)
 - `VITE_POE_API_KEY` - Poe API key (optional)
 - `VITE_GROK_API_KEY` - Grok API key (optional)
 - `VITE_CEREBRAS_API_KEY` - Cerebras API key (optional)
+- `DATABASE_URL` - PostgreSQL database connection (auto-configured)
 
 ## JAMB Subjects
 English, Mathematics, Physics, Chemistry, Biology, Literature, Government, Commerce, Accounting, Economics, CRK, IRK, Geography, Agricultural Science, History
