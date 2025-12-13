@@ -1,9 +1,21 @@
 import { GoogleGenerativeAI } from '@google/generative-ai'
 
-const GEMINI_API_KEY = import.meta.env.VITE_GEMINI_API_KEY || ''
+const GEMINI_API_KEY = import.meta.env.VITE_GEMINI_API_KEY || import.meta.env.GEMINI_API_KEY || ''
 const POE_API_KEY = import.meta.env.VITE_POE_API_KEY || ''
 const GROK_API_KEY = import.meta.env.VITE_GROK_API_KEY || ''
 const CEREBRAS_API_KEY = import.meta.env.VITE_CEREBRAS_API_KEY || ''
+
+const getActiveProviders = () => {
+  const providers = []
+  if (GEMINI_API_KEY) providers.push('gemini')
+  if (CEREBRAS_API_KEY) providers.push('cerebras')
+  if (GROK_API_KEY) providers.push('grok')
+  if (POE_API_KEY) providers.push('poe')
+  return providers
+}
+
+export const hasAnyProvider = () => getActiveProviders().length > 0
+export const getFirstAvailableProvider = () => getActiveProviders()[0] || 'gemini'
 
 const DB_NAME = 'jamb-cbt-offline'
 const DB_VERSION = 6
@@ -26,7 +38,7 @@ export const AI_PROVIDERS = {
     color: 'from-emerald-500 to-teal-600',
     description: 'Automatically selects the best available model',
     models: [
-      { id: 'auto', name: 'Auto', description: 'Smart model selection', tier: 'auto' },
+      { id: 'auto', name: 'Auto', description: 'Smart model selection based on question type', tier: 'auto' },
     ],
     available: true
   },
@@ -37,11 +49,36 @@ export const AI_PROVIDERS = {
     color: 'from-blue-500 to-purple-600',
     description: 'Google\'s most capable AI model',
     models: [
-      { id: 'gemini-1.5-flash', name: 'Gemini 1.5 Flash', description: 'Best free tier (1500/day)', tier: 'standard', priority: 1 },
+      { id: 'gemini-2.0-flash-lite', name: 'Gemini 2.0 Flash Lite', description: 'Free tier - fast responses', tier: 'standard', priority: 1 },
       { id: 'gemini-2.0-flash', name: 'Gemini 2.0 Flash', description: 'Latest & fastest', tier: 'premium', priority: 2 },
+      { id: 'gemini-1.5-flash', name: 'Gemini 1.5 Flash', description: 'Reliable free tier', tier: 'standard', priority: 1 },
       { id: 'gemini-1.5-pro', name: 'Gemini 1.5 Pro', description: 'Advanced reasoning', tier: 'pro', priority: 3 },
     ],
-    available: !!GEMINI_API_KEY
+    get available() { return !!GEMINI_API_KEY }
+  },
+  cerebras: {
+    id: 'cerebras',
+    name: 'Cerebras AI',
+    icon: '⚡',
+    color: 'from-yellow-500 to-orange-600',
+    description: 'Ultra-fast inference',
+    models: [
+      { id: 'llama-3.1-8b', name: 'Llama 3.1 8B', description: 'Fast & efficient', tier: 'standard', priority: 1 },
+      { id: 'llama-3.3-70b', name: 'Llama 3.3 70B', description: 'High performance', tier: 'pro', priority: 2 },
+    ],
+    get available() { return !!CEREBRAS_API_KEY }
+  },
+  grok: {
+    id: 'grok',
+    name: 'Grok AI',
+    icon: '🚀',
+    color: 'from-orange-500 to-red-600',
+    description: 'xAI\'s conversational model',
+    models: [
+      { id: 'grok-beta', name: 'Grok Beta', description: 'Latest Grok model', tier: 'standard', priority: 1 },
+      { id: 'grok-2', name: 'Grok 2', description: 'Enhanced capabilities', tier: 'pro', priority: 2 },
+    ],
+    get available() { return !!GROK_API_KEY }
   },
   poe: {
     id: 'poe',
@@ -54,31 +91,7 @@ export const AI_PROVIDERS = {
       { id: 'claude-3-sonnet', name: 'Claude 3 Sonnet', description: 'Balanced', tier: 'pro', priority: 2 },
       { id: 'gpt-4o-mini', name: 'GPT-4o Mini', description: 'OpenAI compact', tier: 'standard', priority: 1 },
     ],
-    available: !!POE_API_KEY
-  },
-  grok: {
-    id: 'grok',
-    name: 'Grok AI',
-    icon: '🚀',
-    color: 'from-orange-500 to-red-600',
-    description: 'xAI\'s conversational model',
-    models: [
-      { id: 'grok-beta', name: 'Grok Beta', description: 'Latest Grok model', tier: 'standard', priority: 1 },
-      { id: 'grok-2', name: 'Grok 2', description: 'Enhanced capabilities', tier: 'pro', priority: 2 },
-    ],
-    available: !!GROK_API_KEY
-  },
-  cerebras: {
-    id: 'cerebras',
-    name: 'Cerebras AI',
-    icon: '⚡',
-    color: 'from-yellow-500 to-orange-600',
-    description: 'Ultra-fast inference',
-    models: [
-      { id: 'llama-3.3-70b', name: 'Llama 3.3 70B', description: 'High performance', tier: 'pro', priority: 2 },
-      { id: 'llama-3.1-8b', name: 'Llama 3.1 8B', description: 'Fast & efficient', tier: 'standard', priority: 1 },
-    ],
-    available: !!CEREBRAS_API_KEY
+    get available() { return !!POE_API_KEY }
   }
 }
 
@@ -147,15 +160,15 @@ function selectBestProvider(analysis, hasImage = false) {
   
   if (hasImage || analysis.requiresVision) {
     if (GEMINI_API_KEY) {
-      return { provider: 'gemini', model: 'gemini-1.5-flash' }
+      return { provider: 'gemini', model: 'gemini-2.0-flash-lite' }
     }
-    throw new Error('Image analysis requires Gemini API key')
+    throw new Error('Image analysis requires Gemini API key. Please add your API key in Settings.')
   }
   
   if (GEMINI_API_KEY) {
     availableProviders.push({
       provider: 'gemini',
-      model: analysis.preferredTier === 'pro' ? 'gemini-1.5-pro' : 'gemini-1.5-flash',
+      model: analysis.preferredTier === 'pro' ? 'gemini-1.5-pro' : 'gemini-2.0-flash-lite',
       priority: 1
     })
   }
@@ -185,7 +198,7 @@ function selectBestProvider(analysis, hasImage = false) {
   }
   
   if (availableProviders.length === 0) {
-    return { provider: 'gemini', model: 'gemini-1.5-flash' }
+    throw new Error('No AI providers configured. Please add at least one API key in Settings.')
   }
   
   availableProviders.sort((a, b) => a.priority - b.priority)
@@ -616,6 +629,7 @@ async function callWithFallback(prompt, imageData = null) {
   const providers = []
   
   if (GEMINI_API_KEY) {
+    providers.push({ provider: 'gemini', model: 'gemini-2.0-flash-lite' })
     providers.push({ provider: 'gemini', model: 'gemini-1.5-flash' })
   }
   if (CEREBRAS_API_KEY) {
@@ -629,20 +643,22 @@ async function callWithFallback(prompt, imageData = null) {
   }
   
   if (providers.length === 0) {
-    throw new Error('No AI providers configured. Please add at least one API key.')
+    throw new Error('No AI providers configured. Please add your Gemini API key to use AI features.')
   }
   
+  let lastError = null
   for (const { provider, model } of providers) {
     try {
       if (imageData && provider !== 'gemini') continue
       return await callAIProvider(prompt, provider, model, imageData)
     } catch (error) {
-      console.warn(`Provider ${provider} failed:`, error.message)
+      console.warn(`Provider ${provider}/${model} failed:`, error.message)
+      lastError = error
       continue
     }
   }
   
-  throw new Error('All AI providers failed. Please try again later.')
+  throw lastError || new Error('All AI providers failed. Please try again later.')
 }
 
 export async function askAI(question, subject = null, context = null, imageData = null) {

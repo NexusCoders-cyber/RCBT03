@@ -10,6 +10,7 @@ packages = ["zammad"]
 
 [userenv.shared]
 VITE_POE_API_KEY = "u_GmBkD1LVOO3foJ2XrkFPx1kMSQ_EmH_NZGg_cMOmQ"
+VITE_GEMINI_API_KEY = "${GEMINI_API_KEY}"
 
 [workflows]
 runButton = "Project"

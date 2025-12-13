@@ -1,5 +1,5 @@
 const DB_NAME = 'jamb-cbt-offline'
-const DB_VERSION = 4
+const DB_VERSION = 6
 const QUESTIONS_STORE = 'questions'
 const FLASHCARDS_STORE = 'flashcards'
 const NOVEL_STORE = 'novel'
@@ -197,7 +197,7 @@ export async function deleteFlashcard(id) {
   }
 }
 
-export async function updateFlashcardProgress(id, correct) {
+export async function updateFlashcardProgress(id, correct, difficulty = 'normal') {
   try {
     const database = await openDB()
     
@@ -212,6 +212,31 @@ export async function updateFlashcardProgress(id, correct) {
           flashcard.reviewCount = (flashcard.reviewCount || 0) + 1
           flashcard.correctCount = (flashcard.correctCount || 0) + (correct ? 1 : 0)
           flashcard.lastReviewed = Date.now()
+          
+          const currentEase = flashcard.easeFactor || 2.5
+          const currentInterval = flashcard.interval || 1
+          
+          if (correct) {
+            if (difficulty === 'easy') {
+              flashcard.easeFactor = Math.min(currentEase + 0.15, 3.0)
+              flashcard.interval = Math.round(currentInterval * flashcard.easeFactor * 1.3)
+            } else if (difficulty === 'hard') {
+              flashcard.easeFactor = Math.max(currentEase - 0.2, 1.3)
+              flashcard.interval = Math.round(currentInterval * 1.2)
+            } else {
+              flashcard.easeFactor = currentEase
+              flashcard.interval = Math.round(currentInterval * flashcard.easeFactor)
+            }
+            flashcard.streak = (flashcard.streak || 0) + 1
+          } else {
+            flashcard.easeFactor = Math.max(currentEase - 0.2, 1.3)
+            flashcard.interval = 1
+            flashcard.streak = 0
+          }
+          
+          flashcard.nextReview = Date.now() + (flashcard.interval * 24 * 60 * 60 * 1000)
+          flashcard.mastery = Math.min(100, Math.round((flashcard.correctCount / flashcard.reviewCount) * 100))
+          
           store.put(flashcard)
         }
       }
@@ -221,6 +246,73 @@ export async function updateFlashcardProgress(id, correct) {
     })
   } catch {
     return false
+  }
+}
+
+export async function getFlashcardsForReview(subject = null) {
+  try {
+    const allCards = await getFlashcards(subject)
+    const now = Date.now()
+    
+    const dueCards = allCards.filter(card => {
+      if (!card.nextReview) return true
+      return card.nextReview <= now
+    })
+    
+    dueCards.sort((a, b) => {
+      const aMastery = a.mastery || 0
+      const bMastery = b.mastery || 0
+      return aMastery - bMastery
+    })
+    
+    return dueCards
+  } catch {
+    return []
+  }
+}
+
+export async function getFlashcardStats() {
+  try {
+    const allCards = await getFlashcards()
+    const now = Date.now()
+    
+    const stats = {
+      total: allCards.length,
+      mastered: 0,
+      learning: 0,
+      new: 0,
+      dueToday: 0,
+      totalReviews: 0,
+      averageMastery: 0
+    }
+    
+    let totalMastery = 0
+    
+    allCards.forEach(card => {
+      const mastery = card.mastery || 0
+      const reviewCount = card.reviewCount || 0
+      
+      if (reviewCount === 0) {
+        stats.new++
+      } else if (mastery >= 80) {
+        stats.mastered++
+      } else {
+        stats.learning++
+      }
+      
+      if (!card.nextReview || card.nextReview <= now) {
+        stats.dueToday++
+      }
+      
+      stats.totalReviews += reviewCount
+      totalMastery += mastery
+    })
+    
+    stats.averageMastery = allCards.length > 0 ? Math.round(totalMastery / allCards.length) : 0
+    
+    return stats
+  } catch {
+    return { total: 0, mastered: 0, learning: 0, new: 0, dueToday: 0, totalReviews: 0, averageMastery: 0 }
   }
 }
 
@@ -407,6 +499,8 @@ export default {
   getFlashcards,
   deleteFlashcard,
   updateFlashcardProgress,
+  getFlashcardsForReview,
+  getFlashcardStats,
   saveNovelContent,
   getNovelContent,
   getAllNovels,
