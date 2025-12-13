@@ -638,5 +638,1325 @@
     "exam_year": "2002",
     "image_url": null,
     "is_ai_generated": false
+  },
+  {
+    "id": "585",
+    "external_id": "585",
+    "subject": "english",
+    "topic": "choose the option that has the same consonant sound as the one represented by the letter(s) underlined",
+    "question": "shea<u>th </u>",
+    "options": {
+      "a": "bathe ",
+      "b": "length ",
+      "c": "months ",
+      "d": "paths",
+      "e": null
+    },
+    "answer": "b",
+    "explanation": null,
+    "exam_type": "utme",
+    "exam_year": "2010",
+    "image_url": null,
+    "is_ai_generated": false
+  },
+  {
+    "id": "1552",
+    "external_id": "1552",
+    "subject": "english",
+    "topic": null,
+    "question": "choose the option that best completes the gap(s).\n\nYou may now ___________ with your presentation.",
+    "options": {
+      "a": "Precede",
+      "b": "Preceed",
+      "c": "Procede",
+      "d": "Proceed",
+      "e": null
+    },
+    "answer": "d",
+    "explanation": "Note the spelling of each word.",
+    "exam_type": "utme",
+    "exam_year": "2018",
+    "image_url": null,
+    "is_ai_generated": false
+  },
+  {
+    "id": "864",
+    "external_id": "864",
+    "subject": "english",
+    "topic": "<b>In each of questions 59 to 73, choose the option nearest in meaning to the underlined word(s).</b>",
+    "question": "His success may be described as a <u>Pyrrhic</u> victory?\n",
+    "options": {
+      "a": "costly",
+      "b": " a deserving victory",
+      "c": "an easy victory",
+      "d": "indecisive",
+      "e": null
+    },
+    "answer": "a",
+    "explanation": null,
+    "exam_type": "utme",
+    "exam_year": "2002",
+    "image_url": null,
+    "is_ai_generated": false
+  },
+  {
+    "id": "1069",
+    "external_id": "1069",
+    "subject": "english",
+    "topic": "<b>In each of the question 66 to 85 choose the option that best completes the gap(s)</b>",
+    "question": "She was............the verge of tears",
+    "options": {
+      "a": "at",
+      "b": "on",
+      "c": "by",
+      "d": "with",
+      "e": null
+    },
+    "answer": "b",
+    "explanation": "Close to, on the brink of (something)\n\nShe was on the verge of tears",
+    "exam_type": "utme",
+    "exam_year": "2012",
+    "image_url": null,
+    "is_ai_generated": false
+  },
+  {
+    "id": "1088",
+    "external_id": "1088",
+    "subject": "english",
+    "topic": "<b>In each of questions, 92 to 94, choose the appropriate stress pattern from the options. The syllables are underlined in capital letters.</b>",
+    "question": "Imperialism\n",
+    "options": {
+      "a": "<u>IM</u>perialism",
+      "b": "im<u>PE</u>rialism",
+      "c": "impe<u>RIA</u>lism",
+      "d": "imperiali<u>SM</u>",
+      "e": null
+    },
+    "answer": "b",
+    "explanation": null,
+    "exam_type": "utme",
+    "exam_year": "2012",
+    "image_url": null,
+    "is_ai_generated": false
+  },
+  {
+    "id": "952",
+    "external_id": "952",
+    "subject": "english",
+    "topic": "In each of the questions 49 to 63 choose the word that is <b>opposite</b> in meaning to the underlined word.",
+    "question": "I do not trust him', he said, in a rare moment of <u>candour</u>?",
+    "options": {
+      "a": "reproach",
+      "b": "dishonesty",
+      "c": "frankness",
+      "d": "fairness",
+      "e": null
+    },
+    "answer": "b",
+    "explanation": "Candour; the quality of being open and honest; frankness",
+    "exam_type": "utme",
+    "exam_year": "2011",
+    "image_url": null,
+    "is_ai_generated": false
+  },
+  {
+    "id": "106",
+    "external_id": "106",
+    "subject": "english",
+    "topic": "that best explains the information conveyed in the sentence.",
+    "question": "The government warns that drink-driving is punishable under the law.",
+    "options": {
+      "a": "a drunkard driving can be punished",
+      "b": "driving while drunk is an offence",
+      "c": "driving while drinking is an offence",
+      "d": "drinking and driving is an offence.",
+      "e": null
+    },
+    "answer": "a",
+    "explanation": null,
+    "exam_type": "utme",
+    "exam_year": "2004",
+    "image_url": null,
+    "is_ai_generated": false
+  },
+  {
+    "id": "1812",
+    "external_id": "1812",
+    "subject": "english",
+    "topic": "Choose the option that has the same vowel sound as the one represented by the letter underlined.\n",
+    "question": "P<u>a</u>lm.",
+    "options": {
+      "a": "Plait.",
+      "b": "Ranch.",
+      "c": "Florid.",
+      "d": "Launch.",
+      "e": null
+    },
+    "answer": "b",
+    "explanation": "palm; /pɑːm/\nranch; /rɑːn(t)ʃ/. The vowel sound in the above words are highlghted and underlined accordingly.",
+    "exam_type": "utme",
+    "exam_year": "2014",
+    "image_url": null,
+    "is_ai_generated": false
+  },
+  {
+    "id": "1053",
+    "external_id": "1053",
+    "subject": "english",
+    "topic": "In each of the questions 51 to 65 choose the option <b>nearest in meaning</b> to the underlined word or phrase.",
+    "question": "Every human being is <u>vulnerable</u> to communicable diseases.",
+    "options": {
+      "a": "liable",
+      "b": "lifted",
+      "c": "immuned",
+      "d": "close",
+      "e": null
+    },
+    "answer": "a",
+    "explanation": "Someone who is vulnerable is weak and without protection, with the result that they are easily hurt physically or emotionally.\n\nLiable; likely to experience (something undesirable).",
+    "exam_type": "utme",
+    "exam_year": "2012",
+    "image_url": null,
+    "is_ai_generated": false
+  },
+  {
+    "id": "28",
+    "external_id": "28",
+    "subject": "english",
+    "topic": "choose the option that has a different vowel sound from the others.",
+    "question": "",
+    "options": {
+      "a": "there   ",
+      "b": "dear    ",
+      "c": "fair         ",
+      "d": "bear",
+      "e": null
+    },
+    "answer": "c",
+    "explanation": null,
+    "exam_type": "utme",
+    "exam_year": "2003",
+    "image_url": null,
+    "is_ai_generated": false
+  },
+  {
+    "id": "848",
+    "external_id": "848",
+    "subject": "english",
+    "topic": "<b>In each of questions 51 to 53, choose the option that has a different vowel sound from the others.</b>",
+    "question": "",
+    "options": {
+      "a": "tear (verb)",
+      "b": "hear",
+      "c": "weird",
+      "d": "mere",
+      "e": null
+    },
+    "answer": "c",
+    "explanation": null,
+    "exam_type": "utme",
+    "exam_year": "2002",
+    "image_url": null,
+    "is_ai_generated": false
+  },
+  {
+    "id": "1505",
+    "external_id": "1505",
+    "subject": "english",
+    "topic": "Choose the option nearest in meaning to the underlined.",
+    "question": "Ayodeji is an <u>ardent</u> supporter of education for the child",
+    "options": {
+      "a": "cogent",
+      "b": " a passionate",
+      "c": "an ignorant",
+      "d": " an optimistic",
+      "e": null
+    },
+    "answer": "b",
+    "explanation": "Ardent means very passionate and enthusiastic",
+    "exam_type": "utme",
+    "exam_year": "2018",
+    "image_url": null,
+    "is_ai_generated": false
+  },
+  {
+    "id": "873",
+    "external_id": "873",
+    "subject": "english",
+    "topic": "<b>In each of questions 76 to 80, select the option that best explains the information conveyed in the sentence.</b>\n",
+    "question": "His meteoric rise to fame surprise everyone?",
+    "options": {
+      "a": "His rise to fame was only temporary",
+      "b": "People were amazed at his rapid success",
+      "c": "He became successful very suddenly",
+      "d": "He rose to the top quite unexpectedly",
+      "e": null
+    },
+    "answer": "b",
+    "explanation": null,
+    "exam_type": "utme",
+    "exam_year": "2002",
+    "image_url": null,
+    "is_ai_generated": false
+  },
+  {
+    "id": "315",
+    "external_id": "315",
+    "subject": "english",
+    "topic": "choose the option that has the same consonant sound as the one represented by the letter(s) underlined.",
+    "question": "clo<u>ths</u>e",
+    "options": {
+      "a": "thomas",
+      "b": "three",
+      "c": "they",
+      "d": "mouth",
+      "e": null
+    },
+    "answer": "c",
+    "explanation": null,
+    "exam_type": "utme",
+    "exam_year": "2007",
+    "image_url": null,
+    "is_ai_generated": false
+  },
+  {
+    "id": "1410",
+    "external_id": "1410",
+    "subject": "english",
+    "topic": null,
+    "question": "The driver was short of petrol, so he ........ down the road with the engine switched off",
+    "options": {
+      "a": "glided",
+      "b": "coasted",
+      "c": "wheeled",
+      "d": "taxied",
+      "e": null
+    },
+    "answer": "b",
+    "explanation": "Coasted means to move forward in a vehicle without using the engine.",
+    "exam_type": "utme",
+    "exam_year": "2019",
+    "image_url": null,
+    "is_ai_generated": false
+  },
+  {
+    "id": "161",
+    "external_id": "161",
+    "subject": "english",
+    "topic": "choose the option opposite in meaning to the word or phrase in italics.",
+    "question": "The teacher recounted two events that were <i>analogous</i>  with  each other",
+    "options": {
+      "a": "similar with",
+      "b": "Advantageous to",
+      "c": "distant from",
+      "d": "different from",
+      "e": null
+    },
+    "answer": "d",
+    "explanation": null,
+    "exam_type": "utme",
+    "exam_year": "2005",
+    "image_url": null,
+    "is_ai_generated": false
+  },
+  {
+    "id": "94",
+    "external_id": "94",
+    "subject": "english",
+    "topic": "choose the option that best completes the gap(s).",
+    "question": "The police claim that a number of stolen cars…………. recovered.",
+    "options": {
+      "a": "has being",
+      "b": "is being",
+      "c": "has been",
+      "d": "have been",
+      "e": null
+    },
+    "answer": "c",
+    "explanation": null,
+    "exam_type": "utme",
+    "exam_year": "2004",
+    "image_url": null,
+    "is_ai_generated": false
+  },
+  {
+    "id": "80",
+    "external_id": "80",
+    "subject": "english",
+    "topic": "choose the option that best completes the gap(s).",
+    "question": "……………his illness, Muhammad could not come to school.",
+    "options": {
+      "a": "with reference to",
+      "b": "referring to",
+      "c": "owing to",
+      "d": "due to .",
+      "e": null
+    },
+    "answer": "d",
+    "explanation": null,
+    "exam_type": "utme",
+    "exam_year": "2004",
+    "image_url": null,
+    "is_ai_generated": false
+  },
+  {
+    "id": "328",
+    "external_id": "328",
+    "subject": "english",
+    "topic": "choose the option opposite in meaning to the word or phrase in italics.",
+    "question": "The students were <i>undeterred</i> by the noisy lecture environment. ",
+    "options": {
+      "a": "frustrated  ",
+      "b": "encouraged",
+      "c": "discouraged",
+      "d": "challenged.",
+      "e": null
+    },
+    "answer": "a",
+    "explanation": null,
+    "exam_type": "utme",
+    "exam_year": "2007",
+    "image_url": null,
+    "is_ai_generated": false
+  },
+  {
+    "id": "885",
+    "external_id": "885",
+    "subject": "english",
+    "topic": "<b>In each of questions 86 to 100, choose the option opposite in meaning to the underlined word(s).</b>",
+    "question": "Everyone admired the manager's <u>adroit</u> handling of the crises in the company?\n",
+    "options": {
+      "a": "clever",
+      "b": "tactless",
+      "c": "skilful",
+      "d": "clumsy",
+      "e": null
+    },
+    "answer": "b",
+    "explanation": null,
+    "exam_type": "utme",
+    "exam_year": "2002",
+    "image_url": null,
+    "is_ai_generated": false
+  },
+  {
+    "id": "687",
+    "external_id": "687",
+    "subject": "english",
+    "topic": "<b>In each of questions 86 to 100 choose from the options nearest in meaning to the word underlined.</b>\n",
+    "question": "Any chief executive of an organization would find <u>radical</u> changes blocked at every turn?",
+    "options": {
+      "a": " developments",
+      "b": "ideals",
+      "c": "suggestions",
+      "d": "innovations",
+      "e": null
+    },
+    "answer": "d",
+    "explanation": null,
+    "exam_type": "utme",
+    "exam_year": "2001",
+    "image_url": null,
+    "is_ai_generated": false
+  },
+  {
+    "id": "1265",
+    "external_id": "1265",
+    "subject": "english",
+    "topic": "This question is based on Khadijat Abubakar Jalli's novel, \"The Life Changer\"",
+    "question": " What question did Bint ask her teacher?",
+    "options": {
+      "a": "How to say good morning",
+      "b": "How to say what is your name",
+      "c": " How to say you're welcome",
+      "d": "How to say that's very good",
+      "e": null
+    },
+    "answer": "d",
+    "explanation": null,
+    "exam_type": "utme",
+    "exam_year": "2022",
+    "image_url": null,
+    "is_ai_generated": false
+  },
+  {
+    "id": "1654",
+    "external_id": "1654",
+    "subject": "english",
+    "topic": "For these questions, choose the option that best complete the gap(s) \n",
+    "question": "He decided to wait for the bus because he had..........",
+    "options": {
+      "a": "many luggages",
+      "b": "plenty luggages",
+      "c": "a lot of luggage",
+      "d": " too many luggage",
+      "e": null
+    },
+    "answer": "c",
+    "explanation": "He decided to wait for the bus because he had a lot of luggage\n\nThe noun luggage can be countable or uncountable. In more general, commonly used, contexts, the plural form will also beluggage. ",
+    "exam_type": "utme",
+    "exam_year": "2016",
+    "image_url": null,
+    "is_ai_generated": false
+  },
+  {
+    "id": "985",
+    "external_id": "985",
+    "subject": "english",
+    "topic": "<b>In each of the questions 90 to 92 choose the option that rhymes with the given word.</b>",
+    "question": "Fuel? ",
+    "options": {
+      "a": " cruel",
+      "b": "fool",
+      "c": "rule",
+      "d": "field",
+      "e": null
+    },
+    "answer": "a",
+    "explanation": "fuel; /fjuː(ə)l/\n\ncruel; /krʊəl",
+    "exam_type": "utme",
+    "exam_year": "2011",
+    "image_url": null,
+    "is_ai_generated": false
+  },
+  {
+    "id": "393",
+    "external_id": "393",
+    "subject": "english",
+    "topic": "choose the option opposite in meaning to the word or phrase in italics.",
+    "question": "Always strive to get what is <i>legitimate,</i>",
+    "options": {
+      "a": "illicit    ",
+      "b": "legal",
+      "c": " good    ",
+      "d": "impure",
+      "e": null
+    },
+    "answer": "a",
+    "explanation": null,
+    "exam_type": "utme",
+    "exam_year": "2008",
+    "image_url": null,
+    "is_ai_generated": false
+  },
+  {
+    "id": "494",
+    "external_id": "494",
+    "subject": "english",
+    "topic": "choose the option that best completes the gap(s).",
+    "question": "The officer acted in….. the instructions. ",
+    "options": {
+      "a": "accordance ",
+      "b": "accordance to",
+      "c": "accordance of",
+      "d": "accordance with ",
+      "e": null
+    },
+    "answer": "d",
+    "explanation": null,
+    "exam_type": "utme",
+    "exam_year": "2009",
+    "image_url": null,
+    "is_ai_generated": false
+  },
+  {
+    "id": "1161",
+    "external_id": "1161",
+    "subject": "english",
+    "topic": "<b>In each of question 66 to 85, choose the option that best completes the gap (s)</b>\n",
+    "question": "Tinu likes apples......she does not like oranges",
+    "options": {
+      "a": "so",
+      "b": "but",
+      "c": "or",
+      "d": "do",
+      "e": null
+    },
+    "answer": "b",
+    "explanation": "But; is used to introduce a phrase or clause contrasting with what has already been mentioned.\n\nTinu likes apples but she does not like oranges.\n\nThe second phrase contradicts what was already said.",
+    "exam_type": "utme",
+    "exam_year": "2013",
+    "image_url": null,
+    "is_ai_generated": false
+  },
+  {
+    "id": "1362",
+    "external_id": "1362",
+    "subject": "english",
+    "topic": "From the list of words or group of words lettered A to D, choose the one that is most nearest opposite in meaning to the underlined word or group of words and that will, at the same time correctly fill in the gap in the sentence. ",
+    "question": "The exotic bird looked <u>resplendent</u>; its bright plumage contrasted with the rather _________ undergrowth",
+    "options": {
+      "a": "immobile",
+      "b": "foreign",
+      "c": "bright",
+      "d": "drab",
+      "e": null
+    },
+    "answer": "d",
+    "explanation": "Resplendent simply means shiny and colourful as opposed to Drab which means 'dull'",
+    "exam_type": "utme",
+    "exam_year": "2020",
+    "image_url": null,
+    "is_ai_generated": false
+  },
+  {
+    "id": "794",
+    "external_id": "794",
+    "subject": "english",
+    "topic": "In each of questions 85 to 100, choose from the option <b>opposite</b> in meaning to the word underlined.\n",
+    "question": "The permanent Secretary left his job under a <u>cloud</u>?",
+    "options": {
+      "a": "on a cloudy day",
+      "b": "with a clear record",
+      "c": "in disgrace",
+      "d": "on a sunny day",
+      "e": null
+    },
+    "answer": "b",
+    "explanation": null,
+    "exam_type": "utme",
+    "exam_year": "2000",
+    "image_url": null,
+    "is_ai_generated": false
+  },
+  {
+    "id": "1707",
+    "external_id": "1707",
+    "subject": "english",
+    "topic": null,
+    "question": "Choose the option that best fills the gap.\n\nIt has been confirmed that the election ------------- held in July next year",
+    "options": {
+      "a": " will be",
+      "b": " is being",
+      "c": "has been",
+      "d": "have being",
+      "e": null
+    },
+    "answer": "a",
+    "explanation": "The correct answer is ‘A’ because it is in the future tense and it has not happened and might not happen at the future tense and it has not happened and might not happen at the time speculated",
+    "exam_type": "utme",
+    "exam_year": "2015",
+    "image_url": null,
+    "is_ai_generated": false
+  },
+  {
+    "id": "1433",
+    "external_id": "1433",
+    "subject": "english",
+    "topic": "In each of the questions, the word in capital letters has the emphatic stress, Choose the option to which the given sentence relates.",
+    "question": "In each of the questions, the word in capital letters has the emphatic stress, Choose the option to which the given sentence relates.\n\nThe cat DEVOURED the rat",
+    "options": {
+      "a": "did the rat devour the cat",
+      "b": " what devoured the rat",
+      "c": " did the cat pet the rat",
+      "d": "is this rat that the cat devoured",
+      "e": null
+    },
+    "answer": "c",
+    "explanation": "Did the cat pet the rat is the correct answer. The same reasoning in the authoritative answer to Question 59 is also relevant here to support Option as the most suitable answer.",
+    "exam_type": "utme",
+    "exam_year": "2019",
+    "image_url": null,
+    "is_ai_generated": false
+  },
+  {
+    "id": "151",
+    "external_id": "151",
+    "subject": "english",
+    "topic": "select the option that best explains the information conveyed in the sentence.",
+    "question": "If the rain hadn’t fallen, we wouldn’t have missed the match.",
+    "options": {
+      "a": "The rain is falling, so we will miss the match.",
+      "b": "The rain fell, so we didn’t watch the match",
+      "c": "The rain fell, so we watched the match",
+      "d": "The rain didn’t fall, so we didn’t watch the match.",
+      "e": null
+    },
+    "answer": "b",
+    "explanation": null,
+    "exam_type": "utme",
+    "exam_year": "2005",
+    "image_url": null,
+    "is_ai_generated": false
+  },
+  {
+    "id": "658",
+    "external_id": "658",
+    "subject": "english",
+    "topic": "<b>In each of questions 59 to 62 choose from the option the word that has the same consonant sound as the represented by the letter(s) underlined.</b>",
+    "question": "<u>S</u>ure?",
+    "options": {
+      "a": "cheer",
+      "b": "cheap",
+      "c": "charlatan",
+      "d": "church",
+      "e": null
+    },
+    "answer": "c",
+    "explanation": null,
+    "exam_type": "utme",
+    "exam_year": "2001",
+    "image_url": null,
+    "is_ai_generated": false
+  },
+  {
+    "id": "1509",
+    "external_id": "1509",
+    "subject": "english",
+    "topic": "Choose the option nearest in meaning to the underlined.",
+    "question": "The Governor told the chief that he was only on a <u>routine</u> tour",
+    "options": {
+      "a": "normal and regular visit",
+      "b": "unplanned encounter",
+      "c": " surprise and impromptu check",
+      "d": "working, visit and homage",
+      "e": null
+    },
+    "answer": "a",
+    "explanation": "Routine means performed as part of a regular procedure",
+    "exam_type": "utme",
+    "exam_year": "2018",
+    "image_url": null,
+    "is_ai_generated": false
+  },
+  {
+    "id": "480",
+    "external_id": "480",
+    "subject": "english",
+    "topic": "choose the option nearest in meaning to the word or phrase in italics.",
+    "question": "Hers was a <i>specious</i> argument about the government of the day ",
+    "options": {
+      "a": "misleading ",
+      "b": "precious ",
+      "c": "spacious ",
+      "d": "true.",
+      "e": null
+    },
+    "answer": "a",
+    "explanation": null,
+    "exam_type": "utme",
+    "exam_year": "2009",
+    "image_url": null,
+    "is_ai_generated": false
+  },
+  {
+    "id": "1824",
+    "external_id": "1824",
+    "subject": "english",
+    "topic": "The word in capital letter has the emphatic stress. choose the option in which the given sentence relates.",
+    "question": "Musa is STAYING in Enugu.",
+    "options": {
+      "a": "Was Musa staying in Enugu?",
+      "b": "Is Musa going through Enugu?",
+      "c": "Is Musa staying on the outskirt of Enugu?",
+      "d": "Is Audu staying in Enugu?",
+      "e": null
+    },
+    "answer": "b",
+    "explanation": null,
+    "exam_type": "utme",
+    "exam_year": "2014",
+    "image_url": null,
+    "is_ai_generated": false
+  },
+  {
+    "id": "1356",
+    "external_id": "1356",
+    "subject": "english",
+    "topic": "From the words lettered A to D, choose the word or group of words that is nearest in meaning to the underlined word as it is used in the sentence\n\n ",
+    "question": "Coming late to work, according to Leonard, is <u>inimical</u> to the progress of the company",
+    "options": {
+      "a": "harmful",
+      "b": "predominat",
+      "c": "unavoidable",
+      "d": "inevitable",
+      "e": null
+    },
+    "answer": "a",
+    "explanation": "Inimical implies harmful",
+    "exam_type": "utme",
+    "exam_year": "2020",
+    "image_url": null,
+    "is_ai_generated": false
+  },
+  {
+    "id": "1354",
+    "external_id": "1354",
+    "subject": "english",
+    "topic": "From the words lettered A to D, choose the word or group of words that is nearest in meaning to the underlined word as it is used in the sentence\n\n ",
+    "question": "Our chief is very intelligent but he could be <u>parochial</u> in his judgements",
+    "options": {
+      "a": "deep",
+      "b": "broad",
+      "c": "narrow-minded",
+      "d": " kind-hearted",
+      "e": null
+    },
+    "answer": "c",
+    "explanation": "Parochial means having a limited or narrow scope. Option C best fits this definition.",
+    "exam_type": "utme",
+    "exam_year": "2020",
+    "image_url": null,
+    "is_ai_generated": false
+  },
+  {
+    "id": "316",
+    "external_id": "316",
+    "subject": "english",
+    "topic": "choose the option that has the same vowel sound as the letter(s) underlined.",
+    "question": "p<u>os</u>table",
+    "options": {
+      "a": "paw",
+      "b": "pot",
+      "c": "port",
+      "d": "post",
+      "e": null
+    },
+    "answer": "b",
+    "explanation": null,
+    "exam_type": "utme",
+    "exam_year": "2007",
+    "image_url": null,
+    "is_ai_generated": false
+  },
+  {
+    "id": "1752",
+    "external_id": "1752",
+    "subject": "english",
+    "topic": "This question is from the novel 'The Last Days at Forcados High school'.",
+    "question": "‘Jims, we have a prefect meeting with Mr Mallum now’ who made this statement?",
+    "options": {
+      "a": "Seyi Lawal",
+      "b": "Mr Mallum",
+      "c": "Mrs. Solade",
+      "d": "Femi",
+      "e": null
+    },
+    "answer": "a",
+    "explanation": "This statement was made by the headboy, Seyi Lawal when he was asked to call Jimi for a meeting by the principal, Mr Mallum.\n\nSee page 9",
+    "exam_type": "utme",
+    "exam_year": "2015",
+    "image_url": null,
+    "is_ai_generated": false
+  },
+  {
+    "id": "1460",
+    "external_id": "1460",
+    "subject": "english",
+    "topic": null,
+    "question": "Both questions are alternatives; you answer ........ one ........ the other",
+    "options": {
+      "a": "either/or",
+      "b": "neither/nor",
+      "c": "either/nor",
+      "d": "neither/or",
+      "e": null
+    },
+    "answer": "a",
+    "explanation": "Option A is the best answer. Note that 'either' goes with 'or' and the usage of both creates an impression as to alternatives.",
+    "exam_type": "utme",
+    "exam_year": "2019",
+    "image_url": null,
+    "is_ai_generated": false
+  },
+  {
+    "id": "1556",
+    "external_id": "1556",
+    "subject": "english",
+    "topic": null,
+    "question": "choose the option opposite in meaning to the word(s) in italics.\n\n  It is <i>customary</i> to find young men and women in sports.",
+    "options": {
+      "a": "Common",
+      "b": "Unusual",
+      "c": "Unideal",
+      "d": "Unnecessary",
+      "e": null
+    },
+    "answer": "b",
+    "explanation": "Customary means habitual or conventional.\n\nUnusual means unlike what is expected.It is the antonym of ‘customary’",
+    "exam_type": "utme",
+    "exam_year": "2018",
+    "image_url": null,
+    "is_ai_generated": false
+  },
+  {
+    "id": "501",
+    "external_id": "501",
+    "subject": "english",
+    "topic": "choose the option that best completes the gap(s).",
+    "question": "You are just-putting the hat on. ……?",
+    "options": {
+      "a": "don't you  ",
+      "b": "isn't it ",
+      "c": " aren't you  ",
+      "d": "not so",
+      "e": null
+    },
+    "answer": "c",
+    "explanation": null,
+    "exam_type": "utme",
+    "exam_year": "2009",
+    "image_url": null,
+    "is_ai_generated": false
+  },
+  {
+    "id": "835",
+    "external_id": "835",
+    "subject": "english",
+    "topic": "<b>LEXIS, STRUCTUREAND ORAL FORMS\n(Questions 26 to 75 carry 1 mark each)\nIn each of questions 26 to 50, fill each gap with the most appropriate option from the lists provided.</b>\n",
+    "question": "These ........ must have ........ the World Bank officials?",
+    "options": {
+      "a": "analyses / attract",
+      "b": "analyses / attracted",
+      "c": "analysis / attract",
+      "d": " analysis / attracted",
+      "e": null
+    },
+    "answer": "b",
+    "explanation": null,
+    "exam_type": "utme",
+    "exam_year": "2002",
+    "image_url": null,
+    "is_ai_generated": false
+  },
+  {
+    "id": "1055",
+    "external_id": "1055",
+    "subject": "english",
+    "topic": "In each of the questions 51 to 65 choose the option <b>nearest in meaning</b> to the underlined word or phrase.",
+    "question": "The student's union leader delivered his speech <u>extempore</u>",
+    "options": {
+      "a": " out-of -hand",
+      "b": " off the cuff",
+      "c": "accurately",
+      "d": "courageously",
+      "e": null
+    },
+    "answer": "b",
+    "explanation": "Extempore; spoken or done without preparation.\n\noff the cuff; without preparation.",
+    "exam_type": "utme",
+    "exam_year": "2012",
+    "image_url": null,
+    "is_ai_generated": false
+  },
+  {
+    "id": "668",
+    "external_id": "668",
+    "subject": "english",
+    "topic": "<b>In each of questions 63 to 77,choose the option opposite in meaning to the underlined word(s).</b>\n",
+    "question": "It isinconceivable that the rat devoured the cat?",
+    "options": {
+      "a": "contestable",
+      "b": "incomprehensible",
+      "c": "credible",
+      "d": "unimaginable",
+      "e": null
+    },
+    "answer": "c",
+    "explanation": null,
+    "exam_type": "utme",
+    "exam_year": "2001",
+    "image_url": null,
+    "is_ai_generated": false
+  },
+  {
+    "id": "110",
+    "external_id": "110",
+    "subject": "english",
+    "topic": "choose the option that has a different stress pattern from the others.",
+    "question": "",
+    "options": {
+      "a": "ratify",
+      "b": " famous",
+      "c": " result",
+      "d": " taxi",
+      "e": null
+    },
+    "answer": "c",
+    "explanation": null,
+    "exam_type": "utme",
+    "exam_year": "2004",
+    "image_url": null,
+    "is_ai_generated": false
+  },
+  {
+    "id": "923",
+    "external_id": "923",
+    "subject": "english",
+    "topic": "<b>LEXIS, STRUCTURE AND ORAL FORMS</b>\nIn each of the questions 26 to 33, select the option \nthat best explains the information conveyed in \nthe sentence.",
+    "question": "The hunter has a bird's eye view of the animals.",
+    "options": {
+      "a": "He views animals from a high position",
+      "b": " He views the bird's eye",
+      "c": " He views the bird on the tree with one eye",
+      "d": "He watches animals and bird's closely",
+      "e": null
+    },
+    "answer": "a",
+    "explanation": "A view from a very high place that allows you to see a large area",
+    "exam_type": "utme",
+    "exam_year": "2011",
+    "image_url": null,
+    "is_ai_generated": false
+  },
+  {
+    "id": "165",
+    "external_id": "165",
+    "subject": "english",
+    "topic": "choose the option opposite in meaning to the word or phrase in italics.",
+    "question": "The officer was given an <i>invidious</i> task",
+    "options": {
+      "a": "vivid",
+      "b": "cruel",
+      "c": "pleasant",
+      "d": "sinister",
+      "e": null
+    },
+    "answer": "c",
+    "explanation": null,
+    "exam_type": "utme",
+    "exam_year": "2005",
+    "image_url": null,
+    "is_ai_generated": false
+  },
+  {
+    "id": "1496",
+    "external_id": "1496",
+    "subject": "english",
+    "topic": null,
+    "question": "Choose the option that best completes the gap. The chairman refused to shake __________ with the secretary",
+    "options": {
+      "a": "hand",
+      "b": "his hand",
+      "c": "hands",
+      "d": " his hands",
+      "e": null
+    },
+    "answer": "c",
+    "explanation": "When you shake hands with someone you take their right hand in your own for a few moments, often moving it up and down slightly",
+    "exam_type": "utme",
+    "exam_year": "2018",
+    "image_url": null,
+    "is_ai_generated": false
+  },
+  {
+    "id": "1607",
+    "external_id": "1607",
+    "subject": "english",
+    "topic": "This question is based on S. L. Manyika's INDEPENDENCE",
+    "question": "Tayo opted to remain in Nigeria because he had a duty to serve his",
+    "options": {
+      "a": "students",
+      "b": "wife",
+      "c": "friends",
+      "d": "brothers",
+      "e": null
+    },
+    "answer": "a",
+    "explanation": "In chapter 24, Tayo mentioned his student as one major reason why he wasn't open to the demand from his wife, Miriam, to leave the country",
+    "exam_type": "utme",
+    "exam_year": "2017",
+    "image_url": null,
+    "is_ai_generated": false
+  },
+  {
+    "id": "927",
+    "external_id": "927",
+    "subject": "english",
+    "topic": "<b>LEXIS, STRUCTURE AND ORAL FORMS</b>\nIn each of the questions 26 to 33, select the option \nthat best explains the information conveyed in \nthe sentence.",
+    "question": "The plan to upgrade the dispensary to a general hospital did not materialized?",
+    "options": {
+      "a": "The plan did not meet the required specifications",
+      "b": "The arrangement did not work out as wished",
+      "c": "It was difficult to obtain the materials",
+      "d": "The materials purchased were not the right ones",
+      "e": null
+    },
+    "answer": "b",
+    "explanation": "If a possible or expected event does not materialize, it does not happen.",
+    "exam_type": "utme",
+    "exam_year": "2011",
+    "image_url": null,
+    "is_ai_generated": false
+  },
+  {
+    "id": "59",
+    "external_id": "59",
+    "subject": "english",
+    "topic": "choose the option nearest in meaning to the word(s) or phrase in italics.",
+    "question": "The boys knew that a storm was <i>imminent</i>",
+    "options": {
+      "a": "Impending ",
+      "b": "encroaching ",
+      "c": "possible ",
+      "d": "threatening ",
+      "e": null
+    },
+    "answer": "a",
+    "explanation": null,
+    "exam_type": "utme",
+    "exam_year": "2003",
+    "image_url": null,
+    "is_ai_generated": false
+  },
+  {
+    "id": "1070",
+    "external_id": "1070",
+    "subject": "english",
+    "topic": "<b>In each of the question 66 to 85 choose the option that best completes the gap(s)</b>",
+    "question": "Everyone makes mistakes occasionally, nobody is.........",
+    "options": {
+      "a": "incorrigible",
+      "b": "imperfect",
+      "c": "infallible",
+      "d": "indestructible",
+      "e": null
+    },
+    "answer": "c",
+    "explanation": "Infallible; incapable of making mistakes or being wrong.\n\nEveryone makes mistakes occasionally, nobody is infallible",
+    "exam_type": "utme",
+    "exam_year": "2012",
+    "image_url": null,
+    "is_ai_generated": false
+  },
+  {
+    "id": "146",
+    "external_id": "146",
+    "subject": "english",
+    "topic": "choose the option that has the same vowel sound as the one represented by the letter(s) underlined.",
+    "question": "b<u>ea</u>r",
+    "options": {
+      "a": "beer",
+      "b": "steer",
+      "c": "rare",
+      "d": "fear",
+      "e": null
+    },
+    "answer": "d",
+    "explanation": null,
+    "exam_type": "utme",
+    "exam_year": "2004",
+    "image_url": null,
+    "is_ai_generated": false
+  },
+  {
+    "id": "755",
+    "external_id": "755",
+    "subject": "english",
+    "topic": "<b>In each of questions 41 to 62, fill the gap with the most appropriate option from the list provided.</b>",
+    "question": "He arrived ....... to see his family leave for the countryside? ",
+    "options": {
+      "a": "in time",
+      "b": "timely",
+      "c": "late",
+      "d": "with",
+      "e": null
+    },
+    "answer": "a",
+    "explanation": null,
+    "exam_type": "utme",
+    "exam_year": "2000",
+    "image_url": null,
+    "is_ai_generated": false
+  },
+  {
+    "id": "745",
+    "external_id": "745",
+    "subject": "english",
+    "topic": "<b>In each of questions 41 to 62, fill the gap with the most appropriate option from the list provided.</b>",
+    "question": "The Governor rejected the bill and withheld his…….",
+    "options": {
+      "a": "accent",
+      "b": "assent",
+      "c": "access",
+      "d": "ascent",
+      "e": null
+    },
+    "answer": "b",
+    "explanation": null,
+    "exam_type": "utme",
+    "exam_year": "2000",
+    "image_url": null,
+    "is_ai_generated": false
+  },
+  {
+    "id": "659",
+    "external_id": "659",
+    "subject": "english",
+    "topic": "<b>In each of questions 63 to 77,choose the option opposite in meaning to the underlined word(s).</b>\n",
+    "question": "The lecture seemed <u>interminable</u>?",
+    "options": {
+      "a": "unending",
+      "b": "boring",
+      "c": "interesting",
+      "d": "brief",
+      "e": null
+    },
+    "answer": "d",
+    "explanation": null,
+    "exam_type": "utme",
+    "exam_year": "2001",
+    "image_url": null,
+    "is_ai_generated": false
+  },
+  {
+    "id": "734",
+    "external_id": "734",
+    "subject": "english",
+    "topic": "<b>In each of the questions 37 to 38 identify the word that has the stress on the second syllable.</b>",
+    "question": "",
+    "options": {
+      "a": "tomato",
+      "b": "photograph",
+      "c": "yesterday",
+      "d": "tranquil",
+      "e": null
+    },
+    "answer": "b",
+    "explanation": null,
+    "exam_type": "utme",
+    "exam_year": "2000",
+    "image_url": null,
+    "is_ai_generated": false
+  },
+  {
+    "id": "158",
+    "external_id": "158",
+    "subject": "english",
+    "topic": "select the option that best explains the information conveyed in the sentence.",
+    "question": "The Governor parried all the questions put to him by the journalist.",
+    "options": {
+      "a": "The Governor answered all the questions brilliantly",
+      "b": "The Governor evaded all the questions",
+      "c": "The Governor failed all the questions",
+      "d": "The Governor mastered all the questions",
+      "e": null
+    },
+    "answer": "b",
+    "explanation": null,
+    "exam_type": "utme",
+    "exam_year": "2005",
+    "image_url": null,
+    "is_ai_generated": false
+  },
+  {
+    "id": "1193",
+    "external_id": "1193",
+    "subject": "english",
+    "topic": "<b>In each of question 98 to 100, the word in \ncapital letters has the emphatic stress.\nChoose the option to which the given \nsentence relates.</b>",
+    "question": "The bed is IN the room",
+    "options": {
+      "a": " Is the bed in the parlour?",
+      "b": "Was the bed in the room?",
+      "c": "What is in the room?",
+      "d": " Where is the bed?\n",
+      "e": null
+    },
+    "answer": "d",
+    "explanation": null,
+    "exam_type": "utme",
+    "exam_year": "2013",
+    "image_url": null,
+    "is_ai_generated": false
+  },
+  {
+    "id": "1529",
+    "external_id": "1529",
+    "subject": "english",
+    "topic": "Choose the word(s) or phrase(s) which best fill(s) the gap. ",
+    "question": "By the time the plane reaches Harare, it __________in the air for twelve hours",
+    "options": {
+      "a": "has been",
+      "b": "would be",
+      "c": " would have been",
+      "d": "should be",
+      "e": null
+    },
+    "answer": "c",
+    "explanation": "By the time' is an adverb of time that can be used in the present, past and future tense. The question is, however, in the present tense which will be needing a present perfect tense to complete the sentence.",
+    "exam_type": "utme",
+    "exam_year": "2018",
+    "image_url": null,
+    "is_ai_generated": false
+  },
+  {
+    "id": "1500",
+    "external_id": "1500",
+    "subject": "english",
+    "topic": null,
+    "question": "Choose the option that best completes the gap. The young man looked carefully at the long document, but he couldn't make __________ what it meant",
+    "options": {
+      "a": "up",
+      "b": "out",
+      "c": "off",
+      "d": "through",
+      "e": null
+    },
+    "answer": "b",
+    "explanation": "To make out;  means to understand something. Simply put, he couldn't understand what it meant.",
+    "exam_type": "utme",
+    "exam_year": "2018",
+    "image_url": null,
+    "is_ai_generated": false
+  },
+  {
+    "id": "337",
+    "external_id": "337",
+    "subject": "english",
+    "topic": "choose the option that has the stress on the first syllable.",
+    "question": "",
+    "options": {
+      "a": " intact  ",
+      "b": " integral ",
+      "c": "negotiate ",
+      "d": "about.",
+      "e": null
+    },
+    "answer": "b",
+    "explanation": null,
+    "exam_type": "utme",
+    "exam_year": "2007",
+    "image_url": null,
+    "is_ai_generated": false
+  },
+  {
+    "id": "1226",
+    "external_id": "1226",
+    "subject": "english",
+    "topic": "choose the option nearly opposite in meaning to the word(s) underlined",
+    "question": "The annual festival attracts <u>dignitaries</u> from both home and abroad.",
+    "options": {
+      "a": "spectators",
+      "b": "celebrities",
+      "c": "chieftains",
+      "d": "nonentities",
+      "e": null
+    },
+    "answer": "d",
+    "explanation": "Dignitary: a person considered to be important because of high rank or office.\n\nnonentity: a person or thing with no special or interesting qualities; an unimportant person or thing.",
+    "exam_type": "utme",
+    "exam_year": "2021",
+    "image_url": null,
+    "is_ai_generated": false
+  },
+  {
+    "id": "403",
+    "external_id": "403",
+    "subject": "english",
+    "topic": "choose the option nearest in meaning to the word or phrase In Italics",
+    "question": "Participation in the programme is <i>optional</i>",
+    "options": {
+      "a": "unnecessary   ",
+      "b": " recommended",
+      "c": "hard to justify   ",
+      "d": "a matter of choice",
+      "e": null
+    },
+    "answer": "d",
+    "explanation": null,
+    "exam_type": "utme",
+    "exam_year": "2008",
+    "image_url": null,
+    "is_ai_generated": false
   }
 ]
