@@ -49,10 +49,9 @@ export const AI_PROVIDERS = {
     color: 'from-blue-500 to-purple-600',
     description: 'Google\'s most capable AI model',
     models: [
-      { id: 'gemini-2.0-flash-lite', name: 'Gemini 2.0 Flash Lite', description: 'Free tier - fast responses', tier: 'standard', priority: 1 },
-      { id: 'gemini-2.0-flash', name: 'Gemini 2.0 Flash', description: 'Latest & fastest', tier: 'premium', priority: 2 },
-      { id: 'gemini-1.5-flash', name: 'Gemini 1.5 Flash', description: 'Reliable free tier', tier: 'standard', priority: 1 },
-      { id: 'gemini-1.5-pro', name: 'Gemini 1.5 Pro', description: 'Advanced reasoning', tier: 'pro', priority: 3 },
+      { id: 'gemini-2.5-flash', name: 'Gemini 2.5 Flash', description: 'Latest & fastest - free tier', tier: 'standard', priority: 1 },
+      { id: 'gemini-2.0-flash', name: 'Gemini 2.0 Flash', description: 'Fast responses', tier: 'standard', priority: 2 },
+      { id: 'gemini-1.5-flash', name: 'Gemini 1.5 Flash', description: 'Reliable free tier', tier: 'standard', priority: 3 },
     ],
     get available() { return !!GEMINI_API_KEY }
   },
@@ -160,7 +159,7 @@ function selectBestProvider(analysis, hasImage = false) {
   
   if (hasImage || analysis.requiresVision) {
     if (GEMINI_API_KEY) {
-      return { provider: 'gemini', model: 'gemini-2.0-flash-lite' }
+      return { provider: 'gemini', model: 'gemini-2.5-flash' }
     }
     throw new Error('Image analysis requires Gemini API key. Please add your API key in Settings.')
   }
@@ -168,7 +167,7 @@ function selectBestProvider(analysis, hasImage = false) {
   if (GEMINI_API_KEY) {
     availableProviders.push({
       provider: 'gemini',
-      model: analysis.preferredTier === 'pro' ? 'gemini-1.5-pro' : 'gemini-2.0-flash-lite',
+      model: 'gemini-2.5-flash',
       priority: 1
     })
   }
@@ -629,7 +628,8 @@ async function callWithFallback(prompt, imageData = null) {
   const providers = []
   
   if (GEMINI_API_KEY) {
-    providers.push({ provider: 'gemini', model: 'gemini-2.0-flash-lite' })
+    providers.push({ provider: 'gemini', model: 'gemini-2.5-flash' })
+    providers.push({ provider: 'gemini', model: 'gemini-2.0-flash' })
     providers.push({ provider: 'gemini', model: 'gemini-1.5-flash' })
   }
   if (CEREBRAS_API_KEY) {
