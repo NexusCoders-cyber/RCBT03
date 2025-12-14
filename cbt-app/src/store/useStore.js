@@ -69,6 +69,8 @@ const useStore = create(
       isExamSubmitted: false,
       showCalculator: false,
       
+      savedSessions: [],
+      
       studyMode: {
         isActive: false,
         selectedSubjects: [],
@@ -95,6 +97,29 @@ const useStore = create(
       setCalculatorEnabled: (calculatorEnabled) => set({ calculatorEnabled }),
       toggleCalculator: () => set((state) => ({ showCalculator: !state.showCalculator })),
       setShowCalculator: (show) => set({ showCalculator: show }),
+      
+      saveSession: (sessionData) => {
+        set((state) => ({
+          savedSessions: [
+            {
+              ...sessionData,
+              id: `session_${Date.now()}`,
+              savedAt: new Date().toISOString(),
+            },
+            ...state.savedSessions.slice(0, 49),
+          ],
+        }))
+      },
+      
+      deleteSavedSession: (id) => {
+        set((state) => ({
+          savedSessions: state.savedSessions.filter((s) => s.id !== id),
+        }))
+      },
+      
+      clearAllSavedSessions: () => {
+        set({ savedSessions: [] })
+      },
       
       setUserProfile: (profile) => {
         const updatedProfile = {
@@ -469,6 +494,7 @@ const useStore = create(
           examHistory: [],
           studyHistory: [],
           bookmarkedQuestions: [],
+          savedSessions: [],
           notifications: [],
           currentExam: null,
           examMode: null,
@@ -542,6 +568,7 @@ const useStore = create(
         examHistory: state.examHistory,
         studyHistory: state.studyHistory,
         bookmarkedQuestions: state.bookmarkedQuestions,
+        savedSessions: state.savedSessions,
         notifications: state.notifications,
         userProfile: state.userProfile,
         isLoggedIn: state.isLoggedIn,

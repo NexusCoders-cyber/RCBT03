@@ -1,6 +1,6 @@
-import { useState } from 'react'
+import { useState, useRef, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { X, Delete } from 'lucide-react'
+import { X, Move } from 'lucide-react'
 import useStore from '../store/useStore'
 
 export default function Calculator() {
@@ -9,6 +9,69 @@ export default function Calculator() {
   const [previousValue, setPreviousValue] = useState(null)
   const [operation, setOperation] = useState(null)
   const [waitingForNewValue, setWaitingForNewValue] = useState(false)
+  const [position, setPosition] = useState({ x: 0, y: 0 })
+  const [isDragging, setIsDragging] = useState(false)
+  const dragRef = useRef(null)
+  const startPosRef = useRef({ x: 0, y: 0 })
+  const startOffsetRef = useRef({ x: 0, y: 0 })
+
+  useEffect(() => {
+    if (showCalculator) {
+      const savedPos = localStorage.getItem('calculatorPosition')
+      if (savedPos) {
+        try {
+          setPosition(JSON.parse(savedPos))
+        } catch {
+          setPosition({ x: 0, y: 0 })
+        }
+      }
+    }
+  }, [showCalculator])
+
+  const handleDragStart = (e) => {
+    if (e.target.closest('button') && !e.target.closest('[data-drag-handle]')) return
+    setIsDragging(true)
+    const clientX = e.type === 'touchstart' ? e.touches[0].clientX : e.clientX
+    const clientY = e.type === 'touchstart' ? e.touches[0].clientY : e.clientY
+    startPosRef.current = { x: clientX, y: clientY }
+    startOffsetRef.current = { x: position.x, y: position.y }
+  }
+
+  const handleDragMove = (e) => {
+    if (!isDragging) return
+    e.preventDefault()
+    const clientX = e.type === 'touchmove' ? e.touches[0].clientX : e.clientX
+    const clientY = e.type === 'touchmove' ? e.touches[0].clientY : e.clientY
+    const deltaX = clientX - startPosRef.current.x
+    const deltaY = clientY - startPosRef.current.y
+    const newPos = {
+      x: startOffsetRef.current.x + deltaX,
+      y: startOffsetRef.current.y + deltaY
+    }
+    setPosition(newPos)
+  }
+
+  const handleDragEnd = () => {
+    if (isDragging) {
+      setIsDragging(false)
+      localStorage.setItem('calculatorPosition', JSON.stringify(position))
+    }
+  }
+
+  useEffect(() => {
+    if (isDragging) {
+      window.addEventListener('mousemove', handleDragMove)
+      window.addEventListener('mouseup', handleDragEnd)
+      window.addEventListener('touchmove', handleDragMove, { passive: false })
+      window.addEventListener('touchend', handleDragEnd)
+    }
+    return () => {
+      window.removeEventListener('mousemove', handleDragMove)
+      window.removeEventListener('mouseup', handleDragEnd)
+      window.removeEventListener('touchmove', handleDragMove)
+      window.removeEventListener('touchend', handleDragEnd)
+    }
+  }, [isDragging, position])
 
   const handleNumber = (num) => {
     if (waitingForNewValue) {
@@ -109,13 +172,26 @@ export default function Calculator() {
     <AnimatePresence>
       {showCalculator && (
         <motion.div
-          initial={{ opacity: 0, scale: 0.9, y: 20 }}
-          animate={{ opacity: 1, scale: 1, y: 0 }}
-          exit={{ opacity: 0, scale: 0.9, y: 20 }}
+          ref={dragRef}
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 1, scale: 1 }}
+          exit={{ opacity: 0, scale: 0.9 }}
+          style={{
+            transform: `translate(${position.x}px, ${position.y}px)`,
+            touchAction: 'none'
+          }}
           className="fixed bottom-20 right-4 z-50 w-72 bg-slate-900 rounded-2xl shadow-2xl overflow-hidden border border-slate-700"
         >
-          <div className="flex items-center justify-between px-4 py-3 bg-slate-800">
-            <span className="text-white font-semibold">Calculator</span>
+          <div 
+            data-drag-handle="true"
+            onMouseDown={handleDragStart}
+            onTouchStart={handleDragStart}
+            className="flex items-center justify-between px-4 py-3 bg-slate-800 cursor-move select-none"
+          >
+            <div className="flex items-center gap-2">
+              <Move className="w-4 h-4 text-slate-500" />
+              <span className="text-white font-semibold">Calculator</span>
+            </div>
             <button
               onClick={() => setShowCalculator(false)}
               className="p-1 rounded-lg hover:bg-slate-700 text-slate-400 hover:text-white transition-colors"

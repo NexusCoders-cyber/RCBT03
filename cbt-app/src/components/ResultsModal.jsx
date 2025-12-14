@@ -1,14 +1,16 @@
+import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
 import { 
   Trophy, CheckCircle, XCircle, MinusCircle, Home, Eye, RotateCcw, 
-  Sparkles, TrendingUp, Award
+  Sparkles, TrendingUp, Award, Download, Check
 } from 'lucide-react'
 import useStore from '../store/useStore'
 
 export default function ResultsModal() {
   const navigate = useNavigate()
-  const { showResultsModal, pendingResult, closeResultsModal, resetExam } = useStore()
+  const { showResultsModal, pendingResult, closeResultsModal, resetExam, saveSession } = useStore()
+  const [isSaved, setIsSaved] = useState(false)
 
   if (!showResultsModal || !pendingResult) return null
 
@@ -43,6 +45,13 @@ export default function ResultsModal() {
 
   const scoreMessage = getScoreMessage(overallScore)
 
+  const handleSaveSession = () => {
+    if (!isSaved) {
+      saveSession(pendingResult)
+      setIsSaved(true)
+    }
+  }
+
   const handleViewResults = () => {
     closeResultsModal()
     navigate('/results')
@@ -56,12 +65,14 @@ export default function ResultsModal() {
   const handleGoHome = () => {
     closeResultsModal()
     resetExam()
+    setIsSaved(false)
     navigate('/')
   }
 
   const handleRetry = () => {
     closeResultsModal()
     resetExam()
+    setIsSaved(false)
     if (mode === 'study') {
       navigate('/study-setup')
     } else if (mode === 'full') {
@@ -162,6 +173,28 @@ export default function ResultsModal() {
                 ))}
               </div>
             )}
+
+            <button
+              onClick={handleSaveSession}
+              disabled={isSaved}
+              className={`w-full py-3 px-4 font-semibold rounded-xl transition-all flex items-center justify-center gap-2 ${
+                isSaved 
+                  ? 'bg-teal-900/50 text-teal-400 border border-teal-700' 
+                  : 'bg-gradient-to-r from-teal-600 to-emerald-600 text-white hover:from-teal-500 hover:to-emerald-500 shadow-lg shadow-teal-600/30'
+              }`}
+            >
+              {isSaved ? (
+                <>
+                  <Check className="w-5 h-5" />
+                  Session Saved!
+                </>
+              ) : (
+                <>
+                  <Download className="w-5 h-5" />
+                  Save This Session
+                </>
+              )}
+            </button>
 
             <div className="grid grid-cols-2 gap-3">
               <button

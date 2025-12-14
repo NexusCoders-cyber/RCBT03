@@ -4,12 +4,13 @@ import { motion } from 'framer-motion'
 import { 
   Rocket, BookOpen, TrendingUp, 
   Trophy, GraduationCap, Bookmark, ChevronRight, Sparkles, Book,
-  User, Flame, Star, WifiOff, Wifi, Download, Brain, Bot
+  User, Flame, Star, WifiOff, Wifi, Download, Brain, Bot, Save
 } from 'lucide-react'
 import useStore from '../store/useStore'
 import Dictionary from '../components/Dictionary'
 import Flashcards from '../components/Flashcards'
 import AIAssistant from '../components/AIAssistant'
+import SavedSessions from '../components/SavedSessions'
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -66,13 +67,15 @@ export default function Dashboard() {
     practiceHistory, 
     examHistory, 
     studyHistory,
-    bookmarkedQuestions, 
+    bookmarkedQuestions,
+    savedSessions,
     userProfile, 
     isOnline,
   } = useStore()
   const [showDictionary, setShowDictionary] = useState(false)
   const [showFlashcards, setShowFlashcards] = useState(false)
   const [showAI, setShowAI] = useState(false)
+  const [showSavedSessions, setShowSavedSessions] = useState(false)
   const [cachedCount, setCachedCount] = useState(0)
 
   useEffect(() => {
@@ -102,7 +105,6 @@ export default function Dashboard() {
     .slice(0, 3)
 
   const totalSessions = practiceHistory.length + examHistory.length + studyHistory.length
-  const totalQuestionsPracticed = recentExams.reduce((sum, e) => sum + e.totalQuestions, 0)
   const averageScore = recentExams.length > 0
     ? Math.round(recentExams.reduce((sum, e) => sum + e.overallScore, 0) / recentExams.length)
     : 0
@@ -223,7 +225,7 @@ export default function Dashboard() {
             />
           </motion.div>
 
-          <motion.div variants={itemVariants} className="grid grid-cols-4 gap-3">
+          <motion.div variants={itemVariants} className="grid grid-cols-5 gap-3">
             <Link to="/bookmarks" className="block group">
               <div className="bg-amber-50 dark:bg-amber-900/20 rounded-2xl p-4 h-full transition-all duration-300 group-hover:shadow-lg border border-amber-200 dark:border-amber-800/30">
                 <div className="flex flex-col items-center text-center gap-2">
@@ -239,6 +241,21 @@ export default function Dashboard() {
                 </div>
               </div>
             </Link>
+            <button onClick={() => setShowSavedSessions(true)} className="block group text-left">
+              <div className="bg-teal-50 dark:bg-teal-900/20 rounded-2xl p-4 h-full transition-all duration-300 group-hover:shadow-lg border border-teal-200 dark:border-teal-800/30">
+                <div className="flex flex-col items-center text-center gap-2">
+                  <div className="w-10 h-10 bg-teal-100 dark:bg-teal-800/50 rounded-xl flex items-center justify-center">
+                    <Save className="w-5 h-5 text-teal-600 dark:text-teal-400" />
+                  </div>
+                  <div>
+                    <h3 className="font-bold text-teal-700 dark:text-teal-400 text-xs">Saved</h3>
+                    <p className="text-slate-500 dark:text-slate-400 text-xs">
+                      {savedSessions?.length || 0}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </button>
             <button onClick={() => setShowDictionary(true)} className="block group text-left">
               <div className="bg-indigo-50 dark:bg-indigo-900/20 rounded-2xl p-4 h-full transition-all duration-300 group-hover:shadow-lg border border-indigo-200 dark:border-indigo-800/30">
                 <div className="flex flex-col items-center text-center gap-2">
@@ -376,6 +393,7 @@ export default function Dashboard() {
       <Dictionary isOpen={showDictionary} onClose={() => setShowDictionary(false)} />
       <Flashcards isOpen={showFlashcards} onClose={() => setShowFlashcards(false)} />
       <AIAssistant isOpen={showAI} onClose={() => setShowAI(false)} />
+      <SavedSessions isOpen={showSavedSessions} onClose={() => setShowSavedSessions(false)} />
     </div>
   )
 }
