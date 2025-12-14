@@ -1958,5 +1958,1165 @@
     "exam_year": "2008",
     "image_url": null,
     "is_ai_generated": false
+  },
+  {
+    "id": "1044",
+    "external_id": "1044",
+    "subject": "english",
+    "topic": "In each of the questions 36 to 50 choose the option <b>opposite</b> in meaning to the underlined word or phrase.\n",
+    "question": "The way the workshop was organized was rather <u>hit-and-miss</u>",
+    "options": {
+      "a": "systematic",
+      "b": "hasty",
+      "c": "slow",
+      "d": "funny",
+      "e": null
+    },
+    "answer": "a",
+    "explanation": "Hit-and-miss; done or occurring at random.\n\nSystematic; done or acting according to a fixed plan or system; methodical.",
+    "exam_type": "utme",
+    "exam_year": "2012",
+    "image_url": null,
+    "is_ai_generated": false
+  },
+  {
+    "id": "51",
+    "external_id": "51",
+    "subject": "english",
+    "topic": "opposite in meaning to the word(s) or phrase in italics ",
+    "question": "Only those who are <i>gullible</i> fall victim to his trickery ",
+    "options": {
+      "a": "astute ",
+      "b": "Courteous ",
+      "c": "saucy ",
+      "d": "devastated",
+      "e": null
+    },
+    "answer": "a",
+    "explanation": null,
+    "exam_type": "utme",
+    "exam_year": "2003",
+    "image_url": null,
+    "is_ai_generated": false
+  },
+  {
+    "id": "396",
+    "external_id": "396",
+    "subject": "english",
+    "topic": "choose the option opposite in meaning to the word or phrase in italics.",
+    "question": "My father is always very <i>frank</i> about his intentions",
+    "options": {
+      "a": "open   ",
+      "b": "objective",
+      "c": "secretive",
+      "d": "deceitful",
+      "e": null
+    },
+    "answer": "d",
+    "explanation": null,
+    "exam_type": "utme",
+    "exam_year": "2008",
+    "image_url": null,
+    "is_ai_generated": false
+  },
+  {
+    "id": "1699",
+    "external_id": "1699",
+    "subject": "english",
+    "topic": null,
+    "question": "From the options, choose the word(s) that best filll the gap.\n\nMrs Godwin ---------------- in this school since 2001\n",
+    "options": {
+      "a": "taught",
+      "b": "was teaching",
+      "c": "teaches",
+      "d": " has been teaching.",
+      "e": null
+    },
+    "answer": "d",
+    "explanation": "The answer is ‘D’ because it is its present perfect continuous tense",
+    "exam_type": "utme",
+    "exam_year": "2015",
+    "image_url": null,
+    "is_ai_generated": false
+  },
+  {
+    "id": "1379",
+    "external_id": "1379",
+    "subject": "english",
+    "topic": "Choose the one nearest in meaning to the word(s) in bracket",
+    "question": "There are still [virtuous] women in our society today",
+    "options": {
+      "a": "devilish",
+      "b": "clever",
+      "c": "intelligent",
+      "d": "upright",
+      "e": null
+    },
+    "answer": "d",
+    "explanation": "Upright is correct answer. Virtuous means having and demonstrating high level of moral standards or ethics, which is the same as being upright,",
+    "exam_type": "utme",
+    "exam_year": "2019",
+    "image_url": null,
+    "is_ai_generated": false
+  },
+  {
+    "id": "1267",
+    "external_id": "1267",
+    "subject": "english",
+    "topic": "This question is based on Khadijat Abubakar Jalli's novel, \"The Life Changer\"",
+    "question": "How much did Habib give Tomiwa personally?",
+    "options": {
+      "a": "Ten thousand naira",
+      "b": "Five Thousand Naira",
+      "c": "Thirty thousand naira",
+      "d": "Twenty Thousand naira",
+      "e": null
+    },
+    "answer": "d",
+    "explanation": null,
+    "exam_type": "utme",
+    "exam_year": "2022",
+    "image_url": null,
+    "is_ai_generated": false
+  },
+  {
+    "id": "824",
+    "external_id": "824",
+    "subject": "english",
+    "topic": "<b>LEXIS, STRUCTUREAND ORAL FORMS\n(Questions 26 to 75 carry 1 mark each)\nIn each of questions 26 to 50, fill each gap with the most appropriate option from the lists provided.</b>\n",
+    "question": "Musa has lived here for five years but he does not seem able to get over the enormously........ and elaborate rules that govern the society?",
+    "options": {
+      "a": "adsurd",
+      "b": "bizarre",
+      "c": "fantastic",
+      "d": "inticate",
+      "e": null
+    },
+    "answer": "d",
+    "explanation": null,
+    "exam_type": "utme",
+    "exam_year": "2002",
+    "image_url": null,
+    "is_ai_generated": false
+  },
+  {
+    "id": "1574",
+    "external_id": "1574",
+    "subject": "english",
+    "topic": null,
+    "question": "Choose the option nearest in meaning to the word or phrase in italics\n\nThis event was a <i>watershed</i> in the company",
+    "options": {
+      "a": "landmark",
+      "b": "blot",
+      "c": "publicity",
+      "d": "stain",
+      "e": null
+    },
+    "answer": "a",
+    "explanation": "The question has the word <i>watershed</i> italicized. The word means an event or perfect marking a turning point in a situation. It is synonymous to the word landmark which means an event or discovering marking an important stage or turning point in something",
+    "exam_type": "utme",
+    "exam_year": "2017",
+    "image_url": null,
+    "is_ai_generated": false
+  },
+  {
+    "id": "258",
+    "external_id": "258",
+    "subject": "english",
+    "topic": "the option that best explains the information conveyed in the sentence. ",
+    "question": "The dispute over land acquisition has now come a head",
+    "options": {
+      "a": "The problem has reached crisis proportions ",
+      "b": "The problem has now been referred to the headquarters ",
+      "c": "Because of the dispute, land acquisition has now been halted ",
+      "d": "The problem has now been solved ",
+      "e": null
+    },
+    "answer": "a",
+    "explanation": null,
+    "exam_type": "utme",
+    "exam_year": "2006",
+    "image_url": null,
+    "is_ai_generated": false
+  },
+  {
+    "id": "785",
+    "external_id": "785",
+    "subject": "english",
+    "topic": "In each of questions 85 to 100, choose from the option <b>opposite</b> in meaning to the word underlined.\n",
+    "question": "When the driver applied the brakes, they <u>acted up</u>?",
+    "options": {
+      "a": "failed",
+      "b": "responded well",
+      "c": "were sluggish",
+      "d": "jammed",
+      "e": null
+    },
+    "answer": "b",
+    "explanation": null,
+    "exam_type": "utme",
+    "exam_year": "2000",
+    "image_url": null,
+    "is_ai_generated": false
+  },
+  {
+    "id": "142",
+    "external_id": "142",
+    "subject": "english",
+    "topic": "choose the option nearest in meaning to the word or phrase in italics.",
+    "question": "The prosecutor was fully able to <i>substantiate</i> the charge.",
+    "options": {
+      "a": "expatiate on",
+      "b": "prove",
+      "c": "dismiss",
+      "d": "weaken",
+      "e": null
+    },
+    "answer": "b",
+    "explanation": null,
+    "exam_type": "utme",
+    "exam_year": "2004",
+    "image_url": null,
+    "is_ai_generated": false
+  },
+  {
+    "id": "1553",
+    "external_id": "1553",
+    "subject": "english",
+    "topic": null,
+    "question": "choose the option opposite in meaning to the word(s) in italics.\n\n  Father Francis thanked God for the <i>abundance</i> of blessings his family received",
+    "options": {
+      "a": "Nature",
+      "b": "Quantity",
+      "c": "Quality",
+      "d": "Paucity",
+      "e": null
+    },
+    "answer": "d",
+    "explanation": "Abundance means an excessive availability of something.\n\nPaucity means fewness in number",
+    "exam_type": "utme",
+    "exam_year": "2018",
+    "image_url": null,
+    "is_ai_generated": false
+  },
+  {
+    "id": "1229",
+    "external_id": "1229",
+    "subject": "english",
+    "topic": "choose the option nearly opposite in meaning to the word(s) underlined",
+    "question": "It is <u>embarrassing</u> to accept our mistakes and tender an apology.",
+    "options": {
+      "a": "acceptable",
+      "b": "honourable",
+      "c": "detestable",
+      "d": "pardonable",
+      "e": null
+    },
+    "answer": "b",
+    "explanation": "Embarrassing: causing embarrassment.\n\nHonourable: bringing or deserving honour.",
+    "exam_type": "utme",
+    "exam_year": "2021",
+    "image_url": null,
+    "is_ai_generated": false
+  },
+  {
+    "id": "77",
+    "external_id": "77",
+    "subject": "english",
+    "topic": "choose the option that best completes the gap(s).",
+    "question": "Agbo says he is not afraid of ………",
+    "options": {
+      "a": "anybody",
+      "b": "nothing",
+      "c": "nobody",
+      "d": "no one",
+      "e": null
+    },
+    "answer": "a",
+    "explanation": null,
+    "exam_type": "utme",
+    "exam_year": "2004",
+    "image_url": null,
+    "is_ai_generated": false
+  },
+  {
+    "id": "1748",
+    "external_id": "1748",
+    "subject": "english",
+    "topic": "Choose the option that best fills the gap.",
+    "question": "Choose the option that best fills the gap.\n\nHe missed the point because he took the statement ------------",
+    "options": {
+      "a": "literally",
+      "b": "litaraily",
+      "c": "literary",
+      "d": "unlitaterally",
+      "e": null
+    },
+    "answer": "a",
+    "explanation": "The correct answer is ‘A’ ‘literally’ because it means word for word; not figuratively; not as a idiom or metaphor. The other options are not well spelt like option ‘B’ literary is relating with literature.",
+    "exam_type": "utme",
+    "exam_year": "2015",
+    "image_url": null,
+    "is_ai_generated": false
+  },
+  {
+    "id": "1164",
+    "external_id": "1164",
+    "subject": "english",
+    "topic": "<b>In each of question 66 to 85, choose the option that best completes the gap (s)</b>\n",
+    "question": "The continuous rain has really .......the soil.",
+    "options": {
+      "a": "satiated",
+      "b": "saturated",
+      "c": "melted up",
+      "d": "mopped up",
+      "e": null
+    },
+    "answer": "b",
+    "explanation": "Saturated means to be thoroughly soaked. Or holding as much water or moisture as can be absorbed",
+    "exam_type": "utme",
+    "exam_year": "2013",
+    "image_url": null,
+    "is_ai_generated": false
+  },
+  {
+    "id": "312",
+    "external_id": "312",
+    "subject": "english",
+    "topic": "choose the option nearest in meaning to the word or phrase in italics.",
+    "question": "Things may change soon, but at the moment our economic situation is <i>precarious.</i>",
+    "options": {
+      "a": " redeemable",
+      "b": "buoyant ",
+      "c": "uncertain   ",
+      "d": " unattractive.",
+      "e": null
+    },
+    "answer": "c",
+    "explanation": null,
+    "exam_type": "utme",
+    "exam_year": "2007",
+    "image_url": null,
+    "is_ai_generated": false
+  },
+  {
+    "id": "961",
+    "external_id": "961",
+    "subject": "english",
+    "topic": "<b>In each of the questions 64 to 83, choose the option that best completes the gap(s).</b> \n",
+    "question": "........ he switches on the light, the shadow disappears?",
+    "options": {
+      "a": "Whenever",
+      "b": "Expect",
+      "c": "Since",
+      "d": "Until",
+      "e": null
+    },
+    "answer": "a",
+    "explanation": "Whenever he switches on the light, the shadow disappears?\n\nWhenever; at whatever time; on whatever occasion (emphasizing a lack of restriction).",
+    "exam_type": "utme",
+    "exam_year": "2011",
+    "image_url": null,
+    "is_ai_generated": false
+  },
+  {
+    "id": "1624",
+    "external_id": "1624",
+    "subject": "english",
+    "topic": "<b>These questions are based on A.H. Mohammed's The Last Days at Forcados High School.</b>",
+    "question": "Seyi Lawal, the head boy of the school was described as someone who",
+    "options": {
+      "a": "loved his job",
+      "b": "hated Physics practical",
+      "c": "loved interacting with girls",
+      "d": "hated hard-work",
+      "e": null
+    },
+    "answer": "a",
+    "explanation": null,
+    "exam_type": "utme",
+    "exam_year": "2016",
+    "image_url": null,
+    "is_ai_generated": false
+  },
+  {
+    "id": "399",
+    "external_id": "399",
+    "subject": "english",
+    "topic": "choose the option nearest in meaning to the word or phrase In Italics",
+    "question": "The charge brought against my brother was hardly <i>tenable\\</i>",
+    "options": {
+      "a": "sensible  ",
+      "b": "defensible   ",
+      "c": "meaningful",
+      "d": " flimsy",
+      "e": null
+    },
+    "answer": "a",
+    "explanation": null,
+    "exam_type": "utme",
+    "exam_year": "2008",
+    "image_url": null,
+    "is_ai_generated": false
+  },
+  {
+    "id": "313",
+    "external_id": "313",
+    "subject": "english",
+    "topic": "choose the option that has the same consonant sound as the one represented by the letter(s) underlined.",
+    "question": "shoe<u>s</u>",
+    "options": {
+      "a": "horse",
+      "b": "house",
+      "c": "loss",
+      "d": "reason",
+      "e": null
+    },
+    "answer": "d",
+    "explanation": null,
+    "exam_type": "utme",
+    "exam_year": "2007",
+    "image_url": null,
+    "is_ai_generated": false
+  },
+  {
+    "id": "230",
+    "external_id": "230",
+    "subject": "english",
+    "topic": "choose the option that best completes the gap(s).",
+    "question": "Your performance will improve if you…….  Hard",
+    "options": {
+      "a": "are practicing ",
+      "b": "practical ",
+      "c": "would practice ",
+      "d": "practise",
+      "e": null
+    },
+    "answer": "b",
+    "explanation": null,
+    "exam_type": "utme",
+    "exam_year": "2006",
+    "image_url": null,
+    "is_ai_generated": false
+  },
+  {
+    "id": "39",
+    "external_id": "39",
+    "subject": "english",
+    "topic": "opposite in meaning to the word(s) or phrase in italics ",
+    "question": "He is well known for his <i>inordinate</i> ambition ",
+    "options": {
+      "a": "passionate ",
+      "b": "sound ",
+      "c": "excessive",
+      "d": "moderate ",
+      "e": null
+    },
+    "answer": "d",
+    "explanation": null,
+    "exam_type": "utme",
+    "exam_year": "2003",
+    "image_url": null,
+    "is_ai_generated": false
+  },
+  {
+    "id": "1513",
+    "external_id": "1513",
+    "subject": "english",
+    "topic": "Choose the option that best explains the information conveyed in the sentence. ",
+    "question": "If he were here, it could be more fun",
+    "options": {
+      "a": "He did not show up and so the occasion lacked much fun",
+      "b": "He was being expected to supply more fun",
+      "c": "There was no fun because he was not present",
+      "d": "He was expected but did not show up to liven up the occasion",
+      "e": null
+    },
+    "answer": "a",
+    "explanation": "The first clause 'if he were here' reveals an unreal conditional statement that signifies the absence of someone. However the second clause 'it could be more fun'  signifies the presence of little fun.\n\nOption A is the best answer",
+    "exam_type": "utme",
+    "exam_year": "2018",
+    "image_url": null,
+    "is_ai_generated": false
+  },
+  {
+    "id": "247",
+    "external_id": "247",
+    "subject": "english",
+    "topic": "choose the option that has the same stress pattern as the given word.",
+    "question": "apparent ",
+    "options": {
+      "a": "arrested ",
+      "b": "telephone ",
+      "c": "paragraph ",
+      "d": "appetite ",
+      "e": null
+    },
+    "answer": "c",
+    "explanation": null,
+    "exam_type": "utme",
+    "exam_year": "2006",
+    "image_url": null,
+    "is_ai_generated": false
+  },
+  {
+    "id": "304",
+    "external_id": "304",
+    "subject": "english",
+    "topic": "choose the option nearest in meaning to the word or phrase in italics.",
+    "question": "The shortage of petrol was a <i>perennial</i> problem",
+    "options": {
+      "a": "a recurring   ",
+      "b": "a seasonal ",
+      "c": "an annual",
+      "d": "an incurable.",
+      "e": null
+    },
+    "answer": "c",
+    "explanation": null,
+    "exam_type": "utme",
+    "exam_year": "2007",
+    "image_url": null,
+    "is_ai_generated": false
+  },
+  {
+    "id": "638",
+    "external_id": "638",
+    "subject": "english",
+    "topic": "<b>In each of the questions 32 to 56, fill the each gap with the most appropriate option from the list option from the list provided.</b>",
+    "question": "They let him go in ....... to his age?\n\n",
+    "options": {
+      "a": "respect",
+      "b": "regard",
+      "c": "disregard",
+      "d": "consideration",
+      "e": null
+    },
+    "answer": "b",
+    "explanation": null,
+    "exam_type": "utme",
+    "exam_year": "2001",
+    "image_url": null,
+    "is_ai_generated": false
+  },
+  {
+    "id": "301",
+    "external_id": "301",
+    "subject": "english",
+    "topic": "choose the option nearest in meaning to the word or phrase in italics.",
+    "question": "The last criticism at the rally was made <i>in ignorance</i>",
+    "options": {
+      "a": "uniformed ",
+      "b": "objective ",
+      "c": "unimpeaccable",
+      "d": "impeccable ",
+      "e": null
+    },
+    "answer": "a",
+    "explanation": null,
+    "exam_type": "utme",
+    "exam_year": "2007",
+    "image_url": null,
+    "is_ai_generated": false
+  },
+  {
+    "id": "1808",
+    "external_id": "1808",
+    "subject": "english",
+    "topic": "Choose the option that best complete the gap.",
+    "question": "The laughter _____ his face for a moment.",
+    "options": {
+      "a": "Remade.",
+      "b": "Improved.",
+      "c": "Controlled.",
+      "d": "Animated.",
+      "e": null
+    },
+    "answer": "d",
+    "explanation": "Animated; full of life or excitement; lively.",
+    "exam_type": "utme",
+    "exam_year": "2014",
+    "image_url": null,
+    "is_ai_generated": false
+  },
+  {
+    "id": "633",
+    "external_id": "633",
+    "subject": "english",
+    "topic": "<b>In each of the questions 32 to 56, fill the each gap with the most appropriate option from the list option from the list provided.</b>",
+    "question": "Of course we all saw the culprit ....... and hit the man on the head?",
+    "options": {
+      "a": "approached",
+      "b": "approching",
+      "c": "approach",
+      "d": "approches",
+      "e": null
+    },
+    "answer": "a",
+    "explanation": null,
+    "exam_type": "utme",
+    "exam_year": "2001",
+    "image_url": null,
+    "is_ai_generated": false
+  },
+  {
+    "id": "282",
+    "external_id": "282",
+    "subject": "english",
+    "topic": "choose the option that has the same consonant sound as the one represented by the letter(s) underlined.",
+    "question": "gara<u>ge</u>",
+    "options": {
+      "a": "gear   ",
+      "b": "sure   ",
+      "c": "pressure ",
+      "d": "measure",
+      "e": null
+    },
+    "answer": "d",
+    "explanation": null,
+    "exam_type": "utme",
+    "exam_year": "2006",
+    "image_url": null,
+    "is_ai_generated": false
+  },
+  {
+    "id": "1370",
+    "external_id": "1370",
+    "subject": "english",
+    "topic": "From the list of words or group of words lettered A to D, choose the one that is most nearest opposite in meaning to the underlined word or group of words and that will, at the same time correctly fill in the gap in the sentence. ",
+    "question": "God opposes the <u>proud</u> and rewards the _________",
+    "options": {
+      "a": "poor",
+      "b": "honest",
+      "c": "humble",
+      "d": "faithful",
+      "e": null
+    },
+    "answer": "c",
+    "explanation": "Humble is the opposite of the adjective 'Proud'",
+    "exam_type": "utme",
+    "exam_year": "2020",
+    "image_url": null,
+    "is_ai_generated": false
+  },
+  {
+    "id": "1129",
+    "external_id": "1129",
+    "subject": "english",
+    "topic": "<b>questions 36 - 45 are on LEXIS, STRUCTURE AND ORAL FORMS</b>\nIn each of this question select the option that best explains the information conveyed in the sentence.",
+    "question": "Tolu and Chinedu live in each other 's pockets.",
+    "options": {
+      "a": "they steal from each other",
+      "b": "they blackmail each other",
+      "c": " they are very close to each other",
+      "d": "they are long-term business partners",
+      "e": null
+    },
+    "answer": "c",
+    "explanation": "This means to be too close to someone or spend too much time with someone.",
+    "exam_type": "utme",
+    "exam_year": "2013",
+    "image_url": null,
+    "is_ai_generated": false
+  },
+  {
+    "id": "765",
+    "external_id": "765",
+    "subject": "english",
+    "topic": "<b>In each of questions 68 to 84, choose from the option nearest in meaning to the word underlined.</b>\n",
+    "question": "The boy was told that he would need <u>several</u> more pints of blood if he was to survive.",
+    "options": {
+      "a": "many",
+      "b": "much",
+      "c": "some",
+      "d": "plenty",
+      "e": null
+    },
+    "answer": "a",
+    "explanation": null,
+    "exam_type": "utme",
+    "exam_year": "2000",
+    "image_url": null,
+    "is_ai_generated": false
+  },
+  {
+    "id": "594",
+    "external_id": "594",
+    "subject": "english",
+    "topic": "the word in capital letters has the <i>emphatic stress</i>. Choose the option to which the given sentence relates",
+    "question": "EMEKA finished his home work yesterday ",
+    "options": {
+      "a": "Was Emeka helped to do his home work? ",
+      "b": "Did Emeka do his home work yesterday?",
+      "c": "When did Emeka finish his home work? ",
+      "d": "Who finished his home work yesterday",
+      "e": null
+    },
+    "answer": "d",
+    "explanation": null,
+    "exam_type": "utme",
+    "exam_year": "2010",
+    "image_url": null,
+    "is_ai_generated": false
+  },
+  {
+    "id": "1350",
+    "external_id": "1350",
+    "subject": "english",
+    "topic": "From the words lettered A to D, choose the word or group of words that best completes each of the following sentences.",
+    "question": "Mr Cham will never tell you everything, he is very ________",
+    "options": {
+      "a": "secretive",
+      "b": "quiet",
+      "c": "reserved",
+      "d": "realistic",
+      "e": null
+    },
+    "answer": "a",
+    "explanation": "For one who never tells you everything, 'Secrecy' best completes the sentence above.",
+    "exam_type": "utme",
+    "exam_year": "2020",
+    "image_url": null,
+    "is_ai_generated": false
+  },
+  {
+    "id": "1285",
+    "external_id": "1285",
+    "subject": "english",
+    "topic": "In each of the following sentences, the word that receives the emphatic stress is written in capital letters. From the options lettered A to D, choose the appropriate answer.",
+    "question": "John's watch is made of GOLD.",
+    "options": {
+      "a": "Whose watch is made of gold?",
+      "b": "What is made of gold?",
+      "c": "Is John's watch made of silver?",
+      "d": "Is John's necklace made of gold?",
+      "e": null
+    },
+    "answer": "c",
+    "explanation": "When answering emphatic stress questions, the option that does not have the \"stressed word\" becomes the correct answer.",
+    "exam_type": "utme",
+    "exam_year": "2022",
+    "image_url": null,
+    "is_ai_generated": false
+  },
+  {
+    "id": "331",
+    "external_id": "331",
+    "subject": "english",
+    "topic": "choose the option opposite in meaning to the word or phrase in italics.",
+    "question": "The man advised his wife to steer a <i>middle course</i> the argument between her and her employers",
+    "options": {
+      "a": "be recalcitrant  ",
+      "b": "be unrepentant",
+      "c": "be compromising",
+      "d": "be unrelenting",
+      "e": null
+    },
+    "answer": "a",
+    "explanation": null,
+    "exam_type": "utme",
+    "exam_year": "2007",
+    "image_url": null,
+    "is_ai_generated": false
+  },
+  {
+    "id": "1733",
+    "external_id": "1733",
+    "subject": "english",
+    "topic": null,
+    "question": "From the words lettered A to D, choose the word that rhymes with the given word.\n\nTenderly",
+    "options": {
+      "a": "actually",
+      "b": "slenderly",
+      "c": "faithfully",
+      "d": "constantly",
+      "e": null
+    },
+    "answer": "b",
+    "explanation": "tenderly; /ˈtɛnd(ə)li/\n\nslenderly; slɛnd(ə)li/",
+    "exam_type": "utme",
+    "exam_year": "2015",
+    "image_url": null,
+    "is_ai_generated": false
+  },
+  {
+    "id": "447",
+    "external_id": "447",
+    "subject": "english",
+    "topic": "choose the appropriate  stress pattern from the options. The syllables are written in capital letters.",
+    "question": "melodramatic ",
+    "options": {
+      "a": "MEIodramatic  ",
+      "b": "meLOdramatic",
+      "c": " meloDRAmatic ",
+      "d": "melodraMAtic.",
+      "e": null
+    },
+    "answer": "d",
+    "explanation": null,
+    "exam_type": "utme",
+    "exam_year": "2008",
+    "image_url": null,
+    "is_ai_generated": false
+  },
+  {
+    "id": "962",
+    "external_id": "962",
+    "subject": "english",
+    "topic": "<b>In each of the questions 64 to 83, choose the option that best completes the gap(s).</b> \n",
+    "question": "The policemen became suspicious as the hoodlums ......in their office?",
+    "options": {
+      "a": "ferreted",
+      "b": "ferretted",
+      "c": "ferreted about",
+      "d": "ferretted about",
+      "e": null
+    },
+    "answer": "c",
+    "explanation": "The policemen became suspicious as the hoodlums ferreted about in their office?\n\n If you ferret about for something, you look for it in a lot of different places or in a place where it is hidden.",
+    "exam_type": "utme",
+    "exam_year": "2011",
+    "image_url": null,
+    "is_ai_generated": false
+  },
+  {
+    "id": "1167",
+    "external_id": "1167",
+    "subject": "english",
+    "topic": "<b>In each of question 66 to 85, choose the option that best completes the gap (s)</b>\n",
+    "question": "All farmers were encouraged ......carry out fumigation on their farms",
+    "options": {
+      "a": "in",
+      "b": "with",
+      "c": "to",
+      "d": "from",
+      "e": null
+    },
+    "answer": "c",
+    "explanation": "All farmers were encouraged to carry out fumigation on their farms",
+    "exam_type": "utme",
+    "exam_year": "2013",
+    "image_url": null,
+    "is_ai_generated": false
+  },
+  {
+    "id": "174",
+    "external_id": "174",
+    "subject": "english",
+    "topic": "choose the option nearest in meaning to the word or phrase  in italics ",
+    "question": "No wonder Sikemi later became a detective; she has been very <i>observant </i>",
+    "options": {
+      "a": "curious",
+      "b": "perceptive",
+      "c": "inductive",
+      "d": "inquisitive",
+      "e": null
+    },
+    "answer": "a",
+    "explanation": null,
+    "exam_type": "utme",
+    "exam_year": "2005",
+    "image_url": null,
+    "is_ai_generated": false
+  },
+  {
+    "id": "1304",
+    "external_id": "1304",
+    "subject": "english",
+    "topic": "Fill in the gap with the option that best completes the sentence.",
+    "question": "I have always found that it is helpful to have a few wise and trusted people to ________ you can turn for information and advice.",
+    "options": {
+      "a": "whom",
+      "b": "who",
+      "c": "whose",
+      "d": "that",
+      "e": null
+    },
+    "answer": "a",
+    "explanation": "Whom should be used to refer to the object of a verb or preposition.",
+    "exam_type": "utme",
+    "exam_year": "2022",
+    "image_url": null,
+    "is_ai_generated": false
+  },
+  {
+    "id": "752",
+    "external_id": "752",
+    "subject": "english",
+    "topic": "<b>In each of questions 41 to 62, fill the gap with the most appropriate option from the list provided.</b>",
+    "question": "There are several ........ in the farmyard?",
+    "options": {
+      "a": "sheep",
+      "b": "ewe",
+      "c": "lamb",
+      "d": "goat",
+      "e": null
+    },
+    "answer": "a",
+    "explanation": null,
+    "exam_type": "utme",
+    "exam_year": "2000",
+    "image_url": null,
+    "is_ai_generated": false
+  },
+  {
+    "id": "1721",
+    "external_id": "1721",
+    "subject": "english",
+    "topic": null,
+    "question": "This question is from the novel The Last Days at Forcados High school.\n\n‘No more chains in trousers or dangling earrings for the girls. There will be an inspection of fingernails and socks during assembly. Principal’s orders’ who said this?",
+    "options": {
+      "a": "the senior prefect",
+      "b": " principal",
+      "c": "headboy",
+      "d": " non-teaching staff",
+      "e": null
+    },
+    "answer": "c",
+    "explanation": "this statement was made in front of the hall and taking just before assembly by the headboy, Seyi Lawal, reporting what the principal orderedThe answer is\n\n(c) because the senior prefects were joined by Jimi, trying to organize everybody into lines and we were not told about the presence of the non-teaching staff at that time of event.",
+    "exam_type": "utme",
+    "exam_year": "2015",
+    "image_url": null,
+    "is_ai_generated": false
+  },
+  {
+    "id": "591",
+    "external_id": "591",
+    "subject": "english",
+    "topic": "choose the most appropriate stress pattern from the options. The stressed syllable are written in capital letter(s)",
+    "question": "political ",
+    "options": {
+      "a": "politiCAL  ",
+      "b": "POlitical",
+      "c": "poliTlcal",
+      "d": "poLltical",
+      "e": null
+    },
+    "answer": "d",
+    "explanation": null,
+    "exam_type": "utme",
+    "exam_year": "2010",
+    "image_url": null,
+    "is_ai_generated": false
+  },
+  {
+    "id": "1218",
+    "external_id": "1218",
+    "subject": "english",
+    "topic": "choose the most appropriate option nearest in meaning to the word(s) underlined.",
+    "question": "The office assistant was dismissed for <u>pilfering</u>",
+    "options": {
+      "a": "fighting",
+      "b": "incompetence",
+      "c": "stealing",
+      "d": "mismanagement",
+      "e": null
+    },
+    "answer": "c",
+    "explanation": "PIlfering: steal (things of little value).",
+    "exam_type": "utme",
+    "exam_year": "2021",
+    "image_url": null,
+    "is_ai_generated": false
+  },
+  {
+    "id": "481",
+    "external_id": "481",
+    "subject": "english",
+    "topic": "choose the option nearest in meaning to the word or phrase in italics.",
+    "question": "The Lagos bus conductor r wore his professional <i>livery</i>",
+    "options": {
+      "a": "badge   ",
+      "b": "shoe ",
+      "c": " uniform ",
+      "d": "cap.",
+      "e": null
+    },
+    "answer": "c",
+    "explanation": null,
+    "exam_type": "utme",
+    "exam_year": "2009",
+    "image_url": null,
+    "is_ai_generated": false
+  },
+  {
+    "id": "125",
+    "external_id": "125",
+    "subject": "english",
+    "topic": "choose the option opposite in meaning to the word or phrase in italics.",
+    "question": "We found a <i>shady</i> place for the display.",
+    "options": {
+      "a": "an open",
+      "b": "an unsafe",
+      "c": "a stuffy",
+      "d": "an enclosed",
+      "e": null
+    },
+    "answer": "a",
+    "explanation": null,
+    "exam_type": "utme",
+    "exam_year": "2004",
+    "image_url": null,
+    "is_ai_generated": false
+  },
+  {
+    "id": "1521",
+    "external_id": "1521",
+    "subject": "english",
+    "topic": "Choose the option opposite in meaning to the word(s) or phrase in italics. ",
+    "question": "The <i>severity</i> of the harmattan helped me to complete my writing assignment in record time because i had no choice but to lock myself indoors",
+    "options": {
+      "a": "warmth",
+      "b": "mildness",
+      "c": "moderation",
+      "d": "leniency",
+      "e": null
+    },
+    "answer": "b",
+    "explanation": "severity is the state of being severe . the degree of something being bad or undesirable very great; intense. while the opposite of severity is mildness which means not severe; gentle.",
+    "exam_type": "utme",
+    "exam_year": "2018",
+    "image_url": null,
+    "is_ai_generated": false
+  },
+  {
+    "id": "1477",
+    "external_id": "1477",
+    "subject": "english",
+    "topic": "CHOOSE THE OPTION THAT IS NEAREST IN MEANING TO THE WORD(S) IN BRACKET, FOR  THE QUESTIONS ",
+    "question": "We must not [foreclose] reconciliation as the purpose of his trip\n",
+    "options": {
+      "a": "exclude",
+      "b": "consider",
+      "c": "underestimate",
+      "d": "forgo",
+      "e": null
+    },
+    "answer": "a",
+    "explanation": "To foreclose is to leave out the consideration of an option or alternative to something.",
+    "exam_type": "utme",
+    "exam_year": "2019",
+    "image_url": null,
+    "is_ai_generated": false
+  },
+  {
+    "id": "11",
+    "external_id": "11",
+    "subject": "english",
+    "topic": "most appropriate option",
+    "question": "The candidate's charisma should be a..………factor in winning the election. ",
+    "options": {
+      "a": "determinant ",
+      "b": "determinate",
+      "c": "determining ",
+      "d": "determinable ",
+      "e": null
+    },
+    "answer": "c",
+    "explanation": null,
+    "exam_type": "utme",
+    "exam_year": "2003",
+    "image_url": null,
+    "is_ai_generated": false
+  },
+  {
+    "id": "1399",
+    "external_id": "1399",
+    "subject": "english",
+    "topic": "<b>Questions are based on Bolaji Abdullahi's \"Sweet Sixteen\"</b>",
+    "question": "Aliya although is born with a silver spoon, but she has no freedom to move around meet new people unlike other persons. This signals to the…",
+    "options": {
+      "a": "criticism of strict parenting",
+      "b": "irony of life",
+      "c": "essence of a child's exposure",
+      "d": " expectations of wealthy parents",
+      "e": null
+    },
+    "answer": "b",
+    "explanation": "Aliya at age 12 envy of the girls hawking on the street and their freedom to move about as compared to her restriction to move about, eventhough she born into a comfortable home, significantly indicates the irony of life i.e no one has it all.",
+    "exam_type": "utme",
+    "exam_year": "2019",
+    "image_url": null,
+    "is_ai_generated": false
+  },
+  {
+    "id": "1253",
+    "external_id": "1253",
+    "subject": "english",
+    "topic": "choose the option that best answers the question from the options lettered A-D",
+    "question": "He travels every WEEKEND",
+    "options": {
+      "a": " Does he sleep every weekend?",
+      "b": " Does he wash every week days?",
+      "c": " Does he travel every month?",
+      "d": "Does he travel every day?",
+      "e": null
+    },
+    "answer": "c",
+    "explanation": "Option c is the correct answer because WEEKEND contradicts the phrase 'every month'",
+    "exam_type": "utme",
+    "exam_year": "2021",
+    "image_url": null,
+    "is_ai_generated": false
+  },
+  {
+    "id": "1192",
+    "external_id": "1192",
+    "subject": "english",
+    "topic": "<b>In each of question 98 to 100, the word in \ncapital letters has the emphatic stress.\nChoose the option to which the given \nsentence relates.</b>",
+    "question": "Lambusa TOOK OFF the wig.\n",
+    "options": {
+      "a": " Who took off the wig?",
+      "b": "What did Lambusa do?",
+      "c": "Did Lambusa take off a wig?",
+      "d": "Did Lambusa take off the ring?",
+      "e": null
+    },
+    "answer": "b",
+    "explanation": null,
+    "exam_type": "utme",
+    "exam_year": "2013",
+    "image_url": null,
+    "is_ai_generated": false
+  },
+  {
+    "id": "116",
+    "external_id": "116",
+    "subject": "english",
+    "topic": "choose the option opposite in meaning to the word or phrase in italics.",
+    "question": "Beauty queens sometime wear <i>outlandish</i>  dresses.",
+    "options": {
+      "a": "beautiful",
+      "b": "flashy",
+      "c": "familiar",
+      "d": "attractive",
+      "e": null
+    },
+    "answer": "c",
+    "explanation": null,
+    "exam_type": "utme",
+    "exam_year": "2004",
+    "image_url": null,
+    "is_ai_generated": false
+  },
+  {
+    "id": "520",
+    "external_id": "520",
+    "subject": "english",
+    "topic": "the word in capital letters has the emphatic stress. Choose the option which the given sentence relates.",
+    "question": "The girl DANCED in the village square.   ",
+    "options": {
+      "a": "Who danced  in the village square?  ",
+      "b": " Is this the village square where the girl danced? ",
+      "c": "Did the girl dance in the village square? ",
+      "d": "Did the girl sing in the  village square?",
+      "e": null
+    },
+    "answer": "d",
+    "explanation": null,
+    "exam_type": "utme",
+    "exam_year": "2009",
+    "image_url": null,
+    "is_ai_generated": false
   }
 ]

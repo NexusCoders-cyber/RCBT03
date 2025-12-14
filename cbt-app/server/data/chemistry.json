@@ -1,0 +1,202 @@
+[
+  {
+    "id": "201",
+    "external_id": "201",
+    "subject": "chemistry",
+    "topic": null,
+    "question": "Kerosene is commonly used to remove the red colour stain of palm oil from clothes because it",
+    "options": {
+      "a": "Helps to spread the oil over a larger surface area",
+      "b": "Makes the oil evaporate easily by dissolving it",
+      "c": "Helps to dilute the oil and reduce its colour",
+      "d": "Reacts with the oil to form an odourless compound",
+      "e": null
+    },
+    "answer": "b",
+    "explanation": null,
+    "exam_type": "utme",
+    "exam_year": "2005",
+    "image_url": null,
+    "is_ai_generated": false
+  },
+  {
+    "id": "300",
+    "external_id": "300",
+    "subject": "chemistry",
+    "topic": null,
+    "question": "The correct order of increasing boiling points of the following  compounds C3H7OH, C7H16 and C4H10 is",
+    "options": {
+      "a": "C4H10  →  C7H16 → C3H7OH",
+      "b": "C7H16 → C3H7OH → C4H16",
+      "c": "C4H10  → C3H7OH  → C4H10",
+      "d": "C3H7OH →  C4H10  → C7H16",
+      "e": null
+    },
+    "answer": "a",
+    "explanation": null,
+    "exam_type": "utme",
+    "exam_year": "2010",
+    "image_url": null,
+    "is_ai_generated": false
+  },
+  {
+    "id": "93",
+    "external_id": "93",
+    "subject": "chemistry",
+    "topic": null,
+    "question": "When 10g of sodium hydroxide is dissolved in 1000cm3 of water, the solution formed is approximately   [Na = 23, H = 1, O = 16]",
+    "options": {
+      "a": "0.01 mol dm-3",
+      "b": "0.10 mol dm-3",
+      "c": "0.25 mol dm-3",
+      "d": "0.50 mol dm-3",
+      "e": null
+    },
+    "answer": "c",
+    "explanation": null,
+    "exam_type": "utme",
+    "exam_year": "2003",
+    "image_url": null,
+    "is_ai_generated": false
+  },
+  {
+    "id": "229",
+    "external_id": "229",
+    "subject": "chemistry",
+    "topic": null,
+    "question": "[Molar volume of a gas at s.t.p + 22.4dm3} Nuclear fission involves the splitting of a heavy element into two nuclei of",
+    "options": {
+      "a": "Equal masses with a release of energy",
+      "b": "Nearly equal masses with a release of energy and radiation",
+      "c": "Equal masses with a release of energy and radiation",
+      "d": "Unequal masses without any release of energy",
+      "e": null
+    },
+    "answer": "b",
+    "explanation": null,
+    "exam_type": "utme",
+    "exam_year": "2006",
+    "image_url": null,
+    "is_ai_generated": false
+  },
+  {
+    "id": "293",
+    "external_id": "293",
+    "subject": "chemistry",
+    "topic": null,
+    "question": "Stainless steel is used for making",
+    "options": {
+      "a": "Tools",
+      "b": "Coins and medals",
+      "c": "Moving parts of clocks",
+      "d": "Magnets",
+      "e": null
+    },
+    "answer": "a",
+    "explanation": null,
+    "exam_type": "utme",
+    "exam_year": "2010",
+    "image_url": null,
+    "is_ai_generated": false
+  },
+  {
+    "id": "109",
+    "external_id": "109",
+    "subject": "chemistry",
+    "topic": null,
+    "question": "The metal that liberates hydrogen from cold water in bubbles only is",
+    "options": {
+      "a": "Na",
+      "b": "K",
+      "c": "Ca",
+      "d": "Al",
+      "e": null
+    },
+    "answer": "c",
+    "explanation": null,
+    "exam_type": "utme",
+    "exam_year": "2003",
+    "image_url": null,
+    "is_ai_generated": false
+  },
+  {
+    "id": "266",
+    "external_id": "266",
+    "subject": "chemistry",
+    "topic": null,
+    "question": "How many unpaired electron(s) are there in the nitrogen  sub - levels",
+    "options": {
+      "a": "2",
+      "b": "1",
+      "c": "0",
+      "d": "3",
+      "e": null
+    },
+    "answer": "d",
+    "explanation": null,
+    "exam_type": "utme",
+    "exam_year": "2010",
+    "image_url": null,
+    "is_ai_generated": false
+  },
+  {
+    "id": "62",
+    "external_id": "62",
+    "subject": "chemistry",
+    "topic": null,
+    "question": "The processes which return carbon(IV) oxide to the atmosphere include",
+    "options": {
+      "a": "Photosynthesis, decay and respiration",
+      "b": "Photosynthesis, respiration and transpiration",
+      "c": "Respiration, decay and combustion",
+      "d": "Ozone, depletion, combustion and decay",
+      "e": null
+    },
+    "answer": "c",
+    "explanation": null,
+    "exam_type": "utme",
+    "exam_year": "2002",
+    "image_url": null,
+    "is_ai_generated": false
+  },
+  {
+    "id": "250",
+    "external_id": "250",
+    "subject": "chemistry",
+    "topic": null,
+    "question": "Dynamic equilibrium describes a situation where",
+    "options": {
+      "a": "A reaction gives back the reactants",
+      "b": "Reactants are converted to products",
+      "c": "The concentration of reactants and products is equal",
+      "d": "Both forward and reverse reaction proceed at the same rate",
+      "e": null
+    },
+    "answer": "d",
+    "explanation": null,
+    "exam_type": "utme",
+    "exam_year": "2006",
+    "image_url": null,
+    "is_ai_generated": false
+  },
+  {
+    "id": "81",
+    "external_id": "81",
+    "subject": "chemistry",
+    "topic": null,
+    "question": "The noble gases owe their inactivity to",
+    "options": {
+      "a": "Octet configuration",
+      "b": "Cyclic shape",
+      "c": "Hexagonal shape",
+      "d": "Obtuse configuration",
+      "e": null
+    },
+    "answer": "a",
+    "explanation": null,
+    "exam_type": "utme",
+    "exam_year": "2003",
+    "image_url": null,
+    "is_ai_generated": false
+  }
+]
