@@ -8,7 +8,7 @@ channel = "stable-25_05"
 [userenv]
 
 [userenv.shared]
-SUPABASE_DATABASE_URL = "postgresql://postgres:Isaihilom%401@db.jjjxaobmvoklzgcwqnqk.supabase.co:5432/postgres"
+SUPABASE_DATABASE_URL = "postgresql://postgres.jjjxaobmvoklzgcwqnqk:Isaihilom%401@aws-1-eu-west-1.pooler.supabase.com:5432/postgres"
 
 [workflows]
 runButton = "Project"
@@ -58,7 +58,6 @@ externalPort = 3001
 localPort = 5000
 externalPort = 80
 
-[deployment]
-deploymentTarget = "autoscale"
-run = ["bash", "-c", "cd cbt-app && node server/index.js & npx vite preview --host 0.0.0.0 --port 5000"]
-build = ["bash", "-c", "cd cbt-app && npm run build"]
+[[ports]]
+localPort = 5001
+externalPort = 3000
