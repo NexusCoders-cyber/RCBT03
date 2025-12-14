@@ -289,7 +289,7 @@ export default function Exam() {
               </div>
             </div>
 
-            <div className="bg-slate-800 rounded-2xl p-6 sm:p-8 border border-slate-700">
+            <div className="bg-slate-800 rounded-2xl p-6 sm:p-8 border border-slate-700 shadow-xl">
               <div 
                 className="text-lg sm:text-xl text-white leading-relaxed mb-6"
                 dangerouslySetInnerHTML={{ __html: currentQuestion.question }}
@@ -319,19 +319,19 @@ export default function Exam() {
                       onClick={() => handleAnswer(key)}
                       className={`w-full p-4 rounded-xl border-2 text-left transition-all duration-200 flex items-start gap-4
                         ${isSelected
-                          ? 'border-emerald-500 bg-emerald-900/30'
+                          ? 'border-emerald-500 bg-emerald-900/30 shadow-lg shadow-emerald-500/10'
                           : 'border-slate-600 hover:border-slate-500 hover:bg-slate-700/50'
                         }`}
                     >
-                      <span className={`flex-shrink-0 w-10 h-10 rounded-xl flex items-center justify-center font-bold
+                      <span className={`flex-shrink-0 w-10 h-10 rounded-xl flex items-center justify-center font-bold transition-all
                         ${isSelected
-                          ? 'bg-emerald-500 text-white'
+                          ? 'bg-emerald-500 text-white scale-110'
                           : 'bg-slate-700 text-slate-300'
                         }`}>
                         {key.toUpperCase()}
                       </span>
                       <span 
-                        className="text-slate-200 pt-2"
+                        className="text-slate-200 pt-2 flex-1"
                         dangerouslySetInnerHTML={{ __html: value }}
                       />
                     </button>
@@ -357,7 +357,7 @@ export default function Exam() {
 
             <button
               onClick={() => setShowSubmitModal(true)}
-              className="px-6 py-3 rounded-xl font-semibold bg-emerald-600 text-white hover:bg-emerald-500 transition-colors flex items-center gap-2 shadow-lg shadow-emerald-600/30"
+              className="px-6 py-3 rounded-xl font-semibold bg-gradient-to-r from-emerald-600 to-teal-600 text-white hover:from-emerald-500 hover:to-teal-500 transition-all flex items-center gap-2 shadow-lg shadow-emerald-600/30"
             >
               <Send className="w-5 h-5" />
               <span>Submit</span>
