@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect } from 'react'
+import { useState, useRef, useEffect, useCallback } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { X, Move } from 'lucide-react'
 import useStore from '../store/useStore'
@@ -11,7 +11,6 @@ export default function Calculator() {
   const [waitingForNewValue, setWaitingForNewValue] = useState(false)
   const [position, setPosition] = useState({ x: 0, y: 0 })
   const [isDragging, setIsDragging] = useState(false)
-  const dragRef = useRef(null)
   const startPosRef = useRef({ x: 0, y: 0 })
   const startOffsetRef = useRef({ x: 0, y: 0 })
 
@@ -37,39 +36,48 @@ export default function Calculator() {
     startOffsetRef.current = { x: position.x, y: position.y }
   }
 
-  const handleDragMove = (e) => {
-    if (!isDragging) return
+  const handleDragMove = useCallback((e) => {
     e.preventDefault()
     const clientX = e.type === 'touchmove' ? e.touches[0].clientX : e.clientX
     const clientY = e.type === 'touchmove' ? e.touches[0].clientY : e.clientY
     const deltaX = clientX - startPosRef.current.x
     const deltaY = clientY - startPosRef.current.y
-    const newPos = {
+    setPosition({
       x: startOffsetRef.current.x + deltaX,
       y: startOffsetRef.current.y + deltaY
-    }
-    setPosition(newPos)
-  }
+    })
+  }, [])
 
-  const handleDragEnd = () => {
-    if (isDragging) {
-      setIsDragging(false)
-      localStorage.setItem('calculatorPosition', JSON.stringify(position))
-    }
-  }
+  const handleDragEnd = useCallback(() => {
+    setIsDragging(false)
+  }, [])
 
   useEffect(() => {
-    if (isDragging) {
-      window.addEventListener('mousemove', handleDragMove)
-      window.addEventListener('mouseup', handleDragEnd)
-      window.addEventListener('touchmove', handleDragMove, { passive: false })
-      window.addEventListener('touchend', handleDragEnd)
+    if (!isDragging) return
+    
+    const onMove = (e) => handleDragMove(e)
+    const onEnd = () => {
+      handleDragEnd()
+      const currentPos = { x: startOffsetRef.current.x, y: startOffsetRef.current.y }
+      localStorage.setItem('calculatorPosition', JSON.stringify(currentPos))
     }
+    
+    window.addEventListener('mousemove', onMove)
+    window.addEventListener('mouseup', onEnd)
+    window.addEventListener('touchmove', onMove, { passive: false })
+    window.addEventListener('touchend', onEnd)
+    
     return () => {
-      window.removeEventListener('mousemove', handleDragMove)
-      window.removeEventListener('mouseup', handleDragEnd)
-      window.removeEventListener('touchmove', handleDragMove)
-      window.removeEventListener('touchend', handleDragEnd)
+      window.removeEventListener('mousemove', onMove)
+      window.removeEventListener('mouseup', onEnd)
+      window.removeEventListener('touchmove', onMove, { passive: false })
+      window.removeEventListener('touchend', onEnd)
+    }
+  }, [isDragging, handleDragMove, handleDragEnd])
+
+  useEffect(() => {
+    if (!isDragging) {
+      localStorage.setItem('calculatorPosition', JSON.stringify(position))
     }
   }, [isDragging, position])
 
@@ -172,7 +180,6 @@ export default function Calculator() {
     <AnimatePresence>
       {showCalculator && (
         <motion.div
-          ref={dragRef}
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           exit={{ opacity: 0, scale: 0.9 }}
