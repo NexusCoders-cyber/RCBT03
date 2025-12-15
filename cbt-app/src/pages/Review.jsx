@@ -329,6 +329,14 @@ export default function Review() {
                   </div>
 
                   <div className="p-5">
+                    {currentQuestion.section && (
+                      <div className="mb-4 p-3 rounded-xl bg-blue-900/30 border border-blue-700/50">
+                        <p 
+                          className="text-sm text-blue-200 font-medium"
+                          dangerouslySetInnerHTML={{ __html: currentQuestion.section }}
+                        />
+                      </div>
+                    )}
                     <div className="flex items-start gap-3 mb-6">
                       <span className="flex-shrink-0 w-8 h-8 rounded-lg bg-slate-700 text-white font-bold text-sm flex items-center justify-center">
                         {currentQuestion.originalIndex + 1}
@@ -396,35 +404,36 @@ export default function Review() {
                       })}
                     </div>
 
-                    {currentQuestion.solution && (
+                    {(currentQuestion.solution || currentQuestion.explanation) ? (
                       <motion.div 
                         initial={{ opacity: 0, y: 10 }}
                         animate={{ opacity: 1, y: 0 }}
-                        className="mt-6 p-5 rounded-xl bg-gradient-to-br from-blue-900/30 to-indigo-900/30 border border-blue-700/50"
+                        className="mt-6 p-5 rounded-xl bg-gradient-to-br from-emerald-900/30 to-teal-900/30 border border-emerald-700/50"
                       >
-                        <p className="font-semibold text-blue-300 mb-3 flex items-center gap-2">
+                        <p className="font-semibold text-emerald-300 mb-3 flex items-center gap-2">
                           <Lightbulb className="w-5 h-5 text-amber-400" />
                           Explanation
                         </p>
                         <div 
-                          className="text-blue-100 leading-relaxed"
-                          dangerouslySetInnerHTML={{ __html: currentQuestion.solution }}
+                          className="text-emerald-100 leading-relaxed"
+                          dangerouslySetInnerHTML={{ __html: currentQuestion.solution || currentQuestion.explanation || '' }}
                         />
                       </motion.div>
-                    )}
-
-                    {currentQuestion.explanation && !currentQuestion.solution && (
+                    ) : (
                       <motion.div 
                         initial={{ opacity: 0, y: 10 }}
                         animate={{ opacity: 1, y: 0 }}
-                        className="mt-6 p-5 rounded-xl bg-gradient-to-br from-blue-900/30 to-indigo-900/30 border border-blue-700/50"
+                        className="mt-6 p-5 rounded-xl bg-gradient-to-br from-slate-800/50 to-slate-700/50 border border-slate-600"
                       >
-                        <p className="font-semibold text-blue-300 mb-3 flex items-center gap-2">
-                          <Lightbulb className="w-5 h-5 text-amber-400" />
+                        <p className="font-semibold text-slate-300 mb-3 flex items-center gap-2">
+                          <Lightbulb className="w-5 h-5 text-slate-400" />
                           Explanation
                         </p>
-                        <p className="text-blue-100 leading-relaxed">
-                          {currentQuestion.explanation}
+                        <p className="text-slate-400 leading-relaxed">
+                          The correct answer is <span className="font-bold text-emerald-400">{currentQuestion.answer?.toUpperCase()}</span>. 
+                          {currentQuestion.options[currentQuestion.answer] && (
+                            <span dangerouslySetInnerHTML={{ __html: ` - ${currentQuestion.options[currentQuestion.answer]}` }} />
+                          )}
                         </p>
                       </motion.div>
                     )}

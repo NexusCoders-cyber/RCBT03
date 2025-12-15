@@ -32,18 +32,18 @@ const FeatureCard = ({ to, icon: Icon, title, description, bgColor, textColor, i
     <motion.div
       whileHover={{ scale: 1.02 }}
       whileTap={{ scale: 0.98 }}
-      className={`${bgColor} rounded-2xl p-5 h-full transition-all duration-300 hover:shadow-lg relative overflow-hidden`}
+      className={`${bgColor} rounded-2xl p-5 h-36 flex flex-col transition-all duration-300 hover:shadow-lg relative overflow-hidden border border-slate-700/30`}
     >
       {badge && (
         <span className="absolute top-2 right-2 px-2 py-0.5 rounded-full bg-yellow-500 text-yellow-900 text-xs font-bold">
           {badge}
         </span>
       )}
-      <div className={`w-12 h-12 ${iconBg} rounded-xl flex items-center justify-center mb-3`}>
+      <div className={`w-12 h-12 ${iconBg} rounded-xl flex items-center justify-center mb-3 flex-shrink-0`}>
         <Icon className={`w-6 h-6 ${textColor}`} />
       </div>
       <h3 className={`font-bold ${textColor} text-lg mb-1`}>{title}</h3>
-      <p className="text-slate-600 dark:text-slate-300 text-sm leading-relaxed">{description}</p>
+      <p className="text-slate-600 dark:text-slate-300 text-sm leading-relaxed line-clamp-2">{description}</p>
     </motion.div>
   )
 

@@ -290,6 +290,14 @@ export default function Exam() {
             </div>
 
             <div className="bg-slate-800 rounded-2xl p-6 sm:p-8 border border-slate-700 shadow-xl">
+              {currentQuestion.section && (
+                <div className="mb-4 p-3 rounded-xl bg-blue-900/30 border border-blue-700/50">
+                  <p 
+                    className="text-sm text-blue-200 font-medium"
+                    dangerouslySetInnerHTML={{ __html: currentQuestion.section }}
+                  />
+                </div>
+              )}
               <div 
                 className="text-lg sm:text-xl text-white leading-relaxed mb-6"
                 dangerouslySetInnerHTML={{ __html: currentQuestion.question }}
