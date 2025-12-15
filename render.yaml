@@ -1,0 +1,20 @@
+services:
+  - type: web
+    name: jamb-cbt-backend
+    env: node
+    buildCommand: cd cbt-app && npm install && npm run build
+    startCommand: cd cbt-app && node server/index.js
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 3001
+      - key: DATABASE_URL
+        fromDatabase:
+          name: jamb-cbt-db
+          property: connectionString
+
+databases:
+  - name: jamb-cbt-db
+    plan: free
+    databaseName: jamb_cbt
