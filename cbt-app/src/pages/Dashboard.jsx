@@ -225,76 +225,55 @@ export default function Dashboard() {
             />
           </motion.div>
 
-          <motion.div variants={itemVariants} className="grid grid-cols-5 gap-3">
-            <Link to="/bookmarks" className="block group">
-              <div className="bg-amber-50 dark:bg-amber-900/20 rounded-2xl p-4 h-full transition-all duration-300 group-hover:shadow-lg border border-amber-200 dark:border-amber-800/30">
-                <div className="flex flex-col items-center text-center gap-2">
-                  <div className="w-10 h-10 bg-amber-100 dark:bg-amber-800/50 rounded-xl flex items-center justify-center">
-                    <Bookmark className="w-5 h-5 text-amber-600 dark:text-amber-400" />
-                  </div>
-                  <div>
-                    <h3 className="font-bold text-amber-700 dark:text-amber-400 text-xs">Bookmarks</h3>
-                    <p className="text-slate-500 dark:text-slate-400 text-xs">
-                      {bookmarkedQuestions.length || 0}
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </Link>
-            <button onClick={() => setShowSavedSessions(true)} className="block group text-left">
-              <div className="bg-teal-50 dark:bg-teal-900/20 rounded-2xl p-4 h-full transition-all duration-300 group-hover:shadow-lg border border-teal-200 dark:border-teal-800/30">
-                <div className="flex flex-col items-center text-center gap-2">
-                  <div className="w-10 h-10 bg-teal-100 dark:bg-teal-800/50 rounded-xl flex items-center justify-center">
-                    <Save className="w-5 h-5 text-teal-600 dark:text-teal-400" />
-                  </div>
-                  <div>
-                    <h3 className="font-bold text-teal-700 dark:text-teal-400 text-xs">Saved</h3>
-                    <p className="text-slate-500 dark:text-slate-400 text-xs">
-                      {savedSessions?.length || 0}
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </button>
-            <button onClick={() => setShowDictionary(true)} className="block group text-left">
-              <div className="bg-indigo-50 dark:bg-indigo-900/20 rounded-2xl p-4 h-full transition-all duration-300 group-hover:shadow-lg border border-indigo-200 dark:border-indigo-800/30">
-                <div className="flex flex-col items-center text-center gap-2">
-                  <div className="w-10 h-10 bg-indigo-100 dark:bg-indigo-800/50 rounded-xl flex items-center justify-center">
-                    <Book className="w-5 h-5 text-indigo-600 dark:text-indigo-400" />
-                  </div>
-                  <div>
-                    <h3 className="font-bold text-indigo-700 dark:text-indigo-400 text-xs">Dictionary</h3>
-                    <p className="text-slate-500 dark:text-slate-400 text-xs">Words</p>
-                  </div>
-                </div>
-              </div>
-            </button>
-            <button onClick={() => setShowFlashcards(true)} className="block group text-left">
-              <div className="bg-orange-50 dark:bg-orange-900/20 rounded-2xl p-4 h-full transition-all duration-300 group-hover:shadow-lg border border-orange-200 dark:border-orange-800/30">
-                <div className="flex flex-col items-center text-center gap-2">
-                  <div className="w-10 h-10 bg-orange-100 dark:bg-orange-800/50 rounded-xl flex items-center justify-center">
-                    <Brain className="w-5 h-5 text-orange-600 dark:text-orange-400" />
-                  </div>
-                  <div>
-                    <h3 className="font-bold text-orange-700 dark:text-orange-400 text-xs">Flashcards</h3>
-                    <p className="text-slate-500 dark:text-slate-400 text-xs">Study</p>
-                  </div>
-                </div>
-              </div>
-            </button>
-            <Link to="/analytics" className="block group">
-              <div className="bg-cyan-50 dark:bg-cyan-900/20 rounded-2xl p-4 h-full transition-all duration-300 group-hover:shadow-lg border border-cyan-200 dark:border-cyan-800/30">
-                <div className="flex flex-col items-center text-center gap-2">
-                  <div className="w-10 h-10 bg-cyan-100 dark:bg-cyan-800/50 rounded-xl flex items-center justify-center">
-                    <TrendingUp className="w-5 h-5 text-cyan-600 dark:text-cyan-400" />
-                  </div>
-                  <div>
-                    <h3 className="font-bold text-cyan-700 dark:text-cyan-400 text-xs">Analytics</h3>
-                    <p className="text-slate-500 dark:text-slate-400 text-xs">Stats</p>
-                  </div>
-                </div>
-              </div>
-            </Link>
+          <motion.div variants={itemVariants} className="grid grid-cols-2 gap-4">
+            <FeatureCard
+              to="/bookmarks"
+              icon={Bookmark}
+              title="Bookmarks"
+              description={`${bookmarkedQuestions.length || 0} saved questions`}
+              bgColor="bg-amber-100 dark:bg-amber-900/30"
+              textColor="text-amber-700 dark:text-amber-400"
+              iconBg="bg-amber-200 dark:bg-amber-800/50"
+            />
+            <FeatureCard
+              icon={Save}
+              title="History"
+              description={`${savedSessions?.length || 0} past sessions`}
+              bgColor="bg-teal-100 dark:bg-teal-900/30"
+              textColor="text-teal-700 dark:text-teal-400"
+              iconBg="bg-teal-200 dark:bg-teal-800/50"
+              onClick={() => setShowSavedSessions(true)}
+            />
+          </motion.div>
+
+          <motion.div variants={itemVariants} className="grid grid-cols-3 gap-4">
+            <FeatureCard
+              icon={Book}
+              title="Dictionary"
+              description="Look up words"
+              bgColor="bg-indigo-100 dark:bg-indigo-900/30"
+              textColor="text-indigo-700 dark:text-indigo-400"
+              iconBg="bg-indigo-200 dark:bg-indigo-800/50"
+              onClick={() => setShowDictionary(true)}
+            />
+            <FeatureCard
+              icon={Brain}
+              title="Flashcards"
+              description="Quick revision"
+              bgColor="bg-orange-100 dark:bg-orange-900/30"
+              textColor="text-orange-700 dark:text-orange-400"
+              iconBg="bg-orange-200 dark:bg-orange-800/50"
+              onClick={() => setShowFlashcards(true)}
+            />
+            <FeatureCard
+              to="/analytics"
+              icon={TrendingUp}
+              title="Analytics"
+              description="Track progress"
+              bgColor="bg-cyan-100 dark:bg-cyan-900/30"
+              textColor="text-cyan-700 dark:text-cyan-400"
+              iconBg="bg-cyan-200 dark:bg-cyan-800/50"
+            />
           </motion.div>
 
           {!isOnline && cachedCount > 0 && (
