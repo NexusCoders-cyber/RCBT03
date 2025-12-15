@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { motion } from 'framer-motion'
-import { ArrowLeft, ChevronRight, BookOpen, Calculator, Download, CheckCircle, Loader2 } from 'lucide-react'
+import { ArrowLeft, ChevronRight, BookOpen, Calculator, CheckCircle } from 'lucide-react'
 import useStore from '../store/useStore'
 import { alocAPI } from '../services/api'
 
@@ -28,7 +28,6 @@ export default function SubjectSelect() {
   const navigate = useNavigate()
   const { subjects } = useStore()
   const [offlineStatus, setOfflineStatus] = useState({})
-  const [downloadingSubject, setDownloadingSubject] = useState(null)
   const [viewMode, setViewMode] = useState('all')
   const [stats, setStats] = useState(null)
 
@@ -54,19 +53,6 @@ export default function SubjectSelect() {
 
   const handleSubjectClick = (subject) => {
     navigate(`/practice-setup?subject=${subject.id}`)
-  }
-
-  const handleDownload = async (subject, e) => {
-    e.stopPropagation()
-    setDownloadingSubject(subject.id)
-    try {
-      await alocAPI.syncQuestions(subject.id, 100)
-      await loadStats()
-    } catch (error) {
-      console.error('Download error:', error)
-    } finally {
-      setDownloadingSubject(null)
-    }
   }
 
   const getSubjectGradient = (color) => {
@@ -151,7 +137,6 @@ export default function SubjectSelect() {
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {filteredSubjects.map((subject, index) => {
               const isReady = offlineStatus[subject.id]
-              const isDownloading = downloadingSubject === subject.id
               const questionCount = stats?.subjects?.[subject.id] || 0
               
               return (
@@ -205,22 +190,10 @@ export default function SubjectSelect() {
                               </span>
                             ) : (
                               <span className="flex items-center gap-1 px-2.5 py-1 rounded-full bg-white/10 text-xs font-medium text-white/70">
-                                {questionCount > 0 ? `${questionCount} questions` : 'Ready to download'}
+                                {questionCount > 0 ? `${questionCount} questions` : 'Ready to practice'}
                               </span>
                             )}
                           </div>
-                          
-                          <button
-                            onClick={(e) => handleDownload(subject, e)}
-                            disabled={isDownloading}
-                            className="p-2 rounded-xl bg-white/20 hover:bg-white/30 transition-colors disabled:opacity-50"
-                          >
-                            {isDownloading ? (
-                              <Loader2 className="w-4 h-4 text-white animate-spin" />
-                            ) : (
-                              <Download className="w-4 h-4 text-white" />
-                            )}
-                          </button>
                         </div>
                       </div>
                       
@@ -238,52 +211,6 @@ export default function SubjectSelect() {
               )
             })}
           </div>
-
-          <motion.div 
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.5 }}
-            className="bg-gradient-to-r from-emerald-500/10 to-teal-500/10 rounded-2xl p-5 border border-emerald-500/20"
-          >
-            <div className="flex items-start gap-4">
-              <div className="w-12 h-12 rounded-xl bg-emerald-500/20 flex items-center justify-center flex-shrink-0">
-                <Download className="w-6 h-6 text-emerald-400" />
-              </div>
-              <div className="flex-1">
-                <h3 className="font-semibold text-white mb-1">Offline Mode</h3>
-                <p className="text-sm text-slate-400 mb-3">
-                  Download questions for each subject to practice without internet connection
-                </p>
-                <button
-                  onClick={async () => {
-                    setDownloadingSubject('all')
-                    try {
-                      await alocAPI.syncQuestions(null, 100)
-                      await loadStats()
-                    } catch (error) {
-                      console.error('Bulk download error:', error)
-                    } finally {
-                      setDownloadingSubject(null)
-                    }
-                  }}
-                  disabled={downloadingSubject === 'all'}
-                  className="px-4 py-2 rounded-xl bg-emerald-500 hover:bg-emerald-600 text-white text-sm font-medium transition-colors disabled:opacity-50 flex items-center gap-2"
-                >
-                  {downloadingSubject === 'all' ? (
-                    <>
-                      <Loader2 className="w-4 h-4 animate-spin" />
-                      Downloading...
-                    </>
-                  ) : (
-                    <>
-                      <Download className="w-4 h-4" />
-                      Download All Subjects
-                    </>
-                  )}
-                </button>
-              </div>
-            </div>
-          </motion.div>
         </motion.div>
       </div>
     </div>

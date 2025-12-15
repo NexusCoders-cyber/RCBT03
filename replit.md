@@ -66,13 +66,48 @@ cbt-app/
 - **Production Server**: Uses vite preview + backend server
 - The app gracefully handles database connection failures using file-based storage
 
-## Recent Changes
-- Configured for Replit environment
-- Added Supabase PostgreSQL support with standard pg driver
-- Enhanced offline storage capabilities
-- PWA support for mobile installation
+## Recent Changes (December 2025)
+
+### Lekki Headmaster Literature Integration
+- Added comprehensive Lekki Headmaster novel data with 15 exam questions
+- Novel includes 12 chapters, 8 main characters, 6 themes, 6 literary devices
+- Questions automatically integrated into English exam/study modes
+- Dedicated novel study page at `/novel`
+
+### Dashboard UI Updates
+- Unified 4-column grid layout for all feature cards
+- Consistent card sizing (h-32) across all features
+- Added Profile card for user account access
+- Removed badge labels from cards for cleaner look
+
+### Subject Display Fixes
+- Removed emoji icons from subject tabs in Exam mode
+- Removed emoji icons from subject tabs in Study mode
+- Subject names displayed cleanly without symbols
+
+### SavedSessions Enhancement
+- Fully clickable sessions with detailed question review
+- Shows question corrections with visual indicators
+- Includes explanation for each question
+- Subject breakdown with score visualization
+
+### Calculator Improvements
+- Draggable calculator with position persistence
+- Position saved to localStorage
+- Drag only from header handle to preserve button functionality
+
+### SubjectSelect Updates
+- Removed download functionality as requested
+- Cleaner subject card layout
+- Ready to practice indicator
+
+### Offline Functionality
+- Full offline support with localStorage caching
+- Lekki Headmaster questions available even when API fails
+- Graceful fallback to cached questions
 
 ## User Preferences
 - Dark theme by default
 - Timer enabled for exams
 - Calculator enabled for math subjects
+- No code comments in implementation

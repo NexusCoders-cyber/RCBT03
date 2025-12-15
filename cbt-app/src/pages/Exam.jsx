@@ -176,15 +176,14 @@ export default function Exam() {
                           : 'bg-slate-700 text-slate-300 hover:bg-slate-600'
                       }`}
                     >
-                      <span className="mr-1">{subject.icon}</span>
                       <span className="hidden md:inline">{subject.name}</span>
+                      <span className="md:hidden">{subject.name.split(' ')[0]}</span>
                     </button>
                   ))}
                 </div>
               )}
               {examMode === 'practice' && (
                 <div className="flex items-center gap-2">
-                  <span className="text-2xl">{currentSubject?.icon}</span>
                   <span className="font-semibold text-white">
                     {currentSubject?.name}
                   </span>
@@ -239,7 +238,7 @@ export default function Exam() {
                       : 'bg-slate-700 text-slate-300'
                   }`}
                 >
-                  {subject.icon}
+                  {subject.name.split(' ')[0]}
                 </button>
               ))}
             </div>
@@ -438,8 +437,7 @@ export default function Exam() {
                     
                     return (
                       <div key={subject.id}>
-                        <p className="font-medium text-white mb-2 flex items-center gap-2">
-                          <span>{subject.icon}</span>
+                        <p className="font-medium text-white mb-2">
                           {subject.name}
                         </p>
                         <div className="grid grid-cols-10 gap-1">

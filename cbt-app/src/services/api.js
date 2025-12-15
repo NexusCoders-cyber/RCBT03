@@ -1,4 +1,5 @@
 import axios from 'axios'
+import { LEKKI_HEADMASTER_EXAM_QUESTIONS } from '../data/lekkiHeadmaster'
 
 const BACKEND_URL = import.meta.env.VITE_BACKEND_URL || ''
 const ALOC_API_URL = import.meta.env.VITE_ALOC_API_URL || 'https://questions.aloc.com.ng/api/v2'
@@ -370,6 +371,19 @@ export const alocAPI = {
   }
 }
 
+function getLekkiHeadmasterQuestions(count = 15) {
+  const allQuestions = LEKKI_HEADMASTER_EXAM_QUESTIONS.map((q, index) => ({
+    ...q,
+    id: q.id || `lh-exam-${index}`,
+    subject: 'english',
+    examtype: 'utme',
+    examyear: '2024',
+    section: 'Literature - The Lekki Headmaster',
+    solution: q.explanation || '',
+  }))
+  return allQuestions.slice(0, count)
+}
+
 export async function loadQuestionsForExam(subjects, onProgress = null) {
   const questionsMap = {}
   let loadedSubjects = 0
@@ -417,11 +431,21 @@ export async function loadQuestionsForExam(subjects, onProgress = null) {
         }
       }
       
+      if (isEnglish) {
+        const lekkiQuestions = getLekkiHeadmasterQuestions(15)
+        const existingIds = new Set(questions.map(q => q.id))
+        lekkiQuestions.forEach(q => {
+          if (!existingIds.has(q.id)) {
+            questions.push(q)
+          }
+        })
+      }
+      
       if (questions.length > 0) {
         await cacheQuestions(cacheKey, questions)
       }
       
-      questionsMap[subject.id] = questions.slice(0, count)
+      questionsMap[subject.id] = questions.slice(0, isEnglish ? 60 : count)
       loadedSubjects++
       
       if (onProgress) {
@@ -437,9 +461,19 @@ export async function loadQuestionsForExam(subjects, onProgress = null) {
       
       const cachedData = await getCachedQuestions(cacheKey)
       if (cachedData && cachedData.length > 0) {
-        questionsMap[subject.id] = cachedData.slice(0, count)
+        let questions = cachedData.slice(0, count)
+        if (isEnglish) {
+          const lekkiQuestions = getLekkiHeadmasterQuestions(15)
+          const existingIds = new Set(questions.map(q => q.id))
+          lekkiQuestions.forEach(q => {
+            if (!existingIds.has(q.id)) {
+              questions.push(q)
+            }
+          })
+        }
+        questionsMap[subject.id] = questions.slice(0, isEnglish ? 60 : count)
       } else {
-        questionsMap[subject.id] = []
+        questionsMap[subject.id] = isEnglish ? getLekkiHeadmasterQuestions(15) : []
       }
     }
   }
@@ -448,6 +482,7 @@ export async function loadQuestionsForExam(subjects, onProgress = null) {
 }
 
 export async function loadPracticeQuestions(subject, count = 40, year = null) {
+  const isEnglish = subject.id === 'english'
   const cacheKey = `practice-${subject.id}-${count}-${year || 'all'}`
   
   try {
@@ -467,18 +502,38 @@ export async function loadPracticeQuestions(subject, count = 40, year = null) {
       }
     }
     
+    if (isEnglish) {
+      const lekkiQuestions = getLekkiHeadmasterQuestions(10)
+      const existingIds = new Set(questions.map(q => q.id))
+      lekkiQuestions.forEach(q => {
+        if (!existingIds.has(q.id)) {
+          questions.push(q)
+        }
+      })
+    }
+    
     if (questions.length > 0) {
       await cacheQuestions(cacheKey, questions)
     }
     
-    return questions.slice(0, count)
+    return questions.slice(0, isEnglish ? count + 10 : count)
   } catch {
     const cachedData = await getCachedQuestions(cacheKey)
     if (cachedData && cachedData.length > 0) {
-      return cachedData.slice(0, count)
+      let questions = cachedData.slice(0, count)
+      if (isEnglish) {
+        const lekkiQuestions = getLekkiHeadmasterQuestions(10)
+        const existingIds = new Set(questions.map(q => q.id))
+        lekkiQuestions.forEach(q => {
+          if (!existingIds.has(q.id)) {
+            questions.push(q)
+          }
+        })
+      }
+      return questions.slice(0, isEnglish ? count + 10 : count)
     }
     
-    return []
+    return isEnglish ? getLekkiHeadmasterQuestions(10) : []
   }
 }
 

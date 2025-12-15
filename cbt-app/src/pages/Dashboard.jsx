@@ -27,23 +27,18 @@ const itemVariants = {
   visible: { opacity: 1, y: 0 },
 }
 
-const FeatureCard = ({ to, icon: Icon, title, description, bgColor, textColor, iconBg, badge, onClick }) => {
+const FeatureCard = ({ to, icon: Icon, title, description, bgColor, textColor, iconBg, onClick }) => {
   const content = (
     <motion.div
       whileHover={{ scale: 1.02 }}
       whileTap={{ scale: 0.98 }}
-      className={`${bgColor} rounded-2xl p-5 h-36 flex flex-col transition-all duration-300 hover:shadow-lg relative overflow-hidden border border-slate-700/30`}
+      className={`${bgColor} rounded-2xl p-4 h-32 flex flex-col transition-all duration-300 hover:shadow-lg relative overflow-hidden border border-slate-700/30`}
     >
-      {badge && (
-        <span className="absolute top-2 right-2 px-2 py-0.5 rounded-full bg-yellow-500 text-yellow-900 text-xs font-bold">
-          {badge}
-        </span>
-      )}
-      <div className={`w-12 h-12 ${iconBg} rounded-xl flex items-center justify-center mb-3 flex-shrink-0`}>
-        <Icon className={`w-6 h-6 ${textColor}`} />
+      <div className={`w-10 h-10 ${iconBg} rounded-xl flex items-center justify-center mb-2 flex-shrink-0`}>
+        <Icon className={`w-5 h-5 ${textColor}`} />
       </div>
-      <h3 className={`font-bold ${textColor} text-lg mb-1`}>{title}</h3>
-      <p className="text-slate-600 dark:text-slate-300 text-sm leading-relaxed line-clamp-2">{description}</p>
+      <h3 className={`font-bold ${textColor} text-base mb-0.5`}>{title}</h3>
+      <p className="text-slate-600 dark:text-slate-300 text-xs leading-relaxed line-clamp-2">{description}</p>
     </motion.div>
   )
 
@@ -191,29 +186,25 @@ export default function Dashboard() {
             </div>
           </motion.div>
 
-          <motion.div variants={itemVariants} className="grid grid-cols-2 gap-4">
+          <motion.div variants={itemVariants} className="grid grid-cols-2 sm:grid-cols-4 gap-3">
             <FeatureCard
               to="/study-setup"
               icon={Star}
-              title="Study Mode"
-              description="Learn at your pace, no timer"
+              title="Study"
+              description="Learn at your pace"
               bgColor="bg-violet-100 dark:bg-violet-900/30"
               textColor="text-violet-700 dark:text-violet-400"
               iconBg="bg-violet-200 dark:bg-violet-800/50"
-              badge="NEW"
             />
             <FeatureCard
               to="/practice"
               icon={Rocket}
               title="Practice"
-              description={cachedCount > 0 ? `${cachedCount.toLocaleString()}+ offline` : 'Quick practice'}
+              description="Quick questions"
               bgColor="bg-green-100 dark:bg-green-900/30"
               textColor="text-green-700 dark:text-green-400"
               iconBg="bg-green-200 dark:bg-green-800/50"
             />
-          </motion.div>
-
-          <motion.div variants={itemVariants} className="grid grid-cols-2 gap-4">
             <FeatureCard
               to="/exam-setup"
               icon={BookOpen}
@@ -226,21 +217,20 @@ export default function Dashboard() {
             <FeatureCard
               icon={Bot}
               title="AI Tutor"
-              description="Ask anything, get help"
+              description="Get instant help"
               bgColor="bg-emerald-100 dark:bg-emerald-900/30"
               textColor="text-emerald-700 dark:text-emerald-400"
               iconBg="bg-emerald-200 dark:bg-emerald-800/50"
               onClick={() => setShowAI(true)}
-              badge="AI"
             />
           </motion.div>
 
-          <motion.div variants={itemVariants} className="grid grid-cols-2 gap-4">
+          <motion.div variants={itemVariants} className="grid grid-cols-2 sm:grid-cols-4 gap-3">
             <FeatureCard
               to="/bookmarks"
               icon={Bookmark}
               title="Bookmarks"
-              description={`${bookmarkedQuestions.length || 0} saved questions`}
+              description={`${bookmarkedQuestions.length || 0} saved`}
               bgColor="bg-amber-100 dark:bg-amber-900/30"
               textColor="text-amber-700 dark:text-amber-400"
               iconBg="bg-amber-200 dark:bg-amber-800/50"
@@ -248,37 +238,21 @@ export default function Dashboard() {
             <FeatureCard
               icon={Save}
               title="History"
-              description={`${savedSessions?.length || 0} past sessions`}
+              description={`${savedSessions?.length || 0} sessions`}
               bgColor="bg-teal-100 dark:bg-teal-900/30"
               textColor="text-teal-700 dark:text-teal-400"
               iconBg="bg-teal-200 dark:bg-teal-800/50"
               onClick={() => setShowSavedSessions(true)}
             />
-          </motion.div>
-
-          <motion.div variants={itemVariants} className="grid grid-cols-2 gap-4">
             <FeatureCard
               to="/novel"
-              icon={BookOpen}
-              title="Novel Mode"
-              description="Literature study guide"
+              icon={Book}
+              title="Lekki Novel"
+              description="Literature guide"
               bgColor="bg-purple-100 dark:bg-purple-900/30"
               textColor="text-purple-700 dark:text-purple-400"
               iconBg="bg-purple-200 dark:bg-purple-800/50"
-              badge="NEW"
             />
-            <FeatureCard
-              icon={Book}
-              title="Dictionary"
-              description="Look up words"
-              bgColor="bg-indigo-100 dark:bg-indigo-900/30"
-              textColor="text-indigo-700 dark:text-indigo-400"
-              iconBg="bg-indigo-200 dark:bg-indigo-800/50"
-              onClick={() => setShowDictionary(true)}
-            />
-          </motion.div>
-
-          <motion.div variants={itemVariants} className="grid grid-cols-3 gap-4">
             <FeatureCard
               icon={Brain}
               title="Flashcards"
@@ -288,6 +262,9 @@ export default function Dashboard() {
               iconBg="bg-orange-200 dark:bg-orange-800/50"
               onClick={() => setShowFlashcards(true)}
             />
+          </motion.div>
+
+          <motion.div variants={itemVariants} className="grid grid-cols-2 sm:grid-cols-4 gap-3">
             <FeatureCard
               to="/analytics"
               icon={TrendingUp}
@@ -298,6 +275,15 @@ export default function Dashboard() {
               iconBg="bg-cyan-200 dark:bg-cyan-800/50"
             />
             <FeatureCard
+              icon={BookOpen}
+              title="Dictionary"
+              description="Look up words"
+              bgColor="bg-indigo-100 dark:bg-indigo-900/30"
+              textColor="text-indigo-700 dark:text-indigo-400"
+              iconBg="bg-indigo-200 dark:bg-indigo-800/50"
+              onClick={() => setShowDictionary(true)}
+            />
+            <FeatureCard
               to="/settings"
               icon={Star}
               title="Settings"
@@ -305,6 +291,15 @@ export default function Dashboard() {
               bgColor="bg-slate-100 dark:bg-slate-800/50"
               textColor="text-slate-700 dark:text-slate-400"
               iconBg="bg-slate-200 dark:bg-slate-700/50"
+            />
+            <FeatureCard
+              to="/profile"
+              icon={User}
+              title="Profile"
+              description="Your account"
+              bgColor="bg-rose-100 dark:bg-rose-900/30"
+              textColor="text-rose-700 dark:text-rose-400"
+              iconBg="bg-rose-200 dark:bg-rose-800/50"
             />
           </motion.div>
 

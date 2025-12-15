@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect, useCallback } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { X, Move } from 'lucide-react'
+import { X, GripVertical } from 'lucide-react'
 import useStore from '../store/useStore'
 
 export default function Calculator() {
@@ -11,6 +11,7 @@ export default function Calculator() {
   const [waitingForNewValue, setWaitingForNewValue] = useState(false)
   const [position, setPosition] = useState({ x: 0, y: 0 })
   const [isDragging, setIsDragging] = useState(false)
+  const calculatorRef = useRef(null)
   const startPosRef = useRef({ x: 0, y: 0 })
   const startOffsetRef = useRef({ x: 0, y: 0 })
 
@@ -19,67 +20,61 @@ export default function Calculator() {
       const savedPos = localStorage.getItem('calculatorPosition')
       if (savedPos) {
         try {
-          setPosition(JSON.parse(savedPos))
+          const parsed = JSON.parse(savedPos)
+          setPosition(parsed)
         } catch {
           setPosition({ x: 0, y: 0 })
         }
+      } else {
+        setPosition({ x: 0, y: 0 })
       }
     }
   }, [showCalculator])
 
-  const handleDragStart = (e) => {
-    if (e.target.closest('button') && !e.target.closest('[data-drag-handle]')) return
+  const handleDragStart = useCallback((e) => {
     setIsDragging(true)
     const clientX = e.type === 'touchstart' ? e.touches[0].clientX : e.clientX
     const clientY = e.type === 'touchstart' ? e.touches[0].clientY : e.clientY
     startPosRef.current = { x: clientX, y: clientY }
     startOffsetRef.current = { x: position.x, y: position.y }
-  }
+  }, [position])
 
   const handleDragMove = useCallback((e) => {
-    e.preventDefault()
+    if (!isDragging) return
     const clientX = e.type === 'touchmove' ? e.touches[0].clientX : e.clientX
     const clientY = e.type === 'touchmove' ? e.touches[0].clientY : e.clientY
     const deltaX = clientX - startPosRef.current.x
     const deltaY = clientY - startPosRef.current.y
-    setPosition({
-      x: startOffsetRef.current.x + deltaX,
-      y: startOffsetRef.current.y + deltaY
-    })
-  }, [])
+    const newX = startOffsetRef.current.x + deltaX
+    const newY = startOffsetRef.current.y + deltaY
+    setPosition({ x: newX, y: newY })
+  }, [isDragging])
 
   const handleDragEnd = useCallback(() => {
-    setIsDragging(false)
-  }, [])
+    if (isDragging) {
+      setIsDragging(false)
+      localStorage.setItem('calculatorPosition', JSON.stringify(position))
+    }
+  }, [isDragging, position])
 
   useEffect(() => {
     if (!isDragging) return
     
     const onMove = (e) => handleDragMove(e)
-    const onEnd = () => {
-      handleDragEnd()
-      const currentPos = { x: startOffsetRef.current.x, y: startOffsetRef.current.y }
-      localStorage.setItem('calculatorPosition', JSON.stringify(currentPos))
-    }
+    const onEnd = () => handleDragEnd()
     
     window.addEventListener('mousemove', onMove)
     window.addEventListener('mouseup', onEnd)
-    window.addEventListener('touchmove', onMove, { passive: false })
+    window.addEventListener('touchmove', onMove, { passive: true })
     window.addEventListener('touchend', onEnd)
     
     return () => {
       window.removeEventListener('mousemove', onMove)
       window.removeEventListener('mouseup', onEnd)
-      window.removeEventListener('touchmove', onMove, { passive: false })
+      window.removeEventListener('touchmove', onMove)
       window.removeEventListener('touchend', onEnd)
     }
   }, [isDragging, handleDragMove, handleDragEnd])
-
-  useEffect(() => {
-    if (!isDragging) {
-      localStorage.setItem('calculatorPosition', JSON.stringify(position))
-    }
-  }, [isDragging, position])
 
   const handleNumber = (num) => {
     if (waitingForNewValue) {
@@ -180,27 +175,36 @@ export default function Calculator() {
     <AnimatePresence>
       {showCalculator && (
         <motion.div
+          ref={calculatorRef}
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           exit={{ opacity: 0, scale: 0.9 }}
           style={{
+            position: 'fixed',
+            bottom: '80px',
+            right: '16px',
             transform: `translate(${position.x}px, ${position.y}px)`,
-            touchAction: 'none'
+            zIndex: 50
           }}
-          className="fixed bottom-20 right-4 z-50 w-72 bg-slate-900 rounded-2xl shadow-2xl overflow-hidden border border-slate-700"
+          className="w-72 bg-slate-900 rounded-2xl shadow-2xl overflow-hidden border border-slate-700"
         >
           <div 
-            data-drag-handle="true"
             onMouseDown={handleDragStart}
             onTouchStart={handleDragStart}
-            className="flex items-center justify-between px-4 py-3 bg-slate-800 cursor-move select-none"
+            className={`flex items-center justify-between px-4 py-3 bg-slate-800 select-none ${isDragging ? 'cursor-grabbing' : 'cursor-grab'}`}
+            style={{ touchAction: 'none' }}
           >
             <div className="flex items-center gap-2">
-              <Move className="w-4 h-4 text-slate-500" />
+              <GripVertical className="w-5 h-5 text-slate-500" />
               <span className="text-white font-semibold">Calculator</span>
             </div>
             <button
-              onClick={() => setShowCalculator(false)}
+              onClick={(e) => {
+                e.stopPropagation()
+                setShowCalculator(false)
+              }}
+              onMouseDown={(e) => e.stopPropagation()}
+              onTouchStart={(e) => e.stopPropagation()}
               className="p-1 rounded-lg hover:bg-slate-700 text-slate-400 hover:text-white transition-colors"
             >
               <X className="w-5 h-5" />
