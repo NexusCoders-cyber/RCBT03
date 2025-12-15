@@ -9,21 +9,9 @@ import {
 import { getAllNovels, saveNovelContent } from '../services/offlineStorage'
 import { generateNovelAnalysis } from '../services/aiService'
 import useStore from '../store/useStore'
+import { LEKKI_HEADMASTER_NOVEL } from '../data/lekkiHeadmaster'
 
-const DEFAULT_NOVEL = {
-  id: 'default-novel',
-  title: 'Add a Novel',
-  author: 'Use AI to generate study content',
-  yearPublished: '',
-  genre: 'Literature',
-  description: 'Click "Generate Novel Analysis" to create study materials for any JAMB literature text using AI.',
-  summary: 'This feature allows you to generate comprehensive study materials for any novel on the JAMB Literature syllabus. The AI will create:\n\n• A detailed plot summary\n• Chapter-by-chapter analysis\n• Character profiles and relationships\n• Themes and their explanations\n• Literary devices used\n• Practice questions\n\nSimply enter the novel title and author, and the AI will generate everything you need for exam preparation.',
-  chapters: [],
-  characters: [],
-  themes: [],
-  literaryDevices: [],
-  questions: []
-}
+const DEFAULT_NOVEL = LEKKI_HEADMASTER_NOVEL
 
 export default function NovelPage() {
   const navigate = useNavigate()
@@ -44,14 +32,16 @@ export default function NovelPage() {
     setIsLoading(true)
     try {
       const savedNovels = await getAllNovels()
-      setNovels(savedNovels)
-      if (savedNovels.length > 0) {
-        setSelectedNovel(savedNovels[0])
+      const allNovels = [LEKKI_HEADMASTER_NOVEL, ...savedNovels.filter(n => n.id !== 'lekki-headmaster')]
+      setNovels(allNovels)
+      if (allNovels.length > 0) {
+        setSelectedNovel(allNovels[0])
       } else {
         setSelectedNovel(DEFAULT_NOVEL)
       }
     } catch (error) {
       console.error('Failed to load novels:', error)
+      setNovels([LEKKI_HEADMASTER_NOVEL])
       setSelectedNovel(DEFAULT_NOVEL)
     } finally {
       setIsLoading(false)

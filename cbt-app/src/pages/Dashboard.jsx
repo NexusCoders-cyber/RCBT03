@@ -4,7 +4,7 @@ import { motion } from 'framer-motion'
 import { 
   Rocket, BookOpen, TrendingUp, 
   Trophy, GraduationCap, Bookmark, ChevronRight, Sparkles, Book,
-  User, Flame, Star, WifiOff, Wifi, Download, Brain, Bot, Save
+  User, Flame, Star, WifiOff, Wifi, Download, Brain, Bot, Save, Award
 } from 'lucide-react'
 import useStore from '../store/useStore'
 import Dictionary from '../components/Dictionary'
@@ -104,9 +104,13 @@ export default function Dashboard() {
     .sort((a, b) => new Date(b.date) - new Date(a.date))
     .slice(0, 3)
 
+  const allExams = [...practiceHistory, ...examHistory, ...studyHistory]
   const totalSessions = practiceHistory.length + examHistory.length + studyHistory.length
   const averageScore = recentExams.length > 0
     ? Math.round(recentExams.reduce((sum, e) => sum + e.overallScore, 0) / recentExams.length)
+    : 0
+  const highestScore = allExams.length > 0
+    ? Math.max(...allExams.map(e => e.overallScore || 0))
     : 0
 
   const getModeInfo = (mode) => {
@@ -135,8 +139,14 @@ export default function Dashboard() {
                 <div className="flex items-center gap-2">
                   <Sparkles className="w-5 h-5 text-yellow-300" />
                   <span className="text-white/90 text-sm font-medium">
-                    {averageScore > 0 ? `SCORE: ${averageScore}%` : 'Start practicing!'}
+                    {averageScore > 0 ? `AVG: ${averageScore}%` : 'Start practicing!'}
                   </span>
+                  {highestScore > 0 && (
+                    <span className="flex items-center gap-1 text-amber-300 text-sm font-medium ml-2">
+                      <Award className="w-4 h-4" />
+                      Best: {highestScore}%
+                    </span>
+                  )}
                 </div>
                 <div className="flex items-center gap-2">
                   {isOnline ? (
@@ -246,7 +256,17 @@ export default function Dashboard() {
             />
           </motion.div>
 
-          <motion.div variants={itemVariants} className="grid grid-cols-3 gap-4">
+          <motion.div variants={itemVariants} className="grid grid-cols-2 gap-4">
+            <FeatureCard
+              to="/novel"
+              icon={BookOpen}
+              title="Novel Mode"
+              description="Literature study guide"
+              bgColor="bg-purple-100 dark:bg-purple-900/30"
+              textColor="text-purple-700 dark:text-purple-400"
+              iconBg="bg-purple-200 dark:bg-purple-800/50"
+              badge="NEW"
+            />
             <FeatureCard
               icon={Book}
               title="Dictionary"
@@ -256,6 +276,9 @@ export default function Dashboard() {
               iconBg="bg-indigo-200 dark:bg-indigo-800/50"
               onClick={() => setShowDictionary(true)}
             />
+          </motion.div>
+
+          <motion.div variants={itemVariants} className="grid grid-cols-3 gap-4">
             <FeatureCard
               icon={Brain}
               title="Flashcards"
@@ -273,6 +296,15 @@ export default function Dashboard() {
               bgColor="bg-cyan-100 dark:bg-cyan-900/30"
               textColor="text-cyan-700 dark:text-cyan-400"
               iconBg="bg-cyan-200 dark:bg-cyan-800/50"
+            />
+            <FeatureCard
+              to="/settings"
+              icon={Star}
+              title="Settings"
+              description="App preferences"
+              bgColor="bg-slate-100 dark:bg-slate-800/50"
+              textColor="text-slate-700 dark:text-slate-400"
+              iconBg="bg-slate-200 dark:bg-slate-700/50"
             />
           </motion.div>
 

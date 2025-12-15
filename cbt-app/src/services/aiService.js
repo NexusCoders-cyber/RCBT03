@@ -795,19 +795,23 @@ export async function analyzeImage(imageData, question, subject = null) {
 }
 
 export async function generateFlashcards(subject, topic, count = 5) {
-  const prompt = `Generate ${count} flashcards for the JAMB ${subject} topic: "${topic}".
+  const prompt = `Generate ${count} detailed flashcards for the JAMB ${subject} topic: "${topic}".
 
 For each flashcard, provide:
-1. A clear question or prompt (front of card)
-2. A concise but complete answer (back of card)
+1. A clear, specific question or prompt (front of card) - should be detailed enough to test understanding
+2. A comprehensive answer (back of card) - should be at least 3-5 sentences explaining the concept thoroughly, including:
+   - The main answer/definition
+   - Key supporting details or examples
+   - Why this is important for JAMB exams
+   - A memory tip or mnemonic if applicable
 
 Format your response as a JSON array like this:
 [
-  {"front": "Question here?", "back": "Answer here"},
-  {"front": "Question here?", "back": "Answer here"}
+  {"front": "Detailed question that tests understanding?", "back": "Comprehensive answer with full explanation, examples, and key points to remember. Include relevant details that would help a student truly understand and remember this concept for their JAMB exam."},
+  {"front": "Another detailed question?", "back": "Another comprehensive answer with thorough explanation."}
 ]
 
-Make the flashcards focus on key concepts that are commonly tested in JAMB exams.
+Make the flashcards focus on key concepts that are commonly tested in JAMB exams. Each answer should be educational and complete, not just a brief definition.
 Only output the JSON array, no other text.`
 
   const response = await askAI(prompt, subject)

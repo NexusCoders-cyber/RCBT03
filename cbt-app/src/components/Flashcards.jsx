@@ -237,7 +237,7 @@ export default function Flashcards({ isOpen, onClose }) {
                         : 'bg-slate-800 text-slate-300 hover:bg-slate-700'
                     }`}
                   >
-                    <span>{subject.icon}</span>
+                    <span>{subject.name}</span>
                   </button>
                 ))}
               </div>
@@ -371,7 +371,7 @@ function DashboardView({ stats, subjects, selectedSubject, setSelectedSubject, o
                 : 'bg-slate-800 text-slate-300 hover:bg-slate-700'
             }`}
           >
-            {subject.icon}
+            {subject.name}
           </button>
         ))}
       </div>
