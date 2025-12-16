@@ -17,9 +17,10 @@ import StudySetup from './pages/StudySetup'
 import Study from './pages/Study'
 import Profile from './pages/Profile'
 import NovelPage from './pages/NovelPage'
+import { prefetchAllQuestionsForOffline } from './services/offlineStorage'
 
 function App() {
-  const { theme, fontSize, createGuestProfile, isLoggedIn } = useStore()
+  const { theme, fontSize, createGuestProfile, isLoggedIn, setOnlineStatus, addNotification } = useStore()
 
   useEffect(() => {
     if (theme === 'dark') {
@@ -44,18 +45,46 @@ function App() {
   }, [fontSize])
 
   useEffect(() => {
-    if ('serviceWorker' in navigator) {
-      window.addEventListener('load', () => {
-        navigator.serviceWorker.register('/sw.js').catch(() => {})
-      })
+    const updateOnlineStatus = () => {
+      setOnlineStatus(navigator.onLine)
     }
-  }, [])
+    
+    window.addEventListener('online', updateOnlineStatus)
+    window.addEventListener('offline', updateOnlineStatus)
+    updateOnlineStatus()
+    
+    return () => {
+      window.removeEventListener('online', updateOnlineStatus)
+      window.removeEventListener('offline', updateOnlineStatus)
+    }
+  }, [setOnlineStatus])
 
   useEffect(() => {
     if (!isLoggedIn) {
       createGuestProfile('Student')
     }
   }, [isLoggedIn, createGuestProfile])
+
+  useEffect(() => {
+    const fetchQuestionsForOffline = async () => {
+      if (!navigator.onLine) return
+      
+      try {
+        const results = await prefetchAllQuestionsForOffline()
+        if (results.success.length > 0) {
+          addNotification({
+            type: 'success',
+            title: 'Offline Ready',
+            message: `${results.success.length} subjects cached for offline use`
+          })
+        }
+      } catch {
+      }
+    }
+    
+    const timeoutId = setTimeout(fetchQuestionsForOffline, 2000)
+    return () => clearTimeout(timeoutId)
+  }, [addNotification])
 
   return (
     <div className="min-h-screen bg-slate-900 transition-colors duration-300">

@@ -170,6 +170,9 @@ async function fetchFromAloc(subject, count, year = null) {
 function formatQuestion(question, index, subject) {
   if (!question) return null
   
+  const section = question.topic || question.section || ''
+  const passage = question.passage || question.comprehension || question.text || null
+  
   if (question.options) {
     return {
       id: question.id || index,
@@ -177,7 +180,8 @@ function formatQuestion(question, index, subject) {
       question: question.question || '',
       options: question.options,
       answer: question.answer?.toLowerCase() || '',
-      section: question.topic || question.section || '',
+      section: section,
+      passage: passage,
       image: question.image || question.image_url || null,
       solution: question.solution || question.explanation || '',
       examtype: question.examtype || question.exam_type || 'utme',
@@ -204,7 +208,8 @@ function formatQuestion(question, index, subject) {
     question: question.question || '',
     options: options,
     answer: question.answer?.toLowerCase() || '',
-    section: question.section || '',
+    section: section,
+    passage: passage,
     image: question.image || question.image_url || null,
     solution: question.solution || question.explanation || '',
     examtype: question.examtype || 'utme',

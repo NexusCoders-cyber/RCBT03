@@ -1,27 +1,19 @@
+import { openDB as idbOpenDB } from 'idb'
+
 const DB_NAME = 'jamb-cbt-offline'
-const DB_VERSION = 6
+const DB_VERSION = 7
 const QUESTIONS_STORE = 'questions'
 const FLASHCARDS_STORE = 'flashcards'
 const NOVEL_STORE = 'novel'
 const GENERATED_CONTENT_STORE = 'generated_content'
 
-let db = null
+let dbPromise = null
 
 export async function openDB() {
-  if (db) return db
+  if (dbPromise) return dbPromise
   
-  return new Promise((resolve, reject) => {
-    const request = indexedDB.open(DB_NAME, DB_VERSION)
-    
-    request.onerror = () => reject(request.error)
-    request.onsuccess = () => {
-      db = request.result
-      resolve(db)
-    }
-    
-    request.onupgradeneeded = (event) => {
-      const database = event.target.result
-      
+  dbPromise = idbOpenDB(DB_NAME, DB_VERSION, {
+    upgrade(database) {
       if (!database.objectStoreNames.contains(QUESTIONS_STORE)) {
         const store = database.createObjectStore(QUESTIONS_STORE, { keyPath: 'cacheKey' })
         store.createIndex('subject', 'subject', { unique: false })
@@ -51,6 +43,8 @@ export async function openDB() {
       }
     }
   })
+  
+  return dbPromise
 }
 
 export async function saveQuestionsToCache(subject, year, questions) {
@@ -58,21 +52,15 @@ export async function saveQuestionsToCache(subject, year, questions) {
     const database = await openDB()
     const cacheKey = `${subject}-${year || 'random'}`
     
-    return new Promise((resolve) => {
-      const transaction = database.transaction(QUESTIONS_STORE, 'readwrite')
-      const store = transaction.objectStore(QUESTIONS_STORE)
-      
-      store.put({ 
-        cacheKey, 
-        subject, 
-        year, 
-        questions, 
-        timestamp: Date.now() 
-      })
-      
-      transaction.oncomplete = () => resolve(true)
-      transaction.onerror = () => resolve(false)
+    await database.put(QUESTIONS_STORE, { 
+      cacheKey, 
+      subject, 
+      year, 
+      questions, 
+      timestamp: Date.now() 
     })
+    
+    return true
   } catch {
     return false
   }
@@ -82,22 +70,12 @@ export async function getQuestionsFromCache(subject, year) {
   try {
     const database = await openDB()
     const cacheKey = `${subject}-${year || 'random'}`
+    const result = await database.get(QUESTIONS_STORE, cacheKey)
     
-    return new Promise((resolve) => {
-      const transaction = database.transaction(QUESTIONS_STORE, 'readonly')
-      const store = transaction.objectStore(QUESTIONS_STORE)
-      const request = store.get(cacheKey)
-      
-      request.onsuccess = () => {
-        const result = request.result
-        if (result && result.questions) {
-          resolve(result.questions)
-        } else {
-          resolve(null)
-        }
-      }
-      request.onerror = () => resolve(null)
-    })
+    if (result && result.questions) {
+      return result.questions
+    }
+    return null
   } catch {
     return null
   }
@@ -106,20 +84,8 @@ export async function getQuestionsFromCache(subject, year) {
 export async function getAllCachedQuestions(subject) {
   try {
     const database = await openDB()
-    
-    return new Promise((resolve) => {
-      const transaction = database.transaction(QUESTIONS_STORE, 'readonly')
-      const store = transaction.objectStore(QUESTIONS_STORE)
-      const index = store.index('subject')
-      const request = index.getAll(subject)
-      
-      request.onsuccess = () => {
-        const results = request.result || []
-        const allQuestions = results.flatMap(r => r.questions || [])
-        resolve(allQuestions)
-      }
-      request.onerror = () => resolve([])
-    })
+    const results = await database.getAllFromIndex(QUESTIONS_STORE, 'subject', subject)
+    return results.flatMap(r => r.questions || [])
   } catch {
     return []
   }
@@ -129,21 +95,14 @@ export async function saveFlashcard(flashcard) {
   try {
     const database = await openDB()
     
-    return new Promise((resolve) => {
-      const transaction = database.transaction(FLASHCARDS_STORE, 'readwrite')
-      const store = transaction.objectStore(FLASHCARDS_STORE)
-      
-      const cardToSave = {
-        ...flashcard,
-        id: flashcard.id || `fc-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`,
-        createdAt: flashcard.createdAt || Date.now()
-      }
-      
-      store.put(cardToSave)
-      
-      transaction.oncomplete = () => resolve(cardToSave)
-      transaction.onerror = () => resolve(null)
-    })
+    const cardToSave = {
+      ...flashcard,
+      id: flashcard.id || `fc-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`,
+      createdAt: flashcard.createdAt || Date.now()
+    }
+    
+    await database.put(FLASHCARDS_STORE, cardToSave)
+    return cardToSave
   } catch {
     return null
   }
@@ -153,27 +112,18 @@ export async function getFlashcards(subject = null, topic = null) {
   try {
     const database = await openDB()
     
-    return new Promise((resolve) => {
-      const transaction = database.transaction(FLASHCARDS_STORE, 'readonly')
-      const store = transaction.objectStore(FLASHCARDS_STORE)
-      
-      let request
-      if (subject) {
-        const index = store.index('subject')
-        request = index.getAll(subject)
-      } else {
-        request = store.getAll()
-      }
-      
-      request.onsuccess = () => {
-        let results = request.result || []
-        if (topic) {
-          results = results.filter(fc => fc.topic === topic)
-        }
-        resolve(results.sort((a, b) => b.createdAt - a.createdAt))
-      }
-      request.onerror = () => resolve([])
-    })
+    let results
+    if (subject) {
+      results = await database.getAllFromIndex(FLASHCARDS_STORE, 'subject', subject)
+    } else {
+      results = await database.getAll(FLASHCARDS_STORE)
+    }
+    
+    if (topic) {
+      results = results.filter(fc => fc.topic === topic)
+    }
+    
+    return results.sort((a, b) => b.createdAt - a.createdAt)
   } catch {
     return []
   }
@@ -182,16 +132,8 @@ export async function getFlashcards(subject = null, topic = null) {
 export async function deleteFlashcard(id) {
   try {
     const database = await openDB()
-    
-    return new Promise((resolve) => {
-      const transaction = database.transaction(FLASHCARDS_STORE, 'readwrite')
-      const store = transaction.objectStore(FLASHCARDS_STORE)
-      
-      store.delete(id)
-      
-      transaction.oncomplete = () => resolve(true)
-      transaction.onerror = () => resolve(false)
-    })
+    await database.delete(FLASHCARDS_STORE, id)
+    return true
   } catch {
     return false
   }
@@ -200,50 +142,41 @@ export async function deleteFlashcard(id) {
 export async function updateFlashcardProgress(id, correct, difficulty = 'normal') {
   try {
     const database = await openDB()
+    const flashcard = await database.get(FLASHCARDS_STORE, id)
     
-    return new Promise((resolve) => {
-      const transaction = database.transaction(FLASHCARDS_STORE, 'readwrite')
-      const store = transaction.objectStore(FLASHCARDS_STORE)
-      const getRequest = store.get(id)
+    if (flashcard) {
+      flashcard.reviewCount = (flashcard.reviewCount || 0) + 1
+      flashcard.correctCount = (flashcard.correctCount || 0) + (correct ? 1 : 0)
+      flashcard.lastReviewed = Date.now()
       
-      getRequest.onsuccess = () => {
-        const flashcard = getRequest.result
-        if (flashcard) {
-          flashcard.reviewCount = (flashcard.reviewCount || 0) + 1
-          flashcard.correctCount = (flashcard.correctCount || 0) + (correct ? 1 : 0)
-          flashcard.lastReviewed = Date.now()
-          
-          const currentEase = flashcard.easeFactor || 2.5
-          const currentInterval = flashcard.interval || 1
-          
-          if (correct) {
-            if (difficulty === 'easy') {
-              flashcard.easeFactor = Math.min(currentEase + 0.15, 3.0)
-              flashcard.interval = Math.round(currentInterval * flashcard.easeFactor * 1.3)
-            } else if (difficulty === 'hard') {
-              flashcard.easeFactor = Math.max(currentEase - 0.2, 1.3)
-              flashcard.interval = Math.round(currentInterval * 1.2)
-            } else {
-              flashcard.easeFactor = currentEase
-              flashcard.interval = Math.round(currentInterval * flashcard.easeFactor)
-            }
-            flashcard.streak = (flashcard.streak || 0) + 1
-          } else {
-            flashcard.easeFactor = Math.max(currentEase - 0.2, 1.3)
-            flashcard.interval = 1
-            flashcard.streak = 0
-          }
-          
-          flashcard.nextReview = Date.now() + (flashcard.interval * 24 * 60 * 60 * 1000)
-          flashcard.mastery = Math.min(100, Math.round((flashcard.correctCount / flashcard.reviewCount) * 100))
-          
-          store.put(flashcard)
+      const currentEase = flashcard.easeFactor || 2.5
+      const currentInterval = flashcard.interval || 1
+      
+      if (correct) {
+        if (difficulty === 'easy') {
+          flashcard.easeFactor = Math.min(currentEase + 0.15, 3.0)
+          flashcard.interval = Math.round(currentInterval * flashcard.easeFactor * 1.3)
+        } else if (difficulty === 'hard') {
+          flashcard.easeFactor = Math.max(currentEase - 0.2, 1.3)
+          flashcard.interval = Math.round(currentInterval * 1.2)
+        } else {
+          flashcard.easeFactor = currentEase
+          flashcard.interval = Math.round(currentInterval * flashcard.easeFactor)
         }
+        flashcard.streak = (flashcard.streak || 0) + 1
+      } else {
+        flashcard.easeFactor = Math.max(currentEase - 0.2, 1.3)
+        flashcard.interval = 1
+        flashcard.streak = 0
       }
       
-      transaction.oncomplete = () => resolve(true)
-      transaction.onerror = () => resolve(false)
-    })
+      flashcard.nextReview = Date.now() + (flashcard.interval * 24 * 60 * 60 * 1000)
+      flashcard.mastery = Math.min(100, Math.round((flashcard.correctCount / flashcard.reviewCount) * 100))
+      
+      await database.put(FLASHCARDS_STORE, flashcard)
+      return true
+    }
+    return false
   } catch {
     return false
   }
@@ -319,16 +252,8 @@ export async function getFlashcardStats() {
 export async function saveNovelContent(novelData) {
   try {
     const database = await openDB()
-    
-    return new Promise((resolve) => {
-      const transaction = database.transaction(NOVEL_STORE, 'readwrite')
-      const store = transaction.objectStore(NOVEL_STORE)
-      
-      store.put(novelData)
-      
-      transaction.oncomplete = () => resolve(true)
-      transaction.onerror = () => resolve(false)
-    })
+    await database.put(NOVEL_STORE, novelData)
+    return true
   } catch {
     return false
   }
@@ -337,15 +262,7 @@ export async function saveNovelContent(novelData) {
 export async function getNovelContent(id) {
   try {
     const database = await openDB()
-    
-    return new Promise((resolve) => {
-      const transaction = database.transaction(NOVEL_STORE, 'readonly')
-      const store = transaction.objectStore(NOVEL_STORE)
-      const request = store.get(id)
-      
-      request.onsuccess = () => resolve(request.result || null)
-      request.onerror = () => resolve(null)
-    })
+    return await database.get(NOVEL_STORE, id) || null
   } catch {
     return null
   }
@@ -354,15 +271,7 @@ export async function getNovelContent(id) {
 export async function getAllNovels() {
   try {
     const database = await openDB()
-    
-    return new Promise((resolve) => {
-      const transaction = database.transaction(NOVEL_STORE, 'readonly')
-      const store = transaction.objectStore(NOVEL_STORE)
-      const request = store.getAll()
-      
-      request.onsuccess = () => resolve(request.result || [])
-      request.onerror = () => resolve([])
-    })
+    return await database.getAll(NOVEL_STORE) || []
   } catch {
     return []
   }
@@ -371,16 +280,8 @@ export async function getAllNovels() {
 export async function saveGeneratedContent(id, content) {
   try {
     const database = await openDB()
-    
-    return new Promise((resolve) => {
-      const transaction = database.transaction(GENERATED_CONTENT_STORE, 'readwrite')
-      const store = transaction.objectStore(GENERATED_CONTENT_STORE)
-      
-      store.put({ id, content, timestamp: Date.now() })
-      
-      transaction.oncomplete = () => resolve(true)
-      transaction.onerror = () => resolve(false)
-    })
+    await database.put(GENERATED_CONTENT_STORE, { id, content, timestamp: Date.now() })
+    return true
   } catch {
     return false
   }
@@ -389,15 +290,8 @@ export async function saveGeneratedContent(id, content) {
 export async function getGeneratedContent(id) {
   try {
     const database = await openDB()
-    
-    return new Promise((resolve) => {
-      const transaction = database.transaction(GENERATED_CONTENT_STORE, 'readonly')
-      const store = transaction.objectStore(GENERATED_CONTENT_STORE)
-      const request = store.get(id)
-      
-      request.onsuccess = () => resolve(request.result?.content || null)
-      request.onerror = () => resolve(null)
-    })
+    const result = await database.get(GENERATED_CONTENT_STORE, id)
+    return result?.content || null
   } catch {
     return null
   }
@@ -407,45 +301,28 @@ export async function getCacheStats() {
   try {
     const database = await openDB()
     
-    return new Promise((resolve) => {
-      const stats = {
-        questions: 0,
-        flashcards: 0,
-        subjects: new Set(),
-        years: new Set()
-      }
-      
-      const transaction = database.transaction([QUESTIONS_STORE, FLASHCARDS_STORE], 'readonly')
-      
-      const questionsStore = transaction.objectStore(QUESTIONS_STORE)
-      const questionsRequest = questionsStore.getAll()
-      
-      questionsRequest.onsuccess = () => {
-        const results = questionsRequest.result || []
-        results.forEach(r => {
-          stats.questions += (r.questions?.length || 0)
-          if (r.subject) stats.subjects.add(r.subject)
-          if (r.year) stats.years.add(r.year)
-        })
-      }
-      
-      const flashcardsStore = transaction.objectStore(FLASHCARDS_STORE)
-      const flashcardsRequest = flashcardsStore.count()
-      
-      flashcardsRequest.onsuccess = () => {
-        stats.flashcards = flashcardsRequest.result || 0
-      }
-      
-      transaction.oncomplete = () => {
-        resolve({
-          questions: stats.questions,
-          flashcards: stats.flashcards,
-          subjects: Array.from(stats.subjects),
-          years: Array.from(stats.years)
-        })
-      }
-      transaction.onerror = () => resolve({ questions: 0, flashcards: 0, subjects: [], years: [] })
+    const questionsResults = await database.getAll(QUESTIONS_STORE)
+    const flashcardsCount = await database.count(FLASHCARDS_STORE)
+    
+    const stats = {
+      questions: 0,
+      flashcards: flashcardsCount,
+      subjects: new Set(),
+      years: new Set()
+    }
+    
+    questionsResults.forEach(r => {
+      stats.questions += (r.questions?.length || 0)
+      if (r.subject) stats.subjects.add(r.subject)
+      if (r.year) stats.years.add(r.year)
     })
+    
+    return {
+      questions: stats.questions,
+      flashcards: stats.flashcards,
+      subjects: Array.from(stats.subjects),
+      years: Array.from(stats.years)
+    }
   } catch {
     return { questions: 0, flashcards: 0, subjects: [], years: [] }
   }
@@ -472,7 +349,7 @@ export async function downloadQuestionsForOffline(subjects, onProgress = null) {
           results.success.push(subject.id)
         }
       }
-    } catch (error) {
+    } catch {
       results.failed.push(subject.id)
     }
     
@@ -484,6 +361,58 @@ export async function downloadQuestionsForOffline(subjects, onProgress = null) {
         success: results.success.length,
         failed: results.failed.length
       })
+    }
+  }
+  
+  return results
+}
+
+export async function prefetchAllQuestionsForOffline() {
+  const subjects = [
+    { id: 'english', name: 'English Language' },
+    { id: 'mathematics', name: 'Mathematics' },
+    { id: 'physics', name: 'Physics' },
+    { id: 'chemistry', name: 'Chemistry' },
+    { id: 'biology', name: 'Biology' },
+    { id: 'literature', name: 'Literature in English' },
+    { id: 'government', name: 'Government' },
+    { id: 'commerce', name: 'Commerce' },
+    { id: 'accounting', name: 'Accounting' },
+    { id: 'economics', name: 'Economics' },
+    { id: 'crk', name: 'Christian Religious Studies' },
+    { id: 'irk', name: 'Islamic Religious Studies' },
+    { id: 'geography', name: 'Geography' },
+    { id: 'agric', name: 'Agricultural Science' },
+    { id: 'history', name: 'History' }
+  ]
+  
+  const results = { success: [], failed: [] }
+  
+  for (const subject of subjects) {
+    try {
+      const existing = await getQuestionsFromCache(subject.id, 'offline')
+      if (existing && existing.length > 50) {
+        results.success.push(subject.id)
+        continue
+      }
+      
+      const response = await fetch(`https://questions.aloc.com.ng/api/v2/m?subject=${subject.id}&type=utme`, {
+        headers: {
+          'AccessToken': 'QB-1e5c5f1553ccd8cd9e11'
+        }
+      })
+      
+      if (response.ok) {
+        const data = await response.json()
+        const questions = data.data || data || []
+        
+        if (questions.length > 0) {
+          await saveQuestionsToCache(subject.id, 'offline', questions)
+          results.success.push(subject.id)
+        }
+      }
+    } catch {
+      results.failed.push(subject.id)
     }
   }
   
@@ -507,5 +436,6 @@ export default {
   saveGeneratedContent,
   getGeneratedContent,
   getCacheStats,
-  downloadQuestionsForOffline
+  downloadQuestionsForOffline,
+  prefetchAllQuestionsForOffline
 }

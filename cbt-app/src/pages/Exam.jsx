@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
 import { 
   Clock, ChevronLeft, ChevronRight, Flag, Send, 
-  AlertTriangle, Grid, X, Check, Bookmark, Calculator as CalcIcon, Volume2 
+  AlertTriangle, Grid, X, Check, Bookmark, Calculator as CalcIcon, Volume2, FileText
 } from 'lucide-react'
 import useStore from '../store/useStore'
 import Calculator from '../components/Calculator'
@@ -39,6 +39,7 @@ export default function Exam() {
   const [showNavGrid, setShowNavGrid] = useState(false)
   const [showSubmitModal, setShowSubmitModal] = useState(false)
   const [showTimeWarning, setShowTimeWarning] = useState(false)
+  const [showPassage, setShowPassage] = useState(false)
   const hasSubmittedRef = useRef(false)
 
   useEffect(() => {
@@ -82,6 +83,12 @@ export default function Exam() {
   const isQuestionBookmarked = currentQuestion ? 
     bookmarkedQuestions.some(q => q.id === currentQuestion.id) : false
 
+  const hasPassage = currentQuestion && (
+    currentQuestion.passage || 
+    currentQuestion.section?.toLowerCase().includes('comprehension') ||
+    currentQuestion.section?.toLowerCase().includes('passage')
+  )
+
   const formatTime = (seconds) => {
     if (!seconds || seconds <= 0) return '00:00'
     const hrs = Math.floor(seconds / 3600)
@@ -96,12 +103,14 @@ export default function Exam() {
   const handlePrevious = () => {
     if (currentQuestionIndex > 0) {
       setCurrentQuestion(currentQuestionIndex - 1)
+      setShowPassage(false)
     }
   }
 
   const handleNext = () => {
     if (currentQuestionIndex < questions.length - 1) {
       setCurrentQuestion(currentQuestionIndex + 1)
+      setShowPassage(false)
     }
   }
 
@@ -262,6 +271,20 @@ export default function Exam() {
               </span>
               <div className="flex items-center gap-2">
                 <VoiceReaderCompact question={currentQuestion} />
+                {hasPassage && (
+                  <button
+                    onClick={() => setShowPassage(!showPassage)}
+                    className={`flex items-center gap-2 px-3 py-1.5 rounded-xl text-sm font-medium transition-colors
+                      ${showPassage
+                        ? 'bg-blue-600 text-white'
+                        : 'bg-slate-700 text-slate-400 hover:bg-slate-600'
+                      }`}
+                    title="View Passage"
+                  >
+                    <FileText className="w-4 h-4" />
+                    <span className="hidden sm:inline">Passage</span>
+                  </button>
+                )}
                 <button
                   onClick={handleBookmark}
                   className={`flex items-center gap-2 px-3 py-1.5 rounded-xl text-sm font-medium transition-colors
@@ -288,6 +311,34 @@ export default function Exam() {
               </div>
             </div>
 
+            <AnimatePresence mode="wait">
+              {showPassage && currentQuestion.passage && (
+                <motion.div
+                  initial={{ opacity: 0, height: 0 }}
+                  animate={{ opacity: 1, height: 'auto' }}
+                  exit={{ opacity: 0, height: 0 }}
+                  className="bg-blue-900/20 rounded-2xl p-6 border border-blue-700/50"
+                >
+                  <div className="flex items-center justify-between mb-4">
+                    <h3 className="text-lg font-bold text-blue-300 flex items-center gap-2">
+                      <FileText className="w-5 h-5" />
+                      Reading Passage
+                    </h3>
+                    <button
+                      onClick={() => setShowPassage(false)}
+                      className="p-1 rounded-lg hover:bg-blue-800/50 text-blue-400"
+                    >
+                      <X className="w-5 h-5" />
+                    </button>
+                  </div>
+                  <div 
+                    className="text-slate-300 leading-relaxed max-h-96 overflow-y-auto prose prose-invert prose-sm max-w-none"
+                    dangerouslySetInnerHTML={{ __html: currentQuestion.passage }}
+                  />
+                </motion.div>
+              )}
+            </AnimatePresence>
+
             <div className="bg-slate-800 rounded-2xl p-6 sm:p-8 border border-slate-700 shadow-xl">
               {currentQuestion.section && (
                 <div className="mb-4 p-3 rounded-xl bg-blue-900/30 border border-blue-700/50">
@@ -297,6 +348,22 @@ export default function Exam() {
                   />
                 </div>
               )}
+
+              {currentQuestion.passage && !showPassage && (
+                <button
+                  onClick={() => setShowPassage(true)}
+                  className="mb-4 w-full p-3 rounded-xl bg-blue-900/20 border border-blue-700/50 text-left hover:bg-blue-900/30 transition-colors"
+                >
+                  <div className="flex items-center gap-2 text-blue-300">
+                    <FileText className="w-4 h-4" />
+                    <span className="text-sm font-medium">Click to view reading passage</span>
+                  </div>
+                  <p className="text-xs text-slate-400 mt-1 line-clamp-2">
+                    {currentQuestion.passage.replace(/<[^>]*>/g, '').substring(0, 150)}...
+                  </p>
+                </button>
+              )}
+
               <div 
                 className="text-lg sm:text-xl text-white leading-relaxed mb-6"
                 dangerouslySetInnerHTML={{ __html: currentQuestion.question }}
@@ -307,7 +374,7 @@ export default function Exam() {
                   <img 
                     src={currentQuestion.image} 
                     alt="Question diagram" 
-                    className="max-w-full h-auto rounded-lg mx-auto"
+                    className="max-w-full h-auto rounded-lg mx-auto max-h-80 object-contain"
                     onError={(e) => {
                       e.target.style.display = 'none'
                     }}
