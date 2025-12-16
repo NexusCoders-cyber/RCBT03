@@ -4,7 +4,7 @@ import { saveQuestionsToCache, getQuestionsFromCache, getAllCachedQuestions as g
 
 const BACKEND_URL = import.meta.env.VITE_BACKEND_URL || ''
 const ALOC_API_URL = import.meta.env.VITE_ALOC_API_URL || 'https://questions.aloc.com.ng/api/v2'
-const ACCESS_TOKEN = import.meta.env.VITE_ALOC_ACCESS_TOKEN || 'QB-1e5c5f1553ccd8cd9e11'
+const ACCESS_TOKEN = import.meta.env.VITE_ALOC_ACCESS_TOKEN || 'QB-d5c4e46e63efeaa79b0c'
 
 const backendClient = axios.create({
   baseURL: BACKEND_URL,
