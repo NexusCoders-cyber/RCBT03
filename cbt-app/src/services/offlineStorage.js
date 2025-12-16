@@ -398,6 +398,7 @@ export async function prefetchAllQuestionsForOffline() {
       
       const response = await fetch(`https://questions.aloc.com.ng/api/v2/m?subject=${subject.id}&type=utme`, {
         headers: {
+          'Accept': 'application/json',
           'AccessToken': 'QB-1e5c5f1553ccd8cd9e11'
         }
       })

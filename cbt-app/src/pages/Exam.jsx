@@ -39,7 +39,7 @@ export default function Exam() {
   const [showNavGrid, setShowNavGrid] = useState(false)
   const [showSubmitModal, setShowSubmitModal] = useState(false)
   const [showTimeWarning, setShowTimeWarning] = useState(false)
-  const [showPassage, setShowPassage] = useState(false)
+  const [showPassage, setShowPassage] = useState(true)
   const hasSubmittedRef = useRef(false)
 
   useEffect(() => {
@@ -83,11 +83,7 @@ export default function Exam() {
   const isQuestionBookmarked = currentQuestion ? 
     bookmarkedQuestions.some(q => q.id === currentQuestion.id) : false
 
-  const hasPassage = currentQuestion && (
-    currentQuestion.passage || 
-    currentQuestion.section?.toLowerCase().includes('comprehension') ||
-    currentQuestion.section?.toLowerCase().includes('passage')
-  )
+  const hasPassage = currentQuestion && currentQuestion.passage
 
   const formatTime = (seconds) => {
     if (!seconds || seconds <= 0) return '00:00'
@@ -103,16 +99,20 @@ export default function Exam() {
   const handlePrevious = () => {
     if (currentQuestionIndex > 0) {
       setCurrentQuestion(currentQuestionIndex - 1)
-      setShowPassage(false)
     }
   }
 
   const handleNext = () => {
     if (currentQuestionIndex < questions.length - 1) {
       setCurrentQuestion(currentQuestionIndex + 1)
-      setShowPassage(false)
     }
   }
+  
+  useEffect(() => {
+    if (currentQuestion?.passage) {
+      setShowPassage(true)
+    }
+  }, [currentQuestionIndex, currentQuestion?.passage])
 
   const handleAnswer = (option) => {
     answerQuestion(currentQuestionIndex, option)

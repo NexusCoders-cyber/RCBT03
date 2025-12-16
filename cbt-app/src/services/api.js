@@ -1,5 +1,6 @@
 import axios from 'axios'
 import { LEKKI_HEADMASTER_EXAM_QUESTIONS } from '../data/lekkiHeadmaster'
+import { saveQuestionsToCache, getQuestionsFromCache, getAllCachedQuestions as getOfflineCachedQuestions } from './offlineStorage'
 
 const BACKEND_URL = import.meta.env.VITE_BACKEND_URL || ''
 const ALOC_API_URL = import.meta.env.VITE_ALOC_API_URL || 'https://questions.aloc.com.ng/api/v2'
@@ -29,102 +30,6 @@ alocClient.interceptors.request.use((config) => {
   }
   return config
 })
-
-const DB_NAME = 'jamb-cbt-offline'
-const DB_VERSION = 5
-const QUESTIONS_STORE = 'questions'
-
-let db = null
-let dbInitPromise = null
-
-async function openDB() {
-  if (db && db.objectStoreNames.contains(QUESTIONS_STORE)) {
-    return db
-  }
-  
-  if (dbInitPromise) {
-    return dbInitPromise
-  }
-  
-  dbInitPromise = new Promise((resolve, reject) => {
-    const request = indexedDB.open(DB_NAME, DB_VERSION)
-    
-    request.onerror = () => {
-      dbInitPromise = null
-      reject(request.error)
-    }
-    
-    request.onsuccess = () => {
-      db = request.result
-      resolve(db)
-    }
-    
-    request.onupgradeneeded = (event) => {
-      const database = event.target.result
-      if (!database.objectStoreNames.contains(QUESTIONS_STORE)) {
-        database.createObjectStore(QUESTIONS_STORE, { keyPath: 'cacheKey' })
-      }
-    }
-  })
-  
-  return dbInitPromise
-}
-
-async function getCachedQuestions(cacheKey) {
-  try {
-    const database = await openDB()
-    return new Promise((resolve) => {
-      const transaction = database.transaction(QUESTIONS_STORE, 'readonly')
-      const store = transaction.objectStore(QUESTIONS_STORE)
-      const request = store.get(cacheKey)
-      
-      request.onsuccess = () => {
-        const result = request.result
-        if (result && result.questions && result.questions.length > 0) {
-          resolve(result.questions)
-        } else {
-          resolve(null)
-        }
-      }
-      request.onerror = () => resolve(null)
-    })
-  } catch {
-    return null
-  }
-}
-
-async function cacheQuestions(cacheKey, questions) {
-  try {
-    const database = await openDB()
-    return new Promise((resolve) => {
-      const transaction = database.transaction(QUESTIONS_STORE, 'readwrite')
-      const store = transaction.objectStore(QUESTIONS_STORE)
-      store.put({ cacheKey, questions, timestamp: Date.now() })
-      transaction.oncomplete = () => resolve(true)
-      transaction.onerror = () => resolve(false)
-    })
-  } catch {
-    return false
-  }
-}
-
-async function getAllCachedQuestions() {
-  try {
-    const database = await openDB()
-    return new Promise((resolve) => {
-      const transaction = database.transaction(QUESTIONS_STORE, 'readonly')
-      const store = transaction.objectStore(QUESTIONS_STORE)
-      const request = store.getAll()
-      
-      request.onsuccess = () => {
-        resolve(request.result || [])
-      }
-      request.onerror = () => resolve([])
-    })
-  } catch {
-    return []
-  }
-}
 
 const questionCache = new Map()
 
@@ -261,9 +166,9 @@ export const alocAPI = {
     }
     
     if (questions.length === 0) {
-      const cachedData = await getCachedQuestions(cacheKey)
+      const cachedData = await getQuestionsFromCache(subject, year || 'offline')
       if (cachedData) {
-        return cachedData
+        return cachedData.slice(0, count)
       }
       throw new Error(`No questions available for ${subject}`)
     }
@@ -273,14 +178,12 @@ export const alocAPI = {
       timestamp: Date.now(),
     })
     
-    await cacheQuestions(cacheKey, questions)
+    await saveQuestionsToCache(subject, year || 'api', questions)
     
     return questions.slice(0, count)
   },
 
   async getBulkQuestions(subject, count = 40) {
-    const cacheKey = `bulk-${subject}-${count}`
-    
     try {
       const url = `/m?subject=${subject}&type=utme`
       const response = await fetchWithRetry(alocClient, url, 3, 1000)
@@ -294,11 +197,11 @@ export const alocAPI = {
         .slice(0, count)
         .map((q, index) => formatQuestion(q, index, subject))
       
-      await cacheQuestions(cacheKey, formattedQuestions)
+      await saveQuestionsToCache(subject, 'bulk', formattedQuestions)
       
       return formattedQuestions
     } catch {
-      const cachedData = await getCachedQuestions(cacheKey)
+      const cachedData = await getQuestionsFromCache(subject, 'bulk')
       if (cachedData) {
         return cachedData.slice(0, count)
       }
@@ -314,8 +217,7 @@ export const alocAPI = {
         count
       })
       return response.data.data || []
-    } catch (error) {
-      console.error('Generation error:', error.message)
+    } catch {
       return []
     }
   },
@@ -327,8 +229,7 @@ export const alocAPI = {
         count
       })
       return response.data
-    } catch (error) {
-      console.error('Sync error:', error.message)
+    } catch {
       return null
     }
   },
@@ -357,17 +258,17 @@ export const alocAPI = {
 
   async getOfflineQuestionCount() {
     try {
-      const cached = await getAllCachedQuestions()
+      const subjects = ['english', 'mathematics', 'physics', 'chemistry', 'biology', 'literature', 'government', 'commerce', 'accounting', 'economics', 'crk', 'irk', 'geography', 'agric', 'history']
       let total = 0
       const bySubject = {}
       
-      cached.forEach(item => {
-        if (item.questions) {
-          total += item.questions.length
-          const subject = item.cacheKey.split('-')[0]
-          bySubject[subject] = (bySubject[subject] || 0) + item.questions.length
+      for (const subject of subjects) {
+        const cached = await getOfflineCachedQuestions(subject)
+        if (cached && cached.length > 0) {
+          total += cached.length
+          bySubject[subject] = cached.length
         }
-      })
+      }
       
       return { total, bySubject }
     } catch {
@@ -396,7 +297,6 @@ export async function loadQuestionsForExam(subjects, onProgress = null) {
   for (const subject of subjects) {
     const isEnglish = subject.id === 'english'
     const count = subject.count || (isEnglish ? 60 : 40)
-    const cacheKey = `exam-${subject.id}-${count}`
     
     try {
       let questions = []
@@ -404,9 +304,9 @@ export async function loadQuestionsForExam(subjects, onProgress = null) {
       try {
         questions = await alocAPI.getMultipleQuestions(subject.id, count)
       } catch {
-        const cachedData = await getCachedQuestions(cacheKey)
+        const cachedData = await getQuestionsFromCache(subject.id, 'offline')
         if (cachedData && cachedData.length > 0) {
-          questions = cachedData
+          questions = cachedData.map((q, i) => formatQuestion(q, i, subject.id))
         }
       }
       
@@ -422,8 +322,7 @@ export async function loadQuestionsForExam(subjects, onProgress = null) {
             }
           })
         } catch {
-          const bulkCacheKey = `bulk-${subject.id}-${count}`
-          const cachedBulk = await getCachedQuestions(bulkCacheKey)
+          const cachedBulk = await getQuestionsFromCache(subject.id, 'bulk')
           if (cachedBulk) {
             const existingIds = new Set(questions.map(q => q.id))
             cachedBulk.forEach(q => {
@@ -446,10 +345,6 @@ export async function loadQuestionsForExam(subjects, onProgress = null) {
         })
       }
       
-      if (questions.length > 0) {
-        await cacheQuestions(cacheKey, questions)
-      }
-      
       questionsMap[subject.id] = questions.slice(0, isEnglish ? 60 : count)
       loadedSubjects++
       
@@ -461,12 +356,10 @@ export async function loadQuestionsForExam(subjects, onProgress = null) {
           questionCount: questions.length,
         })
       }
-    } catch (error) {
-      console.error(`Error loading questions for ${subject.name}:`, error)
-      
-      const cachedData = await getCachedQuestions(cacheKey)
+    } catch {
+      const cachedData = await getQuestionsFromCache(subject.id, 'offline')
       if (cachedData && cachedData.length > 0) {
-        let questions = cachedData.slice(0, count)
+        let questions = cachedData.slice(0, count).map((q, i) => formatQuestion(q, i, subject.id))
         if (isEnglish) {
           const lekkiQuestions = getLekkiHeadmasterQuestions(15)
           const existingIds = new Set(questions.map(q => q.id))
@@ -488,7 +381,6 @@ export async function loadQuestionsForExam(subjects, onProgress = null) {
 
 export async function loadPracticeQuestions(subject, count = 40, year = null) {
   const isEnglish = subject.id === 'english'
-  const cacheKey = `practice-${subject.id}-${count}-${year || 'all'}`
   
   try {
     let questions = await alocAPI.getMultipleQuestions(subject.id, count, year)
@@ -517,15 +409,11 @@ export async function loadPracticeQuestions(subject, count = 40, year = null) {
       })
     }
     
-    if (questions.length > 0) {
-      await cacheQuestions(cacheKey, questions)
-    }
-    
     return questions.slice(0, isEnglish ? count + 10 : count)
   } catch {
-    const cachedData = await getCachedQuestions(cacheKey)
+    const cachedData = await getQuestionsFromCache(subject.id, 'offline')
     if (cachedData && cachedData.length > 0) {
-      let questions = cachedData.slice(0, count)
+      let questions = cachedData.slice(0, count).map((q, i) => formatQuestion(q, i, subject.id))
       if (isEnglish) {
         const lekkiQuestions = getLekkiHeadmasterQuestions(10)
         const existingIds = new Set(questions.map(q => q.id))
